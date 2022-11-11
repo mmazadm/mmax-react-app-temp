@@ -7,8 +7,8 @@ import Navbar from '../components/header/Navbar'
 const Default = () => {
   return (
     <div className="page-wrapper">
-      {/*<Loader/>*/}
-      <header id="header" >
+      <Loader/>
+      <header id="header" className="mheader" >
         <div className="wpo-site-header wpo-header-style-2  headmobbg" >
           <Navbar/>
         </div>

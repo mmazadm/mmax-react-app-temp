@@ -4,12 +4,9 @@ const Footer = () => {
   return (
     <footer  className="wpo-site-footer footbg1" >
         <div className="wpo-support-section">
-            <div className="container">
-                
-            </div>
         </div>
         <div className="wpo-upper-footer" >
-            <br/>  <br/>  
+            <br/>  <br/>
             <div className="container">
                 <div className="row">
                     <div className="col col-lg-2 col-md-6 col-sm-12 col-12">
@@ -88,13 +85,12 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="wpo-lower-footer" style={{"backgroundColor": "black"}}>
+        <div className="wpo-lower-footer">
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col col-lg-6 col-12">
                         <p className="copyright"> </p>
-                    </div>
-                    
+                    </div>    
                 </div>
             </div>
         </div>

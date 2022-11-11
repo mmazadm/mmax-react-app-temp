@@ -131,7 +131,7 @@ img {
 /* 1.2 Global Elements */
 .page-wrapper {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .wow {
@@ -4354,7 +4354,7 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
 }
 .wpo-site-footer .wpo-lower-footer {
   position: relative;
-  background: #163668;
+  background: #000;
 }
 .wpo-site-footer .wpo-lower-footer .row {
   padding: 20px 0;
@@ -10177,15 +10177,13 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
   padding: 50px;
   background: #fff;
   box-shadow: 0px 1px 15px 0px rgba(62, 65, 159, 0.1);
-  padding-bottom: 0;
-  margin-bottom: -125px;
+  margin-bottom: 25px;
   position: relative;
   z-index: 9;
 }
 @media (max-width: 767px) {
   .wpo-contact-pg-section .wpo-contact-form-area {
     padding: 30px;
-    padding-top: 50px;
   }
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 (function ($) {
 
     "use strict";
@@ -6,24 +7,6 @@
     /*------------------------------------------
         = ALL ESSENTIAL FUNCTIONS
     -------------------------------------------*/
-
-
-    // Toggle mobile navigation
-    function toggleMobileNavigation() {
-        var navbar = $(".navigation-holder");
-        var openBtn = $(".mobail-menu .open-btn");
-        var xbutton = $(".mobail-menu .navbar-toggler");
-
-        openBtn.on("click", function (e) {
-            e.stopImmediatePropagation();
-            navbar.toggleClass("slideInn");
-            xbutton.toggleClass("x-close");
-            return false;
-        })
-    }
-
-    toggleMobileNavigation();
-
 
     // Function for toggle class for small menu
     function toggleClassForSmallNav() {
@@ -66,17 +49,6 @@
     }
 
     smallNavFunctionality();
-
-    $("body").on("click", function () {
-        $('.navigation-holder').removeClass('slideInn');
-    });
-    $(".menu-close").on("click", function () {
-        $('.navigation-holder').removeClass('slideInn');
-    });
-    $(".menu-close").on("click", function () {
-        $('.open-btn').removeClass('x-close');
-    });
-
 
     // toggle1
     $('#toggle1').on("click", function () {
@@ -221,16 +193,12 @@
         = HIDE PRELOADER
     -------------------------------------------*/
     function preloader() {
-        if ($('.preloader').length) {
+        //if ($('.preloader').length) {
             $('.preloader').delay(100).fadeOut(500, function () {
-
                 //active wow
                 wow.init();
-
-
-
             });
-        }
+        //}
     }
 
 
@@ -939,13 +907,11 @@
     /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
-    $(window).on('load', function () {
+    $(document).ready(function () {
 
         preloader();
 
         sortingGallery();
-
-        toggleMobileNavigation();
 
         smallNavFunctionality();
     });

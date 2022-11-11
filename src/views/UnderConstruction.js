@@ -10,6 +10,12 @@ const UnderConstruction = () => {
           <li>
             <a href="/about-us">About Us</a>
           </li>
+          <li>
+            <a href="/mobile-apps">Mobile Applications</a>
+          </li>
+          <li>
+            <a href="/sell-your-equipment">Sell Your Equipment</a>
+          </li>
         </ul>
     </div>
     </section>

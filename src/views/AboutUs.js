@@ -1,6 +1,102 @@
 import React from 'react'
 
 const AboutUs = () => {
+  const services = [
+    {
+      icon:'assets/images/sell/hammer.png',
+      title:'Auction',
+      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
+      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
+    },
+    {
+      icon:'assets/images/sell/hammer.png',
+      title:'Auction',
+      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
+      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
+    },
+    {
+      icon:'assets/images/sell/handshake.png',
+      title:'Acquisitions',
+      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
+      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
+    }
+  ]
+
+  const team = [
+    {
+      name:'Sia Dev',
+      title:'Logistics Manager',
+      facebook:'https://facebook.com',
+      linkedIn:'https://linkedin.com',
+      instagram:'https://instagram.com',
+      photo:'assets/images/sell/Optimized-team-member.jpg'
+    },
+    {
+      name:'Sia Dev',
+      title:'Logistics Manager',
+      facebook:'https://facebook.com',
+      linkedIn:'https://linkedin.com',
+      instagram:'https://instagram.com',
+      photo:'assets/images/sell/Optimized-team-member.jpg'
+    },
+    {
+      name:'Sia Dev',
+      title:'Logistics Manager',
+      facebook:'https://facebook.com',
+      linkedIn:'https://linkedin.com',
+      instagram:'https://instagram.com',
+      photo:'assets/images/sell/Optimized-team-member.jpg'
+    },
+    {
+      name:'Sia Dev',
+      title:'Logistics Manager',
+      facebook:'https://facebook.com',
+      linkedIn:'https://linkedin.com',
+      instagram:'https://instagram.com',
+      photo:'assets/images/sell/Optimized-team-member.jpg'
+    },
+    {
+      name:'Sia Dev',
+      title:'Logistics Manager',
+      facebook:'https://facebook.com',
+      linkedIn:'https://linkedin.com',
+      instagram:'https://instagram.com',
+      photo:'assets/images/sell/Optimized-team-member.jpg'
+    }
+  ]
+
+  const stats = [
+    {
+      count:8253,
+      title:'Auctions',
+      icon:'assets/images/sell/cart.png'
+    },
+    {
+      count:458,
+      title:'Sellers',
+      icon:'assets/images/sell/dollar_thumb.png'
+    },
+    {
+      count:458,
+      title:'Users <br/> helped',
+      icon:'assets/images/sell/headphone.png'
+    },
+    {
+      count:116,
+      title:'Employees',
+      icon:'assets/images/sell/group.png'
+    },
+    {
+      count:4253,
+      title:'Total <br/> Users',
+      icon:'assets/images/sell/laptop.png'
+    },
+    {
+      count:450,
+      title:'Problems <br/> Solved',
+      icon:'assets/images/sell/bulb.png'
+    }
+  ]
   return (
     <>
     {/* Section Mission statement */}
@@ -27,103 +123,30 @@ const AboutUs = () => {
           <h1 className="headservice">Services</h1>
         </div>
         <div className="row office-info">
+          {services.map(item=>(
           <div className="col col-xl-4 col-lg-6 col-md-6 col-12">
             <div className="flip-card">
-                    <div className="flip-card-inner">
-                      <div className="flip-card-front icon">
-                        <img src="assets/images/sell/hammer.png" className="serimg" alt="auctions"/>
-                        <h2 style={{"color":"#ff4402"}}>Auction</h2>                          
-                      </div>
-                      <div className="flip-card-back">
-                        <p className="serpara">
-                          MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers
-                        </p>    
-                        <ul className="ulbullet" >
-                          <li className="bullettext">
-                              Collections
-                          </li>
-                          <li className="bullettext">
-                              Asset Recovery
-                          </li>
-                          <li className="bullettext">
-                              Asset Remarketing
-                          </li>
-                          <li className="bullettext">
-                              Legal Services
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+              <div className="flip-card-inner">
+                <div className="flip-card-front icon">
+                  <img src={item.icon} className="serimg" alt="auctions"/>
+                  <h2 style={{"color":"#ff4402"}}>{item.title}</h2>                          
+                </div>
+                <div className="flip-card-back">
+                  <p className="serpara">
+                    {item.desc}
+                  </p>    
+                  <ul className="ulbullet" >
+                    {item.pointers.map((point, key) => (
+                      <li className="bullettext">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col col-xl-4 col-lg-6 col-md-6 col-12" >
-                               <div className="flip-card">
-                                          <div className="flip-card-inner">
-                                            <div className="flip-card-front icon">
-                                              <img src="assets/images/sell/hammer.png" className="serimg" alt="hammer"/>
-      
-  
-                                        <h2 className="sercolor">Auction</h2>
-                                          
-                                       
-    </div>
-                        <div className="flip-card-back">
-                           <p className="serpara" >
-                                            MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers
-                                            </p>
-                                        
-                                        <ul className="ulbullet">
-                                            <li className="bullettext">
-                                                Collections
-                                            </li>
-                                            <li className="bullettext">
-                                               Asset Recovery
-                                            </li>
-                                            <li className="bullettext">
-                                                Asset Remarketing
-                                            </li>
-                                            <li className="bullettext">
-                                                Legal Services
-                                            </li>
-                                            </ul>
-                                                </div>
-                                              </div>
-                                            </div>
-          </div>
-          <div className="col col-xl-4 col-lg-6 col-md-6 col-12" >
-                  <div className="flip-card">
-                      <div className="flip-card-inner">
-                        <div className="flip-card-front icon">
-                          <img src="assets/images/sell/handshake.png" className="serimg" alt="handshake"/>
-
-
-                        <h2 className="sercolor">Acquisitions</h2>
-                      
-                    
-</div>
-    <div className="flip-card-back">
-        <p className="serpara">
-                        MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers
-                        </p>
-                    
-                    <ul className="ulbullet">
-                        <li className="bullettext">
-                            Collections
-                        </li>
-                        <li className="bullettext">
-                            Asset Recovery
-                        </li>
-                        <li className="bullettext">
-                            Asset Remarketing
-                        </li>
-                        <li className="bullettext">
-                            Legal Services
-                        </li>
-                        </ul>
-                            </div>
-                          </div>
-                        </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -134,71 +157,21 @@ const AboutUs = () => {
         <h2 className="aboutteamstyle" >Our Team</h2>
       </div>
       <div className="row teamrow"> 
-        <div className="col-md-2 offset-md-1">
-          <a href="#" className="opp">
-            <img className="rounded-circle" src="assets/images/sell/Optimized-team-member.jpg"/>
-            <span className="teamdiv" >
-              Sia Dev
-              <p className="teamclass">Logistics Managers</p>  
-              <i className="ti-facebook icondiv"/>
-              <i className="ti-linkedin icondiv2"/>
-              <i className="ti-instagram icondiv2"/>
-              <br/> 
-            </span>
-          </a>  
-        </div>
-        <div className="col-md-2">
-          <a href="#" className="opp">
-            <img className="rounded-circle" src="assets/images/sell/Optimized-team-member.jpg"/>
-            <span className="teamdiv" >
-              Sia Dev
-              <p className="teamclass">Logistics Managers</p>  
-              <i className="ti-facebook icondiv"/>
-              <i className="ti-linkedin icondiv2"/>
-              <i className="ti-instagram icondiv2"/>
-              <br/> 
-            </span>
-          </a>  
-        </div> 
-        <div className="col-md-2">
-          <a href="#" className="opp">
-            <img className="rounded-circle" src="assets/images/sell/Optimized-team-member.jpg"/>
-            <span className="teamdiv" >
-              Sia Dev
-              <p className="teamclass">Logistics Managers</p>  
-              <i className="ti-facebook icondiv"/>
-              <i className="ti-linkedin icondiv2"/>
-              <i className="ti-instagram icondiv2"/>
-              <br/> 
-            </span>
-          </a>  
-        </div> 
-        <div className="col-md-2">
-          <a href="#" className="opp">
-            <img className="rounded-circle" src="assets/images/sell/Optimized-team-member.jpg"/>
-            <span className="teamdiv" >
-              Sia Dev
-              <p className="teamclass">Logistics Managers</p>  
-              <i className="ti-facebook icondiv"/>
-              <i className="ti-linkedin icondiv2"/>
-              <i className="ti-instagram icondiv2"/>
-              <br/> 
-            </span>
-          </a>  
-        </div> 
-        <div className="col-md-2">
-          <a href="#" className="opp">
-            <img className="rounded-circle" src="assets/images/sell/Optimized-team-member.jpg"/>
-            <span className="teamdiv" >
-              Sia Dev
-              <p className="teamclass">Logistics Managers</p>  
-              <i className="ti-facebook icondiv"/>
-              <i className="ti-linkedin icondiv2"/>
-              <i className="ti-instagram icondiv2"/>
-              <br/> 
-            </span>
-          </a>  
-        </div>                     
+      {team.map((item,key) => (
+        <div className={`col-md-2 ${key===0 || key===5?'offset-md-1':''}`}>
+        <a href="#" className="opp">
+          <img className="rounded-circle" src={item.photo} alt="user"/>
+          <span className="teamdiv" >
+            {item.name}
+            <p className="teamclass">{item.title}</p>  
+            <a href={item.facebook} target='_blank' rel='noreferrer' alt='facebook'><i className="ti-facebook icondiv"/></a>
+            <a href={item.linkedIn} target='_blank' rel='noreferrer' alt='linkedin'><i className="ti-linkedin icondiv2"/></a>
+            <a href={item.instagram} target='_blank' rel='noreferrer' alt='instagram'><i className="ti-instagram icondiv2"/></a>
+            <br/> 
+          </span>
+        </a>  
+      </div> 
+      ))}                  
       </div>
     </div>
     </section>
@@ -212,7 +185,7 @@ const AboutUs = () => {
           <div class="col-md-6">
             <article>
               <div id="owl">
-                <div class="column row">
+                <div class="row">
                   <div class="large-12 columns testimonial">
                     <div class="quote">
                       <p class="testimonialcolor" >MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.</p>
@@ -242,59 +215,19 @@ const AboutUs = () => {
             </article>
           </div>
           <div class="col-md-6 stats">
-            <div class="row symbols" >  
-              <div class="col-md-6"> 
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/cart.png" alt="auctions" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >8523 <br/>AUCTIONS</span>
-                  </div>      
-                </div>  
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/dollar_thumb.png" alt="sellers" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >458 <br/>SELLERS</span>
-                  </div>      
-                </div>  
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/cart.png" alt="auctions" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >8523 <br/>AUCTIONS</span>
-                  </div>      
-                </div>                
-              </div>
-              <div class="col-md-6"> 
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/cart.png" alt="auctions" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >8523 <br/>AUCTIONS</span>
-                  </div>      
-                </div>  
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/cart.png" alt="auctions" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >8523 <br/>AUCTIONS</span>
-                  </div>      
-                </div>  
-                <div class="row singelsymbol" >
-                  <div class="col-md-4 statstop" >
-                    <img src="assets/images/sell/dollar_thumb.png" alt="sellers" className="statswidth"/>
-                  </div>
-                  <div class="col-md-8 statscontent">
-                    <span class="statstext" >458 <br/>SELLERS</span>
-                  </div>      
-                </div>                
-              </div>
+            <div class="row symbols">
+              {stats.map(item => (
+                <div class="col-md-6"> 
+                  <div class="row singelsymbol" >
+                    <div class="col-md-4 statstop" >
+                      <img src={item.icon} alt={item.title} className="statswidth"/>
+                    </div>
+                    <div class="col-md-8 statscontent">
+                      <span class="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
+                    </div>      
+                  </div>                  
+                </div>
+              ))}
             </div>
           </div>
         </div>
