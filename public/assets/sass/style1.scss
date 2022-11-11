@@ -1,0 +1,807 @@
+﻿$color_1: white;
+$color_2: #fff;
+$color_3: #222;
+$color_4: #ff4402;
+$color_5: black;
+$color_6: #FFC345;
+$color_7: #777;
+$color_8: #707070;
+$color_9: #313848;
+$font-family_1: "FontAwesome", sans-serif;
+$font-family_2: 'Montserrat';
+$font-family_3: Montserrat;
+$background-color_1: #FF4402;
+$background-color_2: transparent;
+$background-color_3: #303747;
+$background-color_4: #ccc;
+$background-color_5: #F5F6F7;
+$background-color_6: white;
+$border-color_1: white transparent transparent transparent;
+$border-color_2: #ff4402;
+
+/* Medium devices (landscape tablets, 768px and up) */
+/*------------------------------------------------------------------
+Mobile App Page Style Ends
+
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+Mobile App Page Style Ends
+
+Equipment  Page Style Starts
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+Equipment  Page Style Ends
+
+Sell Page Style Starts
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+Sell Style Ends
+
+About  Page Style Starts
+-------------------------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+	.wpo-site-header {
+		#navbar {
+			>ul {
+				>li {
+					>a {
+						padding: 15px 50px !important;
+					}
+				}
+			}
+		}
+	}
+	.rowcard {
+		margin: 130px 200px 40px 50px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.footbg1 {
+		background: #293141;
+	}
+	.wpo-site-footer {
+		.wpo-support-section {
+			padding: 10px 0;
+		}
+	}
+	.headerstrip {
+		text-align: center;
+		font-weight: 800;
+		font-size: 40px;
+	}
+	.mobildiv {
+		display: none !important;
+		display: none;
+	}
+	.sellstrip {
+		background-color: $background-color_1;
+		height: 80px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.sellstrippara {
+		text-align: center;
+		color: $color_1;
+		font-weight: 500;
+		font-size: 18px;
+		padding-top: 15px;
+	}
+	.sellequip {
+		text-align: center;
+	}
+	.sellformpara {
+		margin: 20px;
+		font-size: 18px;
+	}
+	.sellform1 {
+		margin: 20px !important;
+	}
+	.circle {
+		width: 150px;
+		height: 150px;
+		line-height: 150px;
+		border-radius: 50%;
+		font-size: 20px;
+		color: $color_2;
+		text-align: center;
+		background: #ff4402;
+		margin-left: 120px;
+		margin-right: 40px;
+		margin-bottom: 20px;
+	}
+	.sellmsgstrip {
+		background-color: $background-color_1;
+		height: 230px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.cardstrip {
+		text-align: left;
+		font-weight: 800;
+		font-size: 25px;
+	}
+	.cardpara {
+		text-align: left;
+		font-weight: 600;
+		font-size: 14px;
+	}
+	.rowcard {
+		margin-right: 20px;
+		margin-left: 20px;
+		margin-top: 80px;
+		margin-bottom: 40px";";
+	}
+	.opp {
+		color: $color_3;
+		border-radius: 100%;
+		display: inline-block;
+		text-decoration: none;
+		position: relative;
+		width: 100px;
+		height: 28px;
+		margin: 0 2px;
+		padding-top: 12px;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		transition: all .5s;
+		margin-bottom: 100px;
+		span {
+			background-color: $background-color_1;
+			color: $color_2;
+			font-size: 26px;
+			font-weight: bold;
+			position: absolute;
+			bottom: 0;
+			left: -50px;
+			right: -15px;
+			padding: 5px 7px;
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transition: all .4s;
+			-moz-transition: all .4s;
+			transition: all .4s;
+			&:before {
+				content: '';
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 5px solid #fff;
+				position: absolute;
+				bottom: -5px;
+				left: 40px;
+			}
+		}
+		&:hover {
+			span {
+				bottom: 50px;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+	.opp.icon {
+		&:before {
+			font-family: $font-family_1;
+			color: $color_2;
+			font-size: 20px;
+		}
+	}
+	.teamrow {
+		text-align: center;
+	}
+	.symbols {
+		text-align: center;
+	}
+	.singelsymbol {
+		margin-top: 40px;
+	}
+	.msgstrip {
+		background-color: $background-color_1;
+		height: 80px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.msgstrippara {
+		text-align: center;
+		color: $color_1;
+		font-weight: bold;
+		font-size: 18px;
+		padding-top: 15px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.footbg1 {
+		background-image: url(../../assets/images/sell/Group_104.png) !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+	}
+	.headerstrip {
+		text-align: center;
+		font-weight: 800;
+		font-size: 55px;
+	}
+	.sellstrip {
+		background-color: $background-color_1;
+		height: 80px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.sellstrippara {
+		text-align: center;
+		color: $color_1;
+		font-weight: 500;
+		font-size: 26px;
+		padding-top: 15px;
+	}
+	.sellformpara {
+		font-size: 18px;
+		margin-top: 10px;
+	}
+	.circle {
+		width: 150px;
+		height: 150px;
+		line-height: 150px;
+		border-radius: 50%;
+		font-size: 20px;
+		color: $color_2;
+		text-align: center;
+		background: #ff4402;
+	}
+	.sellmsgstrip {
+		background-color: $background-color_1;
+		height: 150px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.cardstrip {
+		text-align: left;
+		font-weight: 500;
+		font-size: 55px;
+		color: $color_4;
+	}
+	.cardpara {
+		text-align: left;
+		font-weight: 600;
+		font-size: 18px;
+	}
+	.rowcard {
+		margin-right: 200px;
+		margin-left: 50px;
+		margin-top: 80px;
+		margin-bottom: 40px";";
+	}
+	.opp {
+		color: $color_3;
+		border-radius: 100%;
+		display: inline-block;
+		text-decoration: none;
+		position: relative;
+		width: 250px;
+		height: 28px;
+		margin: 0 2px;
+		padding-top: 12px;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		transition: all .5s;
+		span {
+			background-color: $background-color_1;
+			color: $color_2;
+			font-size: 26px;
+			font-weight: bold;
+			position: absolute;
+			bottom: 0;
+			left: -50px;
+			right: -15px;
+			padding: 5px 7px;
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transition: all .4s;
+			-moz-transition: all .4s;
+			transition: all .4s;
+			&:before {
+				content: '';
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 5px solid #fff;
+				position: absolute;
+				bottom: -5px;
+				left: 40px;
+			}
+		}
+		&:hover {
+			span {
+				bottom: 50px;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+	.opp.icon {
+		&:before {
+			font-family: $font-family_1;
+			color: $color_2;
+			font-size: 20px;
+		}
+	}
+	.teamrow {
+		margin-top: 80px;
+		margin-bottom: 100px;
+	}
+	.msgstrip {
+		background-color: $background-color_1;
+		height: 80px !important;
+		margin-top: 50px;
+		font-weight: 800;
+	}
+	.msgstrippara {
+		text-align: center;
+		color: $color_1;
+		font-weight: bold;
+		font-size: 26px;
+		padding-top: 15px;
+	}
+}
+.mheader {
+	margin-bottom: 73px;
+}
+.card {
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+.industrytext {
+	font-weight: 600;
+	font-size: 26px;
+	margin-top: 20px;
+	text-align: center;
+}
+.flip-card {
+	background-color: $background-color_2;
+	width: 350px;
+	height: 300px;
+	perspective: 1000px;
+	&:hover {
+		.flip-card-inner {
+			transform: rotateY(180deg);
+		}
+	}
+}
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card-front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	color: $color_5;
+}
+.flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background-color: $background-color_3;
+	color: $color_1;
+	transform: rotateY(180deg);
+}
+article {
+	margin: 20px auto;
+	width: 100%;
+	padding: 1em;
+	font-size: 1em;
+	color: $color_6;
+}
+.quote {
+	background: white;
+	padding: 15px 20px 5px 15px;
+	border-radius: 5px;
+	margin-bottom: 26px;
+	box-shadow: 0px 5px 15px 0px rgb(162 165 159 / 10%);
+	&:after {
+		content: '';
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 20px 18px 0 18px;
+		border-color: $border-color_1;
+		position: relative;
+		top: 37px;
+		left: 20px;
+	}
+}
+.student {
+	margin-left: 25px;
+	margin-bottom: 80px;
+	.photo {
+		background-color: $background-color_4;
+		border-radius: 100px;
+		width: 60px;
+		height: 60px;
+		float: left;
+		margin-right: 10px;
+	}
+	p {
+		position: relative;
+		top: 5px;
+		text-transform: uppercase;
+		&:nth-child(2) {
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+		&:nth-child(3) {
+			font-size: 14px;
+			color: $color_7;
+		}
+	}
+}
+.nav-pills {
+	.nav-link.active {
+		background: #313848;
+	}
+	.show {
+		>.nav-link {
+			background: #313848;
+		}
+	}
+	.nav-link {
+		border-radius: 0px;
+	}
+}
+.tabtext {
+	text-align: center;
+	font-weight: bold;
+}
+.nav-item {
+	border-style: solid;
+}
+.headmobbg {
+	background-color: $background-color_3;
+}
+.headbdbg {
+	background-color: $background-color_5;
+}
+.menufont {
+	font-family: $font-family_2;
+}
+.sellbtn1 {
+	padding: 5px !important;
+	margin-top: 25px !important;
+	clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+	font-size: 14px !important;
+	font-family: $font-family_3 !important;
+}
+.headstriptitle {
+	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
+	margin-top: 100px;
+}
+.mainsec {
+	margin-bottom: 100px;
+}
+.rectsec {
+	margin-top: 400px;
+}
+.head1strippara {
+	text-align: center;
+	font-size: 18px;
+}
+.head2mob {
+	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
+}
+.head3mob {
+	text-align: center;
+	font-size: 18px;
+}
+.imgm {
+	height: 300px;
+	margin-top: 10px;
+}
+.mobbottom {
+	margin-bottom: 70px;
+}
+.mobhstyle {
+	text-align: left;
+	font-weight: bold;
+	font-size: 26px;
+}
+.mobul {
+	margin-top: 26px;
+}
+.mobli1 {
+	text-align: left;
+	font-size: 18px;
+}
+.mobli2 {
+	margin-top: 26px;
+	text-align: left;
+	font-size: 18px;
+}
+.rectbo {
+	margin-top: -70px;
+}
+.margmob {
+	margin-top: -20px;
+}
+.recmobsize {
+	width: 100px;
+	margin-top: 110px;
+}
+.mobcr {
+	margin-top: 170px !important;
+}
+.mobcr1 {
+	margin-top: -20px;
+}
+.eqspace {
+	margin-bottom: 100px;
+}
+.eqhead {
+	text-align: center;
+	font-weight: 800;
+	font-size: 55px;
+}
+.eqpara {
+	text-align: center;
+	font-weight: 600;
+	font-size: 18px;
+	font-family: $font-family_2;
+}
+.processhead {
+	text-align: left;
+	font-weight: bold;
+	font-size: 26px;
+	font-family: $font-family_2;
+	color: $color_8;
+}
+.processhead2 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
+	font-family: $font-family_2;
+	color: $color_8;
+}
+.applytbtn {
+	clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+	font-size: 26px;
+	border-radius: 8px;
+	font-weight: bold !important;
+}
+.sellheadstyle {
+	text-align: center;
+	font-weight: 800;
+	font-size: 55px;
+}
+.selimdiv {
+	margin-top: 50px;
+}
+.selimbot {
+	margin-bottom: 20px;
+}
+.orangestar {
+	color: $color_4;
+}
+.radiowidth {
+	width: 20px;
+}
+.formfont {
+	font-weight: 800;
+}
+.formfont1 {
+	padding-top: 10px;
+	font-size: 12px;
+}
+.formnote {
+	font-size: 14px !important;
+	border-style: solid;
+	border-color: $border-color_2;
+}
+.sellformbtn11 {
+	clip-path: polygon(500% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+	font-size: small !important;
+	border-radius: 26px !important;
+}
+.sellbdh {
+	background-color: $background-color_1;
+	height: 100px !important;
+	margin-top: 50px;
+}
+.sellbdp {
+	text-align: center;
+	color: $color_1;
+	font-weight: 500;
+	font-size: 26px;
+	padding-top: 15px;
+	line-height: 26px;
+}
+.cardup {
+	margin-bottom: 100px;
+}
+.carduimg {
+	height: 100%;
+	width: 400px;
+}
+.carduhead {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.cardustyle {
+	text-align: left;
+	font-weight: bold;
+	font-size: 26px;
+}
+.cardupara {
+	text-align: left;
+	font-size: 18px;
+}
+.timehead {
+	text-align: center;
+	font-weight: 800;
+	font-size: 55px;
+}
+.timepara {
+	font-size: 18px;
+	text-align: center;
+}
+.hrdiv {
+	display: flex;
+	align-items: center;
+}
+.hrline {
+	flex-grow: 1;
+	border-top: 2px solid black;
+	margin-left: -11px;
+	margin-right: -11px;
+}
+.hrpara {
+	font-size: 18px;
+	text-align: center;
+}
+.sellparamsgstrip {
+	text-align: center;
+	color: $color_1;
+	font-weight: 500;
+	font-size: 26px;
+	padding-top: 20px;
+	line-height: 26px;
+}
+.sellparatext {
+	font-size: 20px;
+}
+.expertsell {
+	text-align: center;
+	font-weight: 800;
+	font-size: 26px;
+}
+.expertsellpara {
+	font-size: 18px;
+	text-align: center;
+}
+.analytictext {
+	text-align: center !important;
+	font-weight: 600 !important;
+	font-size: 26px !important;
+}
+.analytictextpara1 {
+	font-size: 18px;
+	text-align: left;
+	margin-left: 30px;
+}
+.analytictextpara2 {
+	text-align: left;
+	font-size: 18px;
+}
+.analyticimgcard1 {
+	height: 300px;
+}
+.analyticimgcard2 {
+	height: 100%;
+}
+.headingindust {
+	text-align: center;
+	font-weight: 800;
+	font-size: 26px;
+	margin-bottom: 40px;
+}
+.cardfi {
+	margin-top: 80px;
+}
+.cardli {
+	margin-top: -200px;
+}
+.aboutmi {
+	height: 450px;
+	margin-top: 150px;
+	color: $color_4;
+}
+.headservice {
+	text-align: center;
+	font-weight: bold;
+	font-size: 55px;
+	margin-bottom: 80px;
+}
+.serimg {
+	width: 100px;
+	margin-top: 60px;
+}
+.sercolor {
+	color: $color_4;
+}
+.serpara {
+	color: $color_1;
+	margin-top: 40px;
+}
+.ulbullet {
+	margin-left: 50px;
+}
+.bullettext {
+	color: $color_1;
+	margin-bottom: -10px;
+	&::marker {
+		font-size: 1.8em;
+	}
+}
+.aboutteamstyle {
+	text-align: center;
+	font-weight: 800;
+	font-size: 55px;
+	margin-bottom: 80px;
+	color: $color_9;
+}
+.teamclass {
+	color: $color_1;
+}
+.teamdiv {
+	text-align: center !important;
+}
+.icondiv1 {
+	background-color: $background-color_6;
+	padding: 5px;
+	border-radius: 50%;
+	color: $color_4;
+	font-size: 20px;
+}
+.icondiv2 {
+	margin-left: 10px;
+	background-color: $background-color_6;
+	padding: 5px;
+	border-radius: 50%;
+	color: $color_4;
+	font-size: 20px;
+	margin-left: 10px;
+	background-color: $background-color_6;
+	padding: 5px;
+	border-radius: 50%;
+	color: $color_4;
+	font-size: 20px;
+}
+.testimonialcolor {
+	color: $color_5;
+}
+.stats {
+	margin-top: 40px;
+	margin-bottom: 120px;
+}
+.statstop {
+	margin-top: 50px;
+	width: 80px;
+}
+.statscontent {
+	margin-top: 50px;
+}
+.statstext {
+	font-size: 18px;
+	font-family: $font-family_2;
+	font-weight: bold;
+	color: $color_5;
+}

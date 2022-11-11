@@ -1,0 +1,1052 @@
+/* Medium devices (landscape tablets, 768px and up) */
+
+
+
+
+ @media only screen and (max-width: 991px) {
+                         
+                      
+                         
+                           .wpo-site-header #navbar > ul > li > a {
+                          padding: 15px 50px !important;
+                                }
+
+
+                        .rowcard{
+                            
+                            margin: 130px 200px 40px 50px;
+
+                              }      
+     
+                        }
+
+
+ @media only screen and (max-width: 768px) {
+                            .footbg1 {
+                            background:#293141;
+                            }
+                                                          
+                            .wpo-site-footer .wpo-support-section {
+                            padding: 10px 0;
+                            }
+                            
+                            
+                            .headerstrip {
+                             text-align: center ;
+                              font-weight:800;
+                             font-size:40px
+                            }
+                                                                     
+                            .mobildiv{
+                             display:none !important;
+                            }
+
+
+
+                              .sellstrip {
+                                  background-color: #FF4402;
+                                  height: 80px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+                              
+                                .sellstrippara {
+                             text-align: center ;
+                            color:white;
+                            font-weight:500;
+                            font-size:18px;
+                            padding-top:15px;
+                                         }
+                                         
+                                         
+                              
+                               
+                                .sellequip{
+                                    text-align:center;
+                                   
+                                }
+                                
+                                .sellformpara{
+                                    margin:20px;
+                                    font-size:18px
+                                }
+                                
+                                .sellform1{
+                                    margin:20px !important;
+                                }
+                                
+                                
+                                 .circle {
+                                  width: 150px;
+                                  height: 150px;
+                                  line-height: 150px;
+                                  border-radius: 50%;
+                                  font-size: 20px;
+                                  color: #fff;
+                                  text-align: center;
+                                  background: #ff4402;
+                                  margin-left: 120px;
+                                  margin-right: 40px;
+                                  margin-bottom:20px;
+                                  
+                                }
+                                
+                                  .sellmsgstrip {
+                                  background-color: #FF4402;
+                                  height: 230px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+
+
+
+                              .cardstrip {
+                                 text-align: left ;
+                                 font-weight:800;
+                                 font-size:25px
+                                  
+                              }
+                              
+                              .cardpara{
+                                  text-align: left ;
+                                  font-weight:600;
+                                  font-size:14px
+                              }
+                              
+                                       
+                               .mobildiv{
+                                   display:none;
+                               }
+                               
+                                .rowcard{
+                                  margin-right:20px;
+                                  margin-left:20px;
+                                  margin-top:80px;
+                                  margin-bottom:40px";
+                              }
+                              
+                              
+                              
+                                   .opp {
+  
+                          color: #222;
+                          border-radius: 100%;
+                          display: inline-block;
+                          text-decoration: none;
+                          position: relative;
+                          width: 100px;
+                          height: 28px;
+                          margin: 0 2px;
+                          padding-top: 12px;
+                          -webkit-transition: all .5s;
+                          -moz-transition: all .5s;
+                          transition: all .5s;
+                          margin-bottom:100px;
+                        }
+                        
+                        .opp.icon:before {
+                          font-family: "FontAwesome", sans-serif;
+                          color: #fff;
+                          font-size: 20px;
+                        }
+                        
+                        
+                        .opp span {
+                          
+                          background-color:#FF4402;
+                          color:  #fff;
+                          font-size: 26px;
+                          font-weight: bold;
+                          position:  absolute;
+                          bottom: 0;
+                          left: -50px;
+                          right: -15px;
+                          padding: 5px 7px;
+                          visibility: hidden;
+                          opacity: 0;
+                          -webkit-transition: all .4s;
+                          -moz-transition: all .4s;
+                          transition: all .4s;
+                        }
+                        
+                        .opp span:before {
+                          content: '';
+                        /*   width: 0;
+                          height: 0; */
+                          border-left: 5px solid transparent;
+                          border-right: 5px solid transparent;
+                          border-top: 5px solid #fff;
+                          position: absolute;
+                          bottom: -5px;
+                          left: 40px;
+                        }
+                        
+                        .opp:hover span {
+                          bottom: 50px;
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                        
+                        
+                        .teamrow{
+                            text-align:center;
+                        }                          
+                              
+                              
+                              
+                              
+                            .symbols{
+                                    text-align:center;
+                                   
+                                }
+                                
+                                .singelsymbol{
+                                    margin-top:40px;
+                                }                      
+                              
+                                .msgstrip {
+                                  background-color: #FF4402;
+                                  height: 80px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+                              
+                                .msgstrippara {
+                             text-align: center ;
+                            color:white;
+                            font-weight:bold;
+                            font-size:18px;
+                            padding-top:15px;
+                                         }
+                                             
+
+
+                              
+} 
+      
+      
+
+      
+      
+      
+      
+      
+      
+                                                    
+ @media only screen and (min-width: 992px) {
+.footbg1 {
+background-image: url(../../assets/images/sell/Group_104.png) !important;
+background-size: cover !important;
+background-repeat: no-repeat !important;
+}
+
+.headerstrip {
+                                  text-align: center ;
+                                 font-weight:800;
+                                 font-size:55px
+                                  
+                              }
+                              
+                              
+                         .sellstrip {
+                                  background-color: #FF4402;
+                                  height: 80px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+                        
+                        .sellstrippara {
+                            
+                            text-align: center ;
+                            color:white;
+                            font-weight:500;
+                            font-size:26px;
+                            padding-top:15px;
+                            
+                        }
+                        
+                       .sellformpara{
+                                    
+                                    font-size:18px;
+                                    margin-top:10px;
+                                }
+                                
+                                
+                                
+                         .circle {
+                                  width: 150px;
+                                  height: 150px;
+                                  line-height: 150px;
+                                  border-radius: 50%;
+                                  font-size: 20px;
+                                  color: #fff;
+                                  text-align: center;
+                                  background: #ff4402;
+
+                                }        
+                                
+                        .sellmsgstrip {
+                                  background-color: #FF4402;
+                                  height: 150px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }                              
+                              
+                         .cardstrip {
+                                  text-align: left ;
+                                  font-weight:500;
+                                  font-size:55px;
+                                  color:#ff4402
+                                  
+                              }
+                              
+                        .cardpara{
+                                   text-align: left ;
+                                  font-weight:600;
+                                  font-size:18px
+                              }
+                              
+                              .rowcard{
+                                  margin-right:200px;
+                                  margin-left:50px;
+                                  margin-top:80px;
+                                  margin-bottom:40px";
+                              }      
+                     
+                                           .opp {
+  
+                          color: #222;
+                          border-radius: 100%;
+                          display: inline-block;
+                          text-decoration: none;
+                          position: relative;
+                          width: 250px;
+                          height: 28px;
+                          margin: 0 2px;
+                          padding-top: 12px;
+                          -webkit-transition: all .5s;
+                          -moz-transition: all .5s;
+                          transition: all .5s;
+                        }
+                        
+                        .opp.icon:before {
+                          font-family: "FontAwesome", sans-serif;
+                          color: #fff;
+                          font-size: 20px;
+                        }
+                        
+                        
+                        .opp span {
+                          
+                          background-color:#FF4402;
+                          color:  #fff;
+                          font-size: 26px;
+                          font-weight: bold;
+                          position:  absolute;
+                          bottom: 0;
+                          left: -50px;
+                          right: -15px;
+                          padding: 5px 7px;
+                          visibility: hidden;
+                          opacity: 0;
+                          -webkit-transition: all .4s;
+                          -moz-transition: all .4s;
+                          transition: all .4s;
+                        }
+                        
+                        .opp span:before {
+                          content: '';
+                        /*   width: 0;
+                          height: 0; */
+                          border-left: 5px solid transparent;
+                          border-right: 5px solid transparent;
+                          border-top: 5px solid #fff;
+                          position: absolute;
+                          bottom: -5px;
+                          left: 40px;
+                        }
+                        
+                        .opp:hover span {
+                          bottom: 50px;
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                        
+                         .teamrow{
+                            margin-top:80px;
+                            margin-bottom:100px;
+                        }             
+                        
+                        
+                        
+                         .msgstrip {
+                                  background-color: #FF4402;
+                                  height: 80px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+                        
+                        .msgstrippara {
+                            
+                            text-align: center ;
+                            color:white;
+                            font-weight:bold;
+                            font-size:26px;
+                            padding-top:15px;
+                            
+                        }
+                        
+                        }   
+                        
+                        
+ .mheader{
+            margin-bottom:73px;
+        }
+        
+        
+.card{
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+.industrytext {
+    font-weight:600;
+    font-size:26px;
+    margin-top:20px;
+    text-align:center;
+}
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+ 
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #303747;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+article {
+  margin: 20px auto;
+  width: 100%;
+  padding: 1em;
+  
+ 
+  font-size: 1em;
+  color:#FFC345;
+}
+
+
+.quote {
+  background: white;
+  padding: 15px 20px 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 26px;
+  box-shadow: 0px 5px 15px 0px rgb(162 165 159 / 10%);
+}
+
+.quote:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 20px 18px 0 18px;
+  border-color: white transparent transparent transparent;
+  position: relative;
+  top: 37px;
+  left: 20px;
+}
+
+.student {
+  margin-left: 25px;
+  margin-bottom: 80px;
+}
+
+.student .photo {
+  background-color: #ccc;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin-right: 10px;
+}
+
+.student p {
+  position: relative;
+  top: 5px;
+  text-transform: uppercase;
+}
+
+.student p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.student p:nth-child(3) {
+  font-size: 14px;
+  color: #777;
+}
+
+
+
+
+
+         .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+ 
+   background: #313848;
+}
+
+ .nav-pills .nav-link{
+ border-radius:0px ;   
+ 
+ 
+ }
+ 
+.tabtext{
+   text-align:center;
+   font-weight:bold;
+   
+   
+}
+.nav-item{
+    border-style: solid;
+    
+    
+}
+
+.headmobbg{
+    background-color:#303747;
+}
+
+.headbdbg{
+    background-color:#F5F6F7;
+}
+
+.menufont{
+    font-family: 'Montserrat';
+    
+}
+
+
+.sellbtn1{
+     padding:5px !important;
+     margin-top:25px !important;
+     clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+     font-size: 14px !important;
+     font-family: Montserrat !important;
+        }
+
+
+
+/*------------------------------------------------------------------
+Mobile App Page Style Ends
+
+
+-------------------------------------------------------------------*/
+
+
+.headstriptitle{
+                    text-align: center ;
+                    font-weight: bold;
+                    font-size:26px;
+                    margin-top:100px;
+                    }
+                    
+                    
+                    
+.mainsec{
+    margin-bottom:100px;
+}
+
+.rectsec{
+    margin-top:400px;
+}
+
+.head1strippara{
+    text-align: center ;
+    font-size:18px;
+}
+
+.head2mob{
+    text-align: center ;
+    font-weight: bold;
+    font-size:26px;
+}
+
+.head3mob{
+    text-align: center ;
+    font-size:18px;
+    
+}
+
+.imgm{
+     height:300px;
+     margin-top:10px;
+             }
+             
+.mobbottom{
+    margin-bottom:70px;
+}
+
+.mobhstyle{
+    text-align: left ;
+    font-weight: bold;
+    font-size:26px;
+}
+
+.mobul{
+    margin-top:26px;
+}
+
+.mobli1{
+    text-align: left;
+    font-size:18px;
+}
+
+.mobli2{
+margin-top:26px;
+text-align: left ;
+font-size:18px;
+}
+
+.rectbo{
+    margin-top:-70px;
+}
+
+.margmob{
+    margin-top:-20px;
+}
+
+.recmobsize{
+    width:100px;
+    margin-top:110px;
+}
+
+.mobcr{
+    margin-top:170px !important
+}
+
+
+.mobcr1{
+    margin-top:-20px
+}
+
+/*------------------------------------------------------------------
+Mobile App Page Style Ends
+
+Equipment  Page Style Starts
+-------------------------------------------------------------------*/
+
+
+.eqspace{
+    margin-bottom:100px;
+}
+
+.eqhead{
+    text-align: center ;
+    font-weight:800;
+    font-size:55px;
+}
+
+.eqpara{
+    text-align: center ;
+    font-weight:600;
+    font-size:18px;
+    font-family: 'Montserrat';
+}
+
+.processhead{
+    text-align: left ;
+    font-weight:bold;
+    font-size:26px;
+    font-family: 'Montserrat';
+    color:#707070;
+}
+.processhead2{
+text-align:center ;
+font-weight:bold;
+font-size:26px;
+font-family: 'Montserrat';
+color:#707070
+}
+
+.applytbtn{
+clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+font-size: 26px;
+border-radius: 8px;
+font-weight:bold !important
+}
+
+
+/*------------------------------------------------------------------
+Equipment  Page Style Ends
+
+Sell Page Style Starts
+-------------------------------------------------------------------*/
+
+.sellheadstyle{
+    text-align: center ;
+    font-weight:800;
+    font-size:55px;
+}
+
+.selimdiv{
+    margin-top:50px;
+}
+
+.selimbot{
+   margin-bottom:20px
+}
+
+ .orangestar{
+   color:#ff4402;
+  }
+  
+  .radiowidth{
+      width:20px;
+  }
+  
+  .formfont{
+      font-weight:800;
+  }
+  
+  .formfont1{
+      padding-top:10px;
+      font-size:12px;
+  }
+  
+  .formnote{
+      font-size:14px !important;
+      border-style: solid;
+      border-color:#ff4402;
+  }
+
+.sellformbtn11{
+ clip-path: polygon(500% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
+ font-size: small !important;
+ border-radius: 26px !important;
+}
+
+.sellbdh{
+    background-color: #FF4402;
+    height: 100px!important;
+    margin-top:50px;
+}
+
+.sellbdp{
+    text-align: center ;
+    color:white;
+    font-weight:500;
+    font-size:26px;
+    padding-top:15px;
+    line-height:26px
+}
+
+.cardup{
+    margin-bottom:100px;
+}
+
+.carduimg{
+   height: 100% ;
+   width:400px;
+}
+
+.carduhead{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.cardustyle{
+    text-align: left ;
+    font-weight: bold;
+    font-size:26px;
+}
+
+.cardupara{
+    text-align: left;
+    font-size:18px
+}
+.timehead{
+  text-align: center ;
+  font-weight:800;
+  font-size:55px
+}
+
+.timepara{
+
+    font-size:18px;
+    text-align:center;
+}
+
+.hrdiv{
+    display: flex; 
+    align-items: center;
+}
+
+.hrline{
+    flex-grow: 1;
+    border-top: 2px solid black;
+    margin-left:-11px;
+    margin-right:-11px;
+}
+
+.hrpara{
+    font-size:18px;
+    text-align:center;
+}
+
+.sellparamsgstrip{
+    text-align: center ;
+    color:white;
+    font-weight:500;
+    font-size:26px;
+    padding-top:20px;
+    line-height:26px;
+}
+
+.sellparatext{
+    font-size:20px;
+}
+
+.expertsell{
+    text-align: center ;
+    font-weight:800;
+    font-size:26px;
+}
+
+.expertsellpara{
+ 
+    font-size:18px;
+    text-align:center;
+}
+
+.analytictext{
+text-align: center !important;
+font-weight:600 !important;
+font-size:26px !important;
+}
+
+.analytictextpara1{
+font-size:18px;
+text-align:left;
+margin-left:30px;
+}
+
+.analytictextpara2{
+text-align: left;
+font-size:18px
+}
+
+.analyticimgcard1{
+    height:300px
+}
+
+
+.analyticimgcard2{
+    height:100%
+}
+
+
+
+.headingindust{
+    text-align: center ;
+    font-weight:800;
+    font-size:26px;
+    margin-bottom:40px;
+}
+
+
+.cardfi{
+    margin-top:80px;
+}
+
+
+.cardli{
+    margin-top:-200px
+}
+
+
+/*------------------------------------------------------------------
+Sell Style Ends
+
+About  Page Style Starts
+-------------------------------------------------------------------*/
+
+.aboutmi{
+    height:450px;
+    margin-top:150px;
+}
+
+.headservice{
+    text-align: center ;
+    font-weight:bold;
+    font-size:55px;
+    margin-bottom:80px;
+}
+
+.serimg{
+    width:100px;
+    margin-top:60px;
+}
+
+
+.aboutmi{
+
+color:#ff4402;
+    
+}
+
+
+
+.sercolor{
+    color:#ff4402;
+}
+
+
+
+.serpara{
+    color:white;
+    margin-top:40px
+}
+
+
+.ulbullet{
+margin-left:50px;
+}
+
+
+ .bullettext{
+            color:white;
+           margin-bottom: -10px;
+                                    
+          }
+          
+          
+          
+.bullettext::marker {
+           font-size:1.8em;
+             }
+          
+ .aboutteamstyle{
+     text-align: center ;
+     font-weight:800;
+     font-size:55px;
+     margin-bottom:80px;
+     color:#313848;
+ }
+
+
+.teamclass{
+    color:white;
+}
+
+.teamdiv{
+    text-align: center !important;
+}
+
+.icondiv1{
+    background-color:white;
+    padding:5px;
+    border-radius:50%;
+    color:#ff4402;
+    font-size:20px   
+}
+
+
+.icondiv2{
+    margin-left: 10px;
+    background-color:white;
+    padding:5px;
+    border-radius:50%;
+    color:#ff4402;
+    font-size:20px;
+}
+
+.icondiv2{
+    margin-left: 10px;
+    background-color:white;
+    padding:5px;
+    border-radius:50%;
+    color:#ff4402;
+    font-size:20px;
+}
+
+.testimonialcolor{
+    color:black;
+}
+
+.stats{
+    margin-top:40px;
+    margin-bottom:120px;
+}
+
+.statstop{
+    margin-top:50px
+}
+
+
+.statstop{
+    width:80px
+}
+
+.statscontent{
+    margin-top:50px
+}
+
+.statstext{
+    font-size:18px;
+    font-family: 'Montserrat';
+    font-weight:bold;
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+

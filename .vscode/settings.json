@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a085a4ea-b902-4569-9ce4-3128ea0d07c5/AppServices/subscriptions/a085a4ea-b902-4569-9ce4-3128ea0d07c5/resourceGroups/MachineryMaxAuctionWorxRG/providers/Microsoft.Web/sites/machinerymax",
+    "appService.deploySubpath": "."
+}
