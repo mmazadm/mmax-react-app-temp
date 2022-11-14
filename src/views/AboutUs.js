@@ -1,4 +1,5 @@
 import React from 'react'
+import d from '../assets/dictionary'
 
 const AboutUs = () => {
   const services = [
@@ -106,7 +107,7 @@ const AboutUs = () => {
           <div className="col col-lg-7 ">
             <div className="card aboutmi" >
               <div className="row rowcard" >
-                <h1 className="cardstrip">Mission Statement</h1>
+                <h1 className="cardstrip">{d.about.missionTitle}</h1>
                   <p className="cardpara">
                     MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.
                   </p>

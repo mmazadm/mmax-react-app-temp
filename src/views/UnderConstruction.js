@@ -16,6 +16,9 @@ const UnderConstruction = () => {
           <li>
             <a href="/sell-your-equipment">Sell Your Equipment</a>
           </li>
+          <li>
+            <a href="/financing">Financing</a>
+          </li>
         </ul>
     </div>
     </section>

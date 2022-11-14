@@ -8,6 +8,7 @@ import AboutUs from "./views/AboutUs";
 import UnderConstruction from "./views/UnderConstruction";
 import MobileApp from "./views/MobileApp";
 import SellEquipment from "./views/SellEquipment";
+import Financing from "./views/Financing";
 
 const appRoutes = [
     {
@@ -28,6 +29,10 @@ const appRoutes = [
             {
                 path:'/sell-your-equipment',
                 element:<SellEquipment/>
+            },
+            {
+                path:'/financing',
+                element:<Financing/>
             }
         ]
     }
