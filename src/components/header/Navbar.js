@@ -21,7 +21,7 @@ const Navbar = () => {
         },
         {
             name:'Financing',
-            link:'/'
+            link:'/financing'
         },
         {
             name:'Calendar',

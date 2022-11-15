@@ -10,7 +10,7 @@ const FooterMenu = ({menu}) => {
         </div>
         <ul>
             {menu.items.map((item,key) => (
-                <li>
+                <li key={key}>
                     <a href={item.link}>
                         <i className="ti-angle-right" />{item.name}
                     </a>

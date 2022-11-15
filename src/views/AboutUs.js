@@ -1,7 +1,11 @@
 import React from 'react'
 import d from '../assets/dictionary'
+import OwlCarousel from 'react-owl-carousel';  
+import 'owl.carousel/dist/assets/owl.carousel.css';  
+import 'owl.carousel/dist/assets/owl.theme.default.css';  
 
 const AboutUs = () => {
+
   const services = [
     {
       icon:'assets/images/sell/hammer.png',
@@ -24,14 +28,6 @@ const AboutUs = () => {
   ]
 
   const team = [
-    {
-      name:'Sia Dev',
-      title:'Logistics Manager',
-      facebook:'https://facebook.com',
-      linkedIn:'https://linkedin.com',
-      instagram:'https://instagram.com',
-      photo:'assets/images/sell/Optimized-team-member.jpg'
-    },
     {
       name:'Sia Dev',
       title:'Logistics Manager',
@@ -98,20 +94,33 @@ const AboutUs = () => {
       icon:'assets/images/sell/bulb.png'
     }
   ]
+
+  const testimonials = [
+    {
+      name:"Sia Dev",
+      role:"Manager",
+      photo:"assets/images/sell/tsagana.png",
+      quote:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.'
+    },
+    {
+      name:"Jane Doe",
+      role:"Seller",
+      photo:"assets/images/sell/tsagana.png",
+      quote:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.'
+    }
+  ]
   return (
     <>
     {/* Section Mission statement */}
     <section className="wpo-contact-pg-section mission-section section-padding" >
-      <div className="container-fluid">
+      <div className="container">
         <div className="row flex-row-reverse">
           <div className="col col-lg-7 ">
-            <div className="card aboutmi" >
-              <div className="row rowcard" >
-                <h1 className="cardstrip">{d.about.missionTitle}</h1>
-                  <p className="cardpara">
-                    MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.
-                  </p>
-              </div>
+            <div className="card p-5" >
+                <h1 className="cardstrip mt-5">{d.about.missionTitle}</h1>
+                <p className="cardpara">
+                  MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.
+                </p>
             </div>
           </div> 
         </div>
@@ -125,7 +134,7 @@ const AboutUs = () => {
         </div>
         <div className="row office-info">
           {services.map(item=>(
-          <div className="col col-xl-4 col-lg-6 col-md-6 col-12">
+          <div className="col-sm mb-4">
             <div className="flip-card">
               <div className="flip-card-inner">
                 <div className="flip-card-front icon">
@@ -138,7 +147,7 @@ const AboutUs = () => {
                   </p>    
                   <ul className="ulbullet" >
                     {item.pointers.map((point, key) => (
-                      <li className="bullettext">
+                      <li key={key} className="bullettext">
                         {point}
                       </li>
                     ))}
@@ -159,8 +168,8 @@ const AboutUs = () => {
       </div>
       <div className="row teamrow"> 
       {team.map((item,key) => (
-        <div className={`col-md-2 ${key===0 || key===5?'offset-md-1':''}`}>
-        <a href="#" className="opp">
+        <div className={`col-sm text-center`}>
+        <div className="opp">
           <img className="rounded-circle" src={item.photo} alt="user"/>
           <span className="teamdiv" >
             {item.name}
@@ -170,61 +179,49 @@ const AboutUs = () => {
             <a href={item.instagram} target='_blank' rel='noreferrer' alt='instagram'><i className="ti-instagram icondiv2"/></a>
             <br/> 
           </span>
-        </a>  
+        </div>  
       </div> 
       ))}                  
       </div>
     </div>
     </section>
     {/** testimonials */}
-    <section className="wpo-contact-pg-section section-padding">
+    <section className="section-padding">
       <div className="container">
         <div className="row">
           <h2 className="aboutteamstyle" >What Our Customers are Saying</h2>
         </div>
         <div className="row">
-          <div class="col-md-6">
+          <div className="col-md-6">
             <article>
-              <div id="owl">
-                <div class="row">
-                  <div class="large-12 columns testimonial">
-                    <div class="quote">
-                      <p class="testimonialcolor" >MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.</p>
-                    </div>
-                    <div class="student">
-                      <div class="photo round-image">
-                        <img src="assets/images/sell/tsagana.png" alt="user-img"/>
+              <OwlCarousel className="owl-theme" items={1} loop dots autoPlay>
+                  {testimonials.map(item => (
+                    <div className="large-12 columns testimonial">
+                      <div className="quote">
+                        <p className="testimonialcolor">{item.quote}</p>
                       </div>
-                      <p>Sia Dev</p>
-                      <p>Managers</p>
-                    </div>
-                  </div>
-                  <div class="large-12 columns testimonial">
-                    <div class="quote">
-                      <p class="testimonialcolor" >MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.</p>
-                    </div>
-                    <div class="student">
-                      <div class="photo round-image">
-                        <img src="assets/images/sell/tsagana.png" alt="user-img"/>
+                      <div className="student">
+                        <div className="photo round-image">
+                          <img src={item.photo} alt="user-img"/>
+                        </div>
+                        <p>{item.name}</p>
+                        <p>{item.role}</p>
                       </div>
-                      <p>Sia Dev</p>
-                      <p>Managers</p>
-                    </div>
                   </div>
-                </div>
-              </div>
+                  ))}
+              </OwlCarousel>
             </article>
           </div>
-          <div class="col-md-6 stats">
-            <div class="row symbols">
+          <div className="col-md-6">
+            <div className="row symbols">
               {stats.map(item => (
-                <div class="col-md-6"> 
-                  <div class="row singelsymbol" >
-                    <div class="col-md-4 statstop" >
+                <div className="col-6"> 
+                  <div className="row singelsymbol" >
+                    <div className="col-md-4 statstop mx-auto" >
                       <img src={item.icon} alt={item.title} className="statswidth"/>
                     </div>
-                    <div class="col-md-8 statscontent">
-                      <span class="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
+                    <div className="col-md-8 statscontent">
+                      <span className="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
                     </div>      
                   </div>                  
                 </div>

@@ -27,23 +27,23 @@ const SellEquipment = () => {
                     <img src="assets/images/Rectangle 14.svg" alt="presentational"/>
                 </div>
                 <div className="col-md-4 selimdiv" >
-                    <div class="row sellequip">
-                        <div class="col-md-6 selimbot" >
+                    <div className="row sellequip">
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/excavator-construction-site (1).png" alt="machine-1"/>
                         </div>
-                        <div class="col-md-6 selimbot" >
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/gear-metal-wheels-close-up.png" alt="machine-1"/>
                         </div>
-                        <div class="col-md-6 selimbot" >
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/excavator-site (1).png" alt="machine-1"/>
                         </div>
-                        <div class="col-md-6 selimbot" >
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/close-up-construction-site-excavator (1).png" alt="machine-1"/>
                         </div>
-                        <div class="col-md-6 selimbot" >
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/excavator-site.png" alt="machine-1"/>
                         </div>
-                        <div class="col-md-6 selimbot" >
+                        <div className="col-md-6 selimbot" >
                             <img src="assets/images/sell/cranes-seaport.png" alt="machine-1"/>
                         </div>
                     </div>
@@ -174,8 +174,8 @@ const SellEquipment = () => {
                 </div>
             </div>
             <div className="row">
-                <div  class="sellbdh">
-                    <p class="sellbdp">
+                <div  className="sellbdh">
+                    <p className="sellbdp">
                         Maximize your assets with MachineryMax.Com <br/>
                         <span style={{"fontSize":"20px"}}> Reach over 255,000 immediate machinery buyers</span>
                     </p>
