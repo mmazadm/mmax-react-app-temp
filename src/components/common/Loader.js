@@ -1,8 +1,19 @@
 import React from 'react'
 
 const Loader = () => {
+
+  React.useEffect(()=> {
+    const preloader = document.getElementById('preloader')
+    preloader.addEventListener('transitionend', () => preloader.remove())
+    if(preloader){
+      setTimeout(()=>{
+        preloader.style.opacity = 0
+      },100) 
+    }
+  },[])
+
   return (
-    <div className="preloader">
+    <div id="preloader" className="preloader">
         <div className="vertical-centered-box">
             <div className="content">
                 <div className="loader-circle"></div>

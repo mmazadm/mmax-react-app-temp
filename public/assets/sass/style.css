@@ -625,6 +625,7 @@ img {
   position: fixed;
   z-index: 1000;
   overflow: hidden;
+  transition: opacity 1s;
 }
 .preloader .vertical-centered-box {
   position: absolute;
@@ -2463,7 +2464,7 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
 @media (max-width: 1400px) {
   .wpo-site-header #navbar > ul > li > a {
     padding: 30px 10px;
-    font-size: 18px;
+    /*font-size: 18px;*/
   }
 }
 @media (max-width: 1200px) {
@@ -10230,3 +10231,5 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
 .error-404-section .error-message p {
   margin-bottom: 1.8em;
 }/*# sourceMappingURL=style.css.map */
+
+.nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link{height:100%;}

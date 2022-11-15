@@ -187,21 +187,6 @@
 
 
 
-
-
-    /*------------------------------------------
-        = HIDE PRELOADER
-    -------------------------------------------*/
-    function preloader() {
-        //if ($('.preloader').length) {
-            $('.preloader').delay(100).fadeOut(500, function () {
-                //active wow
-                wow.init();
-            });
-        //}
-    }
-
-
     /*------------------------------------------
         = WOW ANIMATION SETTING
     -------------------------------------------*/
@@ -903,13 +888,23 @@
     }
 
 
-
+    /*------------------------------------------
+        = HIDE PRELOADER
+    -------------------------------------------*/
+    function preloader() {
+        if ($('.preloader').length) {
+            $('.preloader').delay(100).fadeOut(500, function () {
+                //active wow
+                wow.init();
+            });
+        }
+    }
     /*==========================================================================
         WHEN DOCUMENT LOADING
     ==========================================================================*/
-    $(document).ready(function () {
+    $(window).on('load', function () {
 
-        preloader();
+        // preloader();
 
         sortingGallery();
 

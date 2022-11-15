@@ -56,7 +56,7 @@ const Footer = () => {
               <li>
                 <i className="fa-brands fa-twitter"></i>
                 <i className="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </li>
             </ul>
           </div>
