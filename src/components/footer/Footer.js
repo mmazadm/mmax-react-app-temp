@@ -1,4 +1,5 @@
 import React from 'react'
+import d from '../../assets/dictionary'
 import FooterMenu from './FooterMenu'
 
 const Footer = () => {
@@ -50,8 +51,8 @@ const Footer = () => {
               <img src="assets/images/sell/mmlogo.png" alt="mmlogo" />
             </div>
             <ul>
-              <li>MachineryMax.Com</li>
-              <li>Call: +88 659 789 874</li>
+              <li>{d.footer.siteurl}</li>
+              <li>{d.footer.siteMobNo}</li>
               <li>
                 <i className="fa-brands fa-twitter"></i>
                 <i className="fa-brands fa-facebook-f"></i>
@@ -69,7 +70,7 @@ const Footer = () => {
         <div className="col col-lg-4 col-md-6 col-sm-12 col-12">
           <div className="widget  contact-widget link-widget">
             <h2 style={{ color: "white", marginTop: '30px' }}>
-              Subscribe to <br /> our Newsletter:
+              <span dangerouslySetInnerHTML={{__html:d.footer.newsletterSubscription}}></span>
             </h2>
             <form >
               <div className="input-1">

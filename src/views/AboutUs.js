@@ -109,7 +109,7 @@ const AboutUs = () => {
               <div className="row rowcard" >
                 <h1 className="cardstrip">{d.about.missionTitle}</h1>
                   <p className="cardpara">
-                    MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.
+                    {d.about.missionStatement}
                   </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
       <div className="container">
         <div className="row">
-          <h1 className="headservice">Services</h1>
+          <h1 className="headservice">{d.about.service}</h1>
         </div>
         <div className="row office-info">
           {services.map(item=>(
@@ -155,7 +155,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
     <div className="container">
       <div className="row">
-        <h2 className="aboutteamstyle" >Our Team</h2>
+        <h2 className="aboutteamstyle" >{d.about.ourTeam}</h2>
       </div>
       <div className="row teamrow"> 
       {team.map((item,key) => (
@@ -180,7 +180,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
       <div className="container">
         <div className="row">
-          <h2 className="aboutteamstyle" >What Our Customers are Saying</h2>
+          <h2 className="aboutteamstyle" >{d.about.customersReviewTitle}</h2>
         </div>
         <div className="row">
           <div class="col-md-6">
@@ -189,26 +189,26 @@ const AboutUs = () => {
                 <div class="row">
                   <div class="large-12 columns testimonial">
                     <div class="quote">
-                      <p class="testimonialcolor" >MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.</p>
+                      <p class="testimonialcolor" >{d.about.customersReview}</p>
                     </div>
                     <div class="student">
                       <div class="photo round-image">
                         <img src="assets/images/sell/tsagana.png" alt="user-img"/>
                       </div>
-                      <p>Sia Dev</p>
-                      <p>Managers</p>
+                      <p>{d.about.customerName}</p>
+                      <p>{d.about.customerDesignation}</p>
                     </div>
                   </div>
                   <div class="large-12 columns testimonial">
                     <div class="quote">
-                      <p class="testimonialcolor" >MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.</p>
+                      <p class="testimonialcolor" >{d.about.customersReview}</p>
                     </div>
                     <div class="student">
                       <div class="photo round-image">
                         <img src="assets/images/sell/tsagana.png" alt="user-img"/>
                       </div>
-                      <p>Sia Dev</p>
-                      <p>Managers</p>
+                      <p>{d.about.customerName}</p>
+                      <p>{d.about.customerDesignation}</p>
                     </div>
                   </div>
                 </div>

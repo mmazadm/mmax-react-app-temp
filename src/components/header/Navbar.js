@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import d from '../../assets/dictionary'
 
 const Navbar = () => {
     const menuItems = [
@@ -68,7 +69,7 @@ const Navbar = () => {
                                 <li>
                                     <button className="theme-btn1 btndef sellbtn1"
                                         onClick={() => navigate('/sell-your-equipment')}>
-                                            SELL YOUR EQUIPMENT
+                                           {d.navbar.sellBtn}
                                     </button>  
                                 </li>
                             </ul>

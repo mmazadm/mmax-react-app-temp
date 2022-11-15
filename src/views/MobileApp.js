@@ -1,5 +1,5 @@
 import React from 'react'
-
+import d from '../assets/dictionary'
 const MobileApp = () => {
   return (
     <section className="wpo-contact-pg-section section-padding">
@@ -11,9 +11,12 @@ const MobileApp = () => {
                 <div className="col col-lg-8">
                     <div className="container">    
                         <div class="row">
-                            <h1 class="headerstrip">MachineryMax Mobile <br/>Application</h1>
-                            <h1 class="headstriptitle" >INTRODUCING THE MACHINERYMAX MOBILE APP</h1>
-                            <p  class="head1strippara">ULTRA RESPONSIVE, REAL TIME, USER FRIENDLY MOBILE APP.</p>
+                            <h1 class="headerstrip">
+                                <span dangerouslySetInnerHTML={{__html:d.mobile.mobileAppTitle}}></span>
+                                {/* MachineryMax Mobile <br/>Application */}
+                                </h1>
+                            <h1 class="headstriptitle" >{d.mobile.introductionToApp}</h1>
+                            <p  class="head1strippara">{d.mobile.featuresOfMobileApp}</p>
                         </div>
                         <center>
                             <img src="assets/images/google-play 1.png" width="300px" alt="google play store"/>
@@ -21,19 +24,19 @@ const MobileApp = () => {
                                <br/> <br/> <br/> <br/> <br/>
                         </center>
                         <div class="row">
-                            <h1 class="head2mob">QUICK TUTORIAL ON MOBILE APP AND FUNCTIONALITY</h1>
-                            <p class="head3mob">FROM THE HOME PAGE BROWSE ALL CURRENT EVENTS.</p>
+                            <h1 class="head2mob">{d.mobile.tutorialTitle}</h1>
+                            <p class="head3mob">{d.mobile.instructionToBrowseAllEvents}</p>
                         </div>
                     </div>
                     <div className="pt-5">
                     <div class="wpo-contact-form-area">
                         <div class="row ">
                             <div class="col-md-6 col-sm-12" >
-                                <h1 class="mobhstyle">FROM THE BROWSE EVENTS PAGE VIEW LOTS IN THAT PARTICULAR EVENT</h1>
+                                <h1 class="mobhstyle">{d.mobile.eventDetailTitle}</h1>
                                 <ul class="mobul">
-                                    <li  class="mobli1">BY TOUCHING THE "LOTS" ICON YOU WILL ENTER INTO THE EVENT DETAILS PAGE </li>
+                                    <li  class="mobli1">{d.mobile.eventDetails} </li>
                                     
-                                     <li class="mobli2" >BY TOUCHING THE "LOTS" ICON YOU WILL ENTER INTO THE EVENT DETAILS PAGE </li>
+                                     <li class="mobli2">{d.mobile.eventDetails}</li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-sm-6">
@@ -47,11 +50,11 @@ const MobileApp = () => {
                     <div class="wpo-contact-form-area">
                         <div class="row ">
                             <div class="col-md-6 col-sm-12" >
-                                <h1 class="mobhstyle">FROM THE BROWSE EVENTS PAGE VIEW LOTS IN THAT PARTICULAR EVENT</h1>
+                                <h1 class="mobhstyle">{d.mobile.eventDetailTitle}</h1>
                                 <ul class="mobul">
-                                    <li  class="mobli1">BY TOUCHING THE "LOTS" ICON YOU WILL ENTER INTO THE EVENT DETAILS PAGE </li>
+                                    <li  class="mobli1">{d.mobile.eventDetails}</li>
                                     
-                                     <li class="mobli2" >BY TOUCHING THE "LOTS" ICON YOU WILL ENTER INTO THE EVENT DETAILS PAGE </li>
+                                     <li class="mobli2" > {d.mobile.eventDetails}</li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-sm-6">
