@@ -58,38 +58,42 @@ const SellEquipment = () => {
                         <div className="sellform">
                             <p className="formfont">First Name <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
-                            name="firstname" id="firstname"
+                            name="firstname" id="firstname" value={firstname}
                             onChange={(e) => setFirstName(e.target.value)}/>
                         </div>
                         <div className="sellform">
                             <p className="formfont">Last Name <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
-                            name="lastname" id="lastname"
+                            name="lastname" id="lastname" value={lastname}
                             onChange={(e) => setLastName(e.target.value)}/>
                         </div>
                         <div className="sellform">
                             <p className="formfont">City <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
                             name="city" id="city"
-                            onChange={(e) => setCity(e.target.value)}/>
+                            onChange={(e) => setCity(e.target.value)}
+                            value={city}/>
                         </div>
                         <div className="sellform">
                             <p className="formfont">State <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
                             name="state" id="state"
-                            onChange={(e) => setState(e.target.value)}/>
+                            onChange={(e) => setState(e.target.value)}
+                            value={state}/>
                         </div>
                         <div className="sellform">
                             <p className="formfont">Email <span className="orangestar" >*</span></p>
                             <input type="email" className="form-control" 
                             name="email" id="email"
-                            onChange={(e) => setEmail(e.target.value)}/>
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}/>
                         </div>
                         <div className="sellform">
                             <p className="formfont">Phone <span className="orangestar" >*</span></p>
                             <input type="tel" className="form-control" 
                             name="phone" id="phone"
-                            onChange={(e) => setPhone(e.target.value)}/>
+                            onChange={(e) => setPhone(e.target.value)}
+                            value={phone}/>
                         </div>    
                         <div className="row">   
                             <p className="formfont">I would like to discuss  <span className="orangestar" >*</span></p>
@@ -148,7 +152,8 @@ const SellEquipment = () => {
                             <p className="formfont">Describe your plant/surplus equipment <span className="orangestar" >*</span></p>
                             <textarea type="textarea" className="form-control" 
                             name="state" id="state"
-                            onChange={(e) => setDesc(e.target.value)}/>
+                            onChange={(e) => setDesc(e.target.value)}
+                            value={desc}/>
                         </div>
                         <div className="submit-area">
                             <div className="container">
@@ -241,7 +246,7 @@ const SellEquipment = () => {
                               
                               
                                 <div className="col-md-4 ">
-                                   <img src="assets/images/sell/CompleteShop-v02.png" className="carduimg"/>
+                                   <img src="assets/images/sell/CompleteShop-v02.png" className="carduimg" alt="complete"/>
                                   
                                 </div>
                               
@@ -261,7 +266,7 @@ const SellEquipment = () => {
                             <div className="row">
                                 
                                    <div className="col-md-4 ">
-                                   <img src="assets/images/sell/CompleteShop-v02.png"/>
+                                   <img src="assets/images/sell/CompleteShop-v02.png" alt="complete"/>
                                   
                                 </div>
                                 
@@ -287,7 +292,7 @@ const SellEquipment = () => {
                        </div> 
                        
                           <div className="col-md-2 mobildiv">
-                       <img src="assets/images/sell/arrow.png"/>
+                       <img src="assets/images/sell/arrow.png" alt="assets"/>
                          </div> 
                        
                        </div> 
@@ -351,7 +356,7 @@ const SellEquipment = () => {
          
          <div className="col-md-6 offset-md-1 card"> 
          
-         <img src="assets/images/sell/MachineryMaxOffices.png"/>
+         <img src="assets/images/sell/MachineryMaxOffices.png" alt="office"/>
          
          
          </div>
@@ -387,7 +392,7 @@ const SellEquipment = () => {
                             <div className="row">
                                 
                                    <div className="col-md-6 ">
-                                  <img src="assets/images/sell/AnalyticsUsers2019-v02.png" className="analyticimgcard1"/>
+                                  <img src="assets/images/sell/AnalyticsUsers2019-v02.png" className="analyticimgcard1" alt="analytics"/>
                                   
                                 </div>
                                 
@@ -395,7 +400,7 @@ const SellEquipment = () => {
                                 
                                 
                                 <div className="col-md-6" >
-                                    <img src="assets/images/sell/SessionsByCountry.png" className="analyticimgcard2"/>
+                                    <img src="assets/images/sell/SessionsByCountry.png" className="analyticimgcard2" alt="session"/>
                                   
                                     
                                 
@@ -421,12 +426,12 @@ const SellEquipment = () => {
              <h2 className="headingindust" >Industries We Serve</h2>
              
            <div className="col-md-2 mobildiv">
-                        <img src="assets/images/sell/Rectangle 142.svg" className="cardfi"/>
+                        <img src="assets/images/sell/Rectangle 142.svg" className="cardfi" alt="graphic"/>
                         </div>
              
              <div className="col-md-2">
                  
-               <center>   <img src="assets/images/sell/building-contractor-worker-using-hand-held-worm-drive-circular-saw-cut-boards.png"/></center>
+               <center>   <img src="assets/images/sell/building-contractor-worker-using-hand-held-worm-drive-circular-saw-cut-boards.png" alt="boards"/></center>
                  
                   <h2  className="industrytext">Woodworking</h2>
                   </div>
@@ -434,7 +439,7 @@ const SellEquipment = () => {
                                 
                     <div className="col-md-2">
                  
-               <center>   <img src="assets/images/sell/close-up-construction-site-excavator.png"/> </center>
+               <center>   <img src="assets/images/sell/close-up-construction-site-excavator.png" alt="excavator"/> </center>
                  <h2  className="industrytext">Heavy Equipment</h2>
                  
                   </div>
@@ -443,7 +448,7 @@ const SellEquipment = () => {
                   
                                <div className="col-md-2">
                  
-                <center> <img src="assets/images/sell/man-special-suit-polishing-metal-with-angle-grinder.png"/></center>
+                <center> <img src="assets/images/sell/man-special-suit-polishing-metal-with-angle-grinder.png" alt="grinder"/></center>
                  <h2  className="industrytext">Metalworking</h2>
                  
                   </div>
@@ -452,13 +457,13 @@ const SellEquipment = () => {
                   
                                <div className="col-md-2">
                  
-             <center>     <img src="assets/images/sell/train-wagons-carrying-cargo-containers-shipping-companies.png"/> </center>
+             <center>     <img src="assets/images/sell/train-wagons-carrying-cargo-containers-shipping-companies.png" alt="companies"/> </center>
                  <h2  className="industrytext">Rolling Stock</h2>
                  
                   </div>
                                 
                           <div className="col-md-2 mobildiv">
-                        <img src="assets/images/sell/Rectangle 141.svg" className="cardli"/>
+                        <img src="assets/images/sell/Rectangle 141.svg" className="cardli" alt="graphic"/>
                         </div>                 
          </div> 
         </div>  
