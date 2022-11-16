@@ -1,15 +1,507 @@
-/* Medium devices (landscape tablets, 768px and up) */
 
 
 
+/* Old Css Code Starts */
+@import url("https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i");
 
- @media only screen and (max-width: 991px) {
-                         
-                      
-                         
-                           .wpo-site-header #navbar > ul > li > a {
-                          padding: 15px 50px !important;
-                                }
+body {
+  font-family: "Montserrat" !important;
+
+  letter-spacing: 1px !important;
+}
+
+.theme-btn1 {
+  background: transparent;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600;
+  padding: 15px 45px;
+  border-style: solid;
+  border-color: #fff;
+  text-transform: capitalize;
+  -webkit-backface-visibility: hidden;
+  z-index: 1;
+  position: relative;
+  font-size: 16px;
+
+  transition: all 0.3 ease-in-out;
+}
+.theme-btn1:hover {
+  background: transparent;
+  color: black !important;
+  display: inline-block;
+  font-weight: 600;
+  padding: 15px 45px;
+  border-style: solid;
+  border-color: black;
+  text-transform: capitalize;
+  -webkit-backface-visibility: hidden;
+  z-index: 1;
+  position: relative;
+  font-size: 16px;
+
+  transition: all 0.3 ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.shell {
+  padding: 10px 0;
+  margin-top: 200px;
+}
+.wsk-cp-product {
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+  margin: 0px auto;
+}
+
+.wsk-cp-product:hover {
+  background-color: #f9581c;
+}
+.wsk-cp-img {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  -khtml-transform: translate(-50%);
+  width: 100%;
+  /*padding: 15px;*/
+  transition: all 0.2s ease-in-out;
+}
+.wsk-cp-img img {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0px;
+}
+.wsk-cp-product:hover .wsk-cp-img {
+  /*top:40px;*/
+}
+.wsk-cp-product:hover .wsk-cp-img img {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.wsk-cp-text {
+  padding-top: 150%;
+}
+.wsk-cp-text .category {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 45px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.wsk-cp-text .category > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -khtml-transform: translate(-50%, -50%);
+}
+.wsk-cp-text .category > span {
+  padding: 12px 30px;
+  border: 1px solid #313131;
+  background: #212121;
+  color: #fff;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 27px;
+  transition: all 0.05s ease-in-out;
+}
+.wsk-cp-product:hover .wsk-cp-text .category > span {
+  border-color: #ddd;
+  box-shadow: none;
+  padding: 11px 28px;
+}
+.wsk-cp-product:hover .wsk-cp-text .category {
+  margin-top: 0px;
+}
+.wsk-cp-text .title-product {
+  text-align: center;
+}
+.wsk-cp-text .title-product h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.wsk-cp-text .description-prod p {
+  margin: 0;
+}
+/* Truncate */
+.wsk-cp-text .description-prod {
+  text-align: center;
+  width: 100%;
+  height: 62px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 15px;
+}
+.card-footer {
+  padding: 25px 0 5px;
+  border-top: 1px solid #ddd;
+}
+.card-footer:after,
+.card-footer:before {
+  content: "";
+  display: table;
+}
+.card-footer:after {
+  clear: both;
+}
+
+.card-footer .wcf-left {
+  float: left;
+}
+
+.card-footer .wcf-right {
+  float: right;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+a.buy-btn {
+  display: block;
+  color: #212121;
+  text-align: center;
+  font-size: 18px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  border: 1px solid #212121;
+  transition: all 0.2s ease-in-out;
+}
+a.buy-btn:hover,
+a.buy-btn:active,
+a.buy-btn:focus {
+  border-color: #ff9800;
+  background: #ff9800;
+  color: #fff;
+  text-decoration: none;
+}
+.wsk-btn {
+  display: inline-block;
+  color: #212121;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  border-color: #ff9800;
+  background: #ff9800;
+  padding: 12px 30px;
+  border-radius: 27px;
+  margin: 0 5px;
+}
+.wsk-btn:hover,
+.wsk-btn:focus,
+.wsk-btn:active {
+  text-decoration: none;
+  color: #fff;
+}
+.red {
+  color: #f44336;
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 5px;
+}
+@media screen and (max-width: 991px) {
+  .wsk-cp-product {
+    margin: 40px auto;
+  }
+  .wsk-cp-product .wsk-cp-img {
+    top: -40px;
+  }
+  .wsk-cp-product .wsk-cp-img img {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+  .wsk-cp-product .wsk-cp-text .category > span {
+    border-color: #ddd;
+    box-shadow: none;
+    padding: 11px 28px;
+  }
+  .wsk-cp-product .wsk-cp-text .category {
+    margin-top: 0px;
+  }
+  a.buy-btn {
+    border-color: #ff9800;
+    background: #ff9800;
+    color: #fff;
+  }
+}
+
+.centered2 {
+  position: absolute;
+  top: 80px;
+  left: 16px;
+  transform: translate(-3%, -30%);
+  color: black;
+
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-align: center;
+}
+
+.gavel1 {
+  background-color: #ff4400;
+  color: white;
+  font-weight: 800;
+  border-radius: 50%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.gavel1:hover {
+  background-color: white;
+  color: #ff4400;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.centered1 {
+  position: absolute;
+  bottom: -5%;
+  left: 20%;
+  transform: translate(-3%, -30%);
+  color: black;
+  background-color: white !important;
+  padding: 10px;
+
+  font-size: 28px;
+  text-align: center;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.heading101 {
+  font-size: 2.5rem !important;
+  text-transform: uppercase !important;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  text-align: center;
+}
+
+.shaping {
+  margin-top: -250px;
+}
+
+.latestheading {
+  text-align: center;
+  font-weight: 800;
+}
+
+.imgclasses {
+  height: 400px;
+  background-color: #333;
+}
+
+.theme-btn-design {
+  clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+  font-size: 12px !important;
+}
+
+.cardbgarrow {
+  background-image: url(../../assets/images/sell/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.leftcards {
+  margin-top: 100px;
+}
+
+.card-img-top1 {
+  height: 270px;
+  filter: brightness(30%);
+}
+
+.card-img-top2 {
+  height: 350px;
+  filter: brightness(30%);
+}
+
+.card-img-top3 {
+  height: 380px;
+  filter: brightness(30%);
+}
+
+.card-img-top4 {
+  height: 240px;
+  filter: brightness(30%);
+}
+
+.cardtitletexts {
+  color: white;
+  margin-left: 60px;
+}
+
+.cardtexts {
+  color: white;
+  margin-left: 60px;
+}
+
+.flexcat {
+  display: flex;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+}
+
+.cardthemebtn {
+  margin-left: 60px;
+  clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+}
+
+.group69 {
+  position: absolute;
+  margin-top: -48px;
+  margin-right: 20px;
+  width: 22rem;
+}
+
+.img1res {
+  height: 540px;
+  filter: brightness(30%);
+}
+
+.centerprod {
+  font-size: 28px;
+  text-align: center;
+}
+
+.catbtns {
+  clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+  font-size: small;
+  border-radius: 15px;
+}
+
+.catheight {
+  height: 400px !important;
+}
+
+.airfilter {
+  font-size: 28px;
+  text-align: center;
+}
+
+.btnbgco {
+  background-color: #303030 !important;
+  clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+  font-size: 12px !important;
+}
+
+.timetext {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.timfont {
+  font-size: 24px;
+}
+
+.catmargin {
+  margin-top: -100px;
+}
+
+.catmargintop {
+  margin-top: 100px;
+}
+
+.viewallbtn {
+  clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
+  font-size: medium;
+  width: 300px;
+}
+
+.factimgwidth {
+  width: 250rem;
+}
+
+.orangeindex {
+  background-color: #ff4402;
+  height: 150px !important;
+}
+
+.msgqs {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+.mapdiv {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mapclass {
+  width: 50rem;
+  display: flex;
+}
+
+.orangeheight {
+  background-color: #ff4402;
+  height: 100px !important;
+}
+
+.newsbg {
+  background-color: #363d4f;
+}
+
+.newshead {
+  text-align: center;
+  color: white;
+}
+
+.group19wid {
+  width: 300px;
+}
+
+/* Old Css Code Ends*/
+
+/* New Css Code Starts*/
+@media only screen and (max-width: 991px) {
+  .wpo-site-header #navbar > ul > li > a {
+    padding: 15px 50px !important;
+  }
 
 
                         .rowcard{
@@ -21,25 +513,32 @@
                         }
 
 
- @media only screen and (max-width: 768px) {
-                            .footbg1 {
-                            background:#293141;
-                            }
-                                                          
-                            .wpo-site-footer .wpo-support-section {
-                            padding: 10px 0;
-                            }
-                            
-                            
-                            .headerstrip {
-                             text-align: center ;
-                              font-weight:800;
-                             font-size:40px
-                            }
-                                                                     
-                            .mobildiv{
-                             display:none !important;
-                            }
+@media only screen and (max-width: 820px) {
+
+  .cardcol1{
+    margin-left: 200px;
+    width: 55%;
+  }
+
+
+
+  .footbg1 {
+    background: #293141;
+  }
+
+  .wpo-site-footer .wpo-support-section {
+    padding: 10px 0;
+  }
+
+  .headerstrip {
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  .mobildiv {
+    display: none !important;
+  }
 
 
 
@@ -69,7 +568,7 @@
                                 
                                 .sellformpara{
                                     margin:20px;
-                                    font-size:18px
+                                    font-size:18px;
                                 }
                                 
                                 .sellform1{
@@ -105,14 +604,14 @@
                               .cardstrip {
                                  text-align: left ;
                                  font-weight:800;
-                                 font-size:25px
+                                 font-size:25px;
                                   
                               }
                               
                               .cardpara{
                                   text-align: left ;
                                   font-weight:600;
-                                  font-size:14px
+                                  font-size:14px;
                               }
                               
                                        
@@ -124,7 +623,7 @@
                                   margin-right:20px;
                                   margin-left:20px;
                                   margin-top:80px;
-                                  margin-bottom:40px";
+                                  margin-bottom:40px;
                               }
                               
                               
@@ -147,7 +646,7 @@
                         }
                         
                         .opp.icon:before {
-                          font-family: "FontAwesome", sans-serif;
+                          font-family: 'FontAwesome', sans-serif;
                           color: #fff;
                           font-size: 20px;
                         }
@@ -224,21 +723,382 @@
                             padding-top:15px;
                                          }
                                              
+                              
+                         #backgrounddiv {
+                         position: fixed;
+                         top: 0px;
+                         left: 0px;
+                         width: 35%;
+                         height: 100%;
+                         background-color: #E5E6E9;
+                         z-index: 1;
+                                      } 
+                                      
+                                      
+                        .accounttabs{
+                          font-size: 16px ;
+                          font-weight: 800 ;
+                          color:#303747;
+                        }
+
+                        .activeaccounttabs{
+                          font-size: 16px;
+                          font-weight: 800;
+                          color:white;
+                          background-color: black;
+                          padding:7px;
+                        }
 
 
+
+                        .tabsubmenu{
+                          color:#303747;
+                          font-size: 14px;
+                          font-weight:400px;
+                        }
+
+                        .activetabsubmenu{
+                          color:#e3591e;
+                          font-size: 14px;
+                          font-weight:400px;
+                        }
+
+                        .accstrip{
+                            text-align: left ;
+                            color:white;
+                            font-weight:bold;
+                            font-size:14px;
+                            padding-top:15px;
+                            padding-left: 20px;
+                        }
+
+                        .formtitle2{
+                          font-size: 14px;
+                          font-weight: 600;
+                          color:#303747;
+                          padding-top:10px
+                        }
+
+                    
+                       
                               
 } 
-      
-      
 
-      
-      
-      
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 720px) {
+  .footbg1 {
+    background: #293141;
+  }
+
+  .wpo-site-footer .wpo-support-section {
+    padding: 10px 0;
+  }
+
+  .headerstrip {
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  .mobildiv {
+    display: none !important;
+  }
+
+  .sellstrip {
+    background-color: #ff4402;
+    height: 80px !important;
+    margin-top: 50px;
+    font-weight: 800;
+  }
+
+  .sellstrippara {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    padding-top: 15px;
+  }
+
+  .sellequip {
+    text-align: center;
+  }
+
+  .sellformpara {
+    margin: 20px;
+    font-size: 18px;
+  }
+
+  .sellform1 {
+    margin: 20px !important;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #ff4402;
+    margin-left: 120px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+  }
+
+  .sellmsgstrip {
+    background-color: #ff4402;
+    height: 230px !important;
+    margin-top: 50px;
+    font-weight: 800;
+  }
+
+  .cardstrip {
+    text-align: left;
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  .cardpara {
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .mobildiv {
+    display: none;
+  }
+
+  .rowcard {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+             }
+                              
+                              
+                              
+   .opp {
+  
+      color: #222;
+      border-radius: 100%;
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+      width: 100px;
+      height: 28px;
+      margin: 0 2px;
+      padding-top: 12px;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s;
+      margin-bottom:100px;
+      }
+                        
+      .opp.icon:before {
+      font-family: 'FontAwesome', sans-serif;
+      color: #fff;
+      font-size: 20px;
+                        }
+                        
+     .opp span {
+                          
+                          background-color:#FF4402;
+                          color:  #fff;
+                          font-size: 26px;
+                          font-weight: bold;
+                          position:  absolute;
+                          bottom: 0;
+                          left: -50px;
+                          right: -15px;
+                          padding: 5px 7px;
+                          visibility: hidden;
+                          opacity: 0;
+                          -webkit-transition: all .4s;
+                          -moz-transition: all .4s;
+                          transition: all .4s;
+                        }                   
+                        
+                        
+                        .opp span:before {
+                          content: '';
+                        /*   width: 0;
+                          height: 0; */
+                          border-left: 5px solid transparent;
+                          border-right: 5px solid transparent;
+                          border-top: 5px solid #fff;
+                          position: absolute;
+                          bottom: -5px;
+                          left: 40px;
+                        }
+                        
+                        .opp:hover span {
+                          bottom: 50px;
+                          visibility: visible;
+                          opacity: 1;
+                        }
+                        
+                        
+                        .teamrow{
+                            text-align:center;
+                        }                          
+                              
+                              
+                              
+                              
+                            .symbols{
+                                    text-align:center;
+                                   
+                                }
+                                
+                                .singelsymbol{
+                                    margin-top:40px;
+                                }                      
+                              
+                                .msgstrip {
+                                  background-color: #FF4402;
+                                  height: 80px!important;
+                                  margin-top:50px;
+                                  font-weight:800;
+                                  
+                              }
+                              
+                                .msgstrippara {
+                             text-align: center ;
+                            color:white;
+                            font-weight:bold;
+                            font-size:18px;
+                            padding-top:15px;
+                                         }
+                                             
+                              
+                         #backgrounddiv {
+                         position: fixed;
+                         top: 0px;
+                         left: 0px;
+                         width: 35%;
+                         height: 100%;
+                         background-color: #E5E6E9;
+                         z-index: 1;
+                                      } 
+                                      
+                                      
+                        .accounttabs{
+                          font-size: 16px ;
+                          font-weight: 800 ;
+                          color:#303747;
+                        }
+
+                        .activeaccounttabs{
+                          font-size: 16px;
+                          font-weight: 800;
+                          color:white;
+                          background-color: black;
+                          padding:7px;
+                        }
+
+
+
+                        .tabsubmenu{
+                          color:#303747;
+                          font-size: 14px;
+                          font-weight:400px;
+                        }
+
+                        .activetabsubmenu{
+                          color:#e3591e;
+                          font-size: 14px;
+                          font-weight:400px;
+                        }
+
+                        .accstrip{
+                            text-align: left ;
+                            color:white;
+                            font-weight:bold;
+                            font-size:14px;
+                            padding-top:15px;
+                            padding-left: 20px;
+                        }
+
+                        .formtitle2{
+                          font-size: 14px;
+                          font-weight: 600;
+                          color:#303747;
+                          padding-top:10px
+                        }
+
+                        .cardcol1{
+                          margin-left: -100px ;
+                        }
+                       
+                              
+} 
       
       
       
                                                     
  @media only screen and (min-width: 992px) {
+
+  .cardcol1{
+    margin-left: 140px ;
+    width: 60%;
+  }
+
+  #backgrounddiv {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 60%;
+    height: 100%;
+    background-color: #E5E6E9;
+    z-index: 1;
+}
+
+.accounttabs{
+  font-size: 30px ;
+  font-weight: 800 ;
+  color:#303747;
+}
+
+.activeaccounttabs{
+  font-size: 30px;
+  font-weight: 800;
+  color:white;
+  background-color: black;
+  padding:7px;
+}
+
+.tabsubmenu{
+  color:#303747;
+  font-size: 18px;
+  font-weight:400px;
+}
+
+.activetabsubmenu{
+  color:#e3591e;
+  font-size: 18px;
+  font-weight:400px;
+}
+
+
+.accstrip{
+  text-align: left ;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+  padding-top:15px;
+  padding-left: 20px;
+}
+
+.formtitle2{
+  font-size: 18px;
+  font-weight: 600;
+  color:#303747
+}
+
+
+
 .footbg1 {
 background-image: url(../../assets/images/sell/Group_104.png) !important;
 background-size: cover !important;
@@ -331,9 +1191,9 @@ background-repeat: no-repeat !important;
                           height: 28px;
                           margin: 0 2px;
                           padding-top: 12px;
-                          -webkit-transition: all .5s;
-                          -moz-transition: all .5s;
-                          transition: all .5s;
+                          -webkit-transition: all 0.5s;
+                          -moz-transition: all 0.5s;
+                          transition: all 0.5s;
                         }
                         
                         .opp.icon:before {
@@ -358,13 +1218,13 @@ background-repeat: no-repeat !important;
                           padding: 5px 7px;
                           visibility: hidden;
                           opacity: 0;
-                          -webkit-transition: all .4s;
-                          -moz-transition: all .4s;
-                          transition: all .4s;
+                          -webkit-transition: all 0.4s;
+                          -moz-transition: all 0.4s;
+                          transition: all 0.4s;
                         }
                         
                         .opp span:before {
-                          content: '';
+                          content: "";
                         /*   width: 0;
                           height: 0; */
                           border-left: 5px solid transparent;
@@ -403,7 +1263,16 @@ background-repeat: no-repeat !important;
                             font-weight:bold;
                             font-size:26px;
                             padding-top:15px;
-                            
+        }
+
+  #backgrounddiv {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 25%;
+    height: 100%;
+    background-color: #E5E6E9;
+    z-index: 1;                      
                         }
                         
                         }   
@@ -489,7 +1358,7 @@ article {
 }
 
 .quote:after {
-  content: '';
+  content: "";
   width: 0px;
   height: 0px;
   border-style: solid;
@@ -574,7 +1443,7 @@ article {
 
 .sellbtn1{
      padding:5px !important;
-     margin-top:25px !important;
+     margin-top:23px !important;
      clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
      font-size: 14px !important;
      font-family: Montserrat !important;
@@ -711,14 +1580,14 @@ text-align:center ;
 font-weight:bold;
 font-size:26px;
 font-family: 'Montserrat';
-color:#707070
+color:#707070;
 }
 
 .applytbtn{
 clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0);
 font-size: 26px;
 border-radius: 8px;
-font-weight:bold !important
+font-weight:bold !important;
 }
 
 
@@ -739,7 +1608,7 @@ Sell Page Style Starts
 }
 
 .selimbot{
-   margin-bottom:20px
+   margin-bottom:20px;
 }
 
  .orangestar{
@@ -783,7 +1652,7 @@ Sell Page Style Starts
     font-weight:500;
     font-size:26px;
     padding-top:15px;
-    line-height:26px
+    line-height:26px;
 }
 
 .cardup{
@@ -808,12 +1677,12 @@ Sell Page Style Starts
 
 .cardupara{
     text-align: left;
-    font-size:18px
+    font-size:18px;
 }
 .timehead{
   text-align: center ;
   font-weight:800;
-  font-size:55px
+  font-size:55px;
 }
 
 .timepara{
@@ -878,16 +1747,16 @@ margin-left:30px;
 
 .analytictextpara2{
 text-align: left;
-font-size:18px
+font-size:18px;
 }
 
 .analyticimgcard1{
-    height:300px
+    height:300px;
 }
 
 
 .analyticimgcard2{
-    height:100%
+    height:100%;
 }
 
 
@@ -906,7 +1775,7 @@ font-size:18px
 
 
 .cardli{
-    margin-top:-200px
+    margin-top:-200px;
 }
 
 
@@ -950,7 +1819,7 @@ color:#ff4402;
 
 .serpara{
     color:white;
-    margin-top:40px
+    margin-top:40px;
 }
 
 
@@ -994,7 +1863,7 @@ margin-left:50px;
     padding:5px;
     border-radius:50%;
     color:#ff4402;
-    font-size:20px   
+    font-size:20px;   
 }
 
 
@@ -1026,16 +1895,19 @@ margin-left:50px;
 }
 
 .statstop{
-    margin-top:50px
+    margin-top:50px;
 }
 
 
 .statstop{
-    width:80px
+    width:80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .statscontent{
-    margin-top:50px
+    margin-top:50px;
 }
 
 .statstext{
@@ -1045,13 +1917,120 @@ margin-left:50px;
     color:black;
 }
 
+.newsletter {
+  color: white;
+  margin-top: 30px;
+}
+
+.footersection {
+  margin-top: 30px;
+}
+
+.footerpara {
+  font-size: 28px;
+}
+
+.lowerfoot {
+  background-color: black;
+}
+
+.rowgutter1 {
+  --bs-gutter-x: 0rem !important;
+}
 
 
 
 
 
+.activeaccounttabs1{
+  font-size: 30px;
+  font-weight: 400;
+  color:white;
+  background-color:orangered;
+  padding:7px;
+
+}
+
+.accountcont{
+  z-index: 2 !important; 
+  position: relative;
+}
+
+.acch1{
+  margin-bottom: 100px;
+  
+}
+
+.acch1align{
+  text-align: left
+}
+
+.tabacc{
+  padding-top: 50px;
+}
+
+.accrect{
+  margin-left: -70px ;
+  margin-top:300px;
+  max-width:150%;
+}
+.accrect1{
+  margin-left: -50px ;
+  margin-top:300px;
+  max-width:250%;
+}
+
+
+.formsp{
+  margin-bottom:100px ;
+}
+
+.formtitle{
+  font-size: 30px;
+  font-weight: 600;
+  color:#303747
+}
+
+
+
+.insize{
+  font-size: 12px;
+}
+
+.footacc{
+  z-index: 2 !important; 
+  position: relative;
+}
+
+.iconmargin{
+  margin-left: 10px;
+}
+
+
+.insizewidth{
+  width:343px !important;
+}
+
+.notein{
+  font-size: 18px;
+  font-weight:100;
+  width: 600px;
+}
+
+.theme-btngrad{
+  float: right; 
+  background: linear-gradient(to bottom right, red, #ffc107); 
+}
+
+.detailbtntop{
+  margin-bottom: 100px !important;
+}
+
+.addbtnnew{
+  margin-top:200px
+}
 
 
 
 
-
+/* New Css Code Ends*/

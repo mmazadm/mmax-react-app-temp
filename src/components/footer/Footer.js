@@ -54,9 +54,9 @@ const Footer = () => {
               <li>{d.footer.siteurl}</li>
               <li>{d.footer.siteMobNo}</li>
               <li>
-                <i className="fa-brands fa-twitter"></i>
-                <i className="fa-brands fa-facebook-f"></i>
-                <i className="fa-brands fa-instagram"></i>
+                <i className="ti-twitter"></i>
+                <i className="ti-facebook ms-1"></i>
+                <i className="ti-instagram ms-1"></i>
               </li>
             </ul>
           </div>
@@ -92,7 +92,7 @@ const Footer = () => {
                 className='bg-transparent'
                   type="submit"
                 >
-                  <i className="fa flaticon-send" aria-hidden="true" />
+                  <i className="fa fa-paper-plane" aria-hidden="true" />
                 </button>
               </div>
             </form>
@@ -105,8 +105,10 @@ const Footer = () => {
   <div className="wpo-lower-footer bg-dark" >
     <div className="container">
       <div className="row align-items-center">
-        <div className="col col-lg-6 col-12">
-          <p className="copyright"> </p>
+        <div className="col">
+          <p className="copyright">
+          © Copyright 2022 MachineryMax.Com. All Rights Reserved. No part of this web page may be reproduced in any way without the prior written permission of MachineryMax.Com.
+          </p>
         </div>
       </div>
     </div>

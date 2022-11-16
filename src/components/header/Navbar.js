@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import d from '../../assets/dictionary'
 
 const Navbar = () => {
@@ -18,7 +17,16 @@ const Navbar = () => {
         },
         {
             name:'About Us',
-            link:'/about-us'
+            submenu:[
+                {
+                    name:'About Us',
+                    link:'/about-us'
+                },
+                {
+                    name:'Mobile Applications',
+                    link:'/mobile-apps'
+                }
+            ]
         },
         {
             name:'Financing',
@@ -30,12 +38,11 @@ const Navbar = () => {
         }
     ]
     const [isOpen, setIsOpen] = useState(false)
-    const navigate = useNavigate()
     return (
         <nav className="navigation navbar navbar-expand-lg ">
             <div className="container-fluid">
                 <div className="row align-items-center">
-                    <div className="col-lg-3 col-md-3 col-3 d-lg-none dl-block">
+                    <div className="col-lg-3 col-md-3 col-3 d-lg-none d-block">
                         <div className="mobail-menu">
                             <button type="button" onClick={()=>setIsOpen(!isOpen)} className={`navbar-toggler ${isOpen? 'x-close': 'open-btn'}`}>
                                 <span className="sr-only">Toggle navigation</span>
@@ -63,14 +70,21 @@ const Navbar = () => {
                                         <a href={item.link} className="menufont">
                                             {item.name.toUpperCase()}
                                         </a>
+                                        {hasChildren && 
+                                        <ul className="sub-menu">
+                                            {item.submenu.map(i=> 
+                                            <li>
+                                                <a href={i.link}>{i.name}</a>
+                                            </li>)}
+                                        </ul>}
                                     </li>
                                     )
                                 })}
                                 <li>
-                                    <button className="theme-btn1 btndef sellbtn1"
-                                        onClick={() => navigate('/sell-your-equipment')}>
+                                    <a className="theme-btn1 btndef sellbtn1"
+                                        href='/sell-your-equipment'>
                                            {d.navbar.sellBtn}
-                                    </button>  
+                                    </a>  
                                 </li>
                             </ul>
                         </div>

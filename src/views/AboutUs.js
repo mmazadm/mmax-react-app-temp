@@ -117,9 +117,9 @@ const AboutUs = () => {
         <div className="row flex-row-reverse">
           <div className="col col-lg-7 ">
             <div className="card p-5" >
-              <div className="row rowcard" >
-                <h1 className="cardstrip mt-5">{d.about.missionTitle}</h1>
-                  <p className="cardpara">
+              <div className="card-body" >
+                <h1 className="cardstrip card-title">{d.about.missionTitle}</h1>
+                  <p className="cardpara card-text">
                    {d.about.missionStatement}
                   </p>
               </div>
@@ -136,7 +136,7 @@ const AboutUs = () => {
         </div>
         <div className="row office-info">
           {services.map(item=>(
-          <div className="col-sm mb-4">
+          <div className="col-md mb-4">
             <div className="flip-card">
               <div className="flip-card-inner">
                 <div className="flip-card-front icon">
@@ -170,7 +170,7 @@ const AboutUs = () => {
       </div>
       <div className="row teamrow"> 
       {team.map((item,key) => (
-        <div className={`col-sm text-center`}>
+        <div className={`col-sm-6 col-md text-center`}>
         <div className="opp">
           <img className="rounded-circle" src={item.photo} alt="user"/>
           <span className="teamdiv" >
@@ -222,7 +222,7 @@ const AboutUs = () => {
                     <div className="col-md-4 statstop mx-auto" >
                       <img src={item.icon} alt={item.title} className="statswidth"/>
                     </div>
-                    <div className="col-md-8 statscontent">
+                    <div className="col-md-8 statscontent mx-auto">
                       <span className="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
                     </div>      
                   </div>                  

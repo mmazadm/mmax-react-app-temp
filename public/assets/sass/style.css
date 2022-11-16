@@ -122,6 +122,10 @@ img {
   max-width: 100%;
 }
 
+li {
+  list-style: none;
+}
+
 .sr-only {
   display: none !important;
   opacity: 0;
@@ -192,7 +196,7 @@ img {
   padding: 5px 10px;
   font-size: 16px;
   text-align: center;
-  display: none;
+ /* display: none; */
 }
 @media (max-width: 767px) {
   .contact-validation-active #success,
@@ -1486,7 +1490,7 @@ img {
 @media screen and (min-width: 992px) {
   .wpo-site-header #navbar {
     /*** hover effect ***/
-    justify-content: center;
+    justify-content: right;
   }
   .wpo-site-header #navbar li {
     position: relative;
@@ -2470,7 +2474,7 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
 @media (max-width: 1200px) {
   .wpo-site-header #navbar > ul > li > a {
     padding: 30px 6px;
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 @media (max-width: 991px) {
@@ -10232,4 +10236,12 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
   margin-bottom: 1.8em;
 }/*# sourceMappingURL=style.css.map */
 
+/* Calfus custom */
 .nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link{height:100%;}
+.mission-section{
+  background-image: url('/assets/images/sell/excavator-construction-site.png');
+  height:1000px;
+}
+.ulbullet li{
+  list-style:disc;
+  }
