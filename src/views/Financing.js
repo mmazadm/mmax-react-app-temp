@@ -1,4 +1,5 @@
 import React from 'react'
+import d from '../assets/dictionary'
 
 const Financing = () => {
     const pillsTab = [
@@ -27,12 +28,13 @@ const Financing = () => {
             <section className="wpo-contact-pg-section section-padding eqspace" >
                 <div className="container-fluid">
                     <div className="row">
-                            <h1 className="eqhead" >Equipment Financing</h1>
+                            <h1 className="eqhead" >{d.financing.financingTitle}</h1>
                             <p className="eqpara">
-                                Get financing for new and used equipment or technology for your business.<br />Access up to $150,000 application only, or up to $1million with financials. <br />Loan and lease options are available.
+                            <span dangerouslySetInnerHTML={{__html:d.financing.financingIntroduction}}></span>
+                                
                             </p>
                             <div className="msgstrip">
-                             <p className="msgstrippara">GET PRE-APPROVED BEFORE YOU BID!</p>
+                             <p className="msgstrippara">{d.financing.preApprovedBidTitle}</p>
                              </div>
                     </div>
                 </div>
@@ -60,30 +62,28 @@ const Financing = () => {
 
                     <div className="col-md-6" >
                         <br /> <br /> <br /> <br />
-                        <h1 className="processhead" >The Process</h1>
+                        <h1 className="processhead" >{d.financing.processTitle}</h1>
                         <p>
-                            1. Apply Online <br />&nbsp &nbsp It only takes 3 minutes.
+                           <span dangerouslySetInnerHTML={{__html:d.financing.step1}}></span>
                         </p>
 
 
                         <p>
-                            2. Sign your documents electronically.<br />
-                            &nbsp &nbsp    Receive your contracts in a secure online format.
+                            <span dangerouslySetInnerHTML={{__html:d.financing.step2}}></span>
 
                         </p>
 
                         <p>
-                            3. Get your financing.<br />
-                            &nbsp &nbsp     Receive your contracts in a secure online format.
+                            <span dangerouslySetInnerHTML={{__html:d.financing.step3}}></span>
 
                         </p>
 
                     </div>
                     <div className="col-md-6">
                                 <br /> <br /> <br /> <br />
-                                <h1 className="processhead2">Ready to get started?</h1>
+                                <h1 className="processhead2">{d.financing.getStartedTitle}</h1>
                                 <br /><br />
-                                <center><a href="about.html" className="theme-btn applytbtn" >Apply Now </a> </center>
+                                <center><a href="about.html" className="theme-btn applytbtn" >{d.financing.applyNow} </a> </center>
 
                     </div>
                 </div>

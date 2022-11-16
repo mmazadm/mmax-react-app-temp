@@ -1,8 +1,9 @@
 import React from 'react'
+import d from '../assets/dictionary'
 
 const PageNotFound = () => {
   return (
-    <div>PageNotFound</div>
+    <div>{d.pNotFound.pageNotFound }</div>
   )
 }
 

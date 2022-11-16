@@ -117,10 +117,12 @@ const AboutUs = () => {
         <div className="row flex-row-reverse">
           <div className="col col-lg-7 ">
             <div className="card p-5" >
+              <div className="row rowcard" >
                 <h1 className="cardstrip mt-5">{d.about.missionTitle}</h1>
-                <p className="cardpara">
-                  MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.
-                </p>
+                  <p className="cardpara">
+                   {d.about.missionStatement}
+                  </p>
+              </div>
             </div>
           </div> 
         </div>
@@ -130,7 +132,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
       <div className="container">
         <div className="row">
-          <h1 className="headservice">Services</h1>
+          <h1 className="headservice">{d.about.service}</h1>
         </div>
         <div className="row office-info">
           {services.map(item=>(
@@ -164,7 +166,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
     <div className="container">
       <div className="row">
-        <h2 className="aboutteamstyle" >Our Team</h2>
+        <h2 className="aboutteamstyle" >{d.about.ourTeam}</h2>
       </div>
       <div className="row teamrow"> 
       {team.map((item,key) => (
@@ -189,7 +191,7 @@ const AboutUs = () => {
     <section className="section-padding">
       <div className="container">
         <div className="row">
-          <h2 className="aboutteamstyle" >What Our Customers are Saying</h2>
+          <h2 className="aboutteamstyle" >{d.about.customersReviewTitle}</h2>
         </div>
         <div className="row">
           <div className="col-md-6">
