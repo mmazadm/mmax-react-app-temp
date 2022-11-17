@@ -2,12 +2,215 @@ const d = {
     about:{
         missionTitle:'Mission Statement',
         missionStatement:'MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.',
-        service:'Services',
+        serviceTitle:'Services',
         ourTeam:'Our Team',
         customersReviewTitle:'What Our Customers are Saying',
         customersReview:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.',
         customerName:'Sia Dev',
-        customerDesignation:'Managers'
+        customerDesignation:'Managers',
+        services: [
+            {
+              icon:'assets/images/sell/hammer.png',
+              title:'Auction',
+              desc:'MachineryMax Auctions offers several different services according to our clients needs such as',
+              pointers:['Complete shop closures','Cleaning, Staging, Professional Photography','Clear Out Services','Valuation Service','Individual Asset Disposition','Valuations']
+            },
+            {
+              icon:'assets/images/sell/hammer.png',
+              title:'Asset Recovery',
+              desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
+              pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
+            },
+            {
+              icon:'assets/images/sell/handshake.png',
+              title:'Acquisitions',
+              desc:'If going to auction is not an option, MachineryMax offers its acquisition services to our clients',
+              pointers:['Immediate Cash Payouts','Complete plants, real estate, or individual assets']
+            }
+          ],
+        team:[
+            {
+              name:'Kirk Gass',
+              title:'Co-Founder/President',
+              city:'Tracy California Office',
+              email:'kirk@machinerymax.com',
+              facebook:'https://facebook.com',
+              linkedIn:'https://www.linkedin.com/in/kirk-gass-9164669/',
+              instagram:'https://instagram.com',
+              direct:'866-988-4667 Ext 707',
+              cell:'925-250-8248',
+              photo:'/assets/images/aboutUs/KirkGass.jpg'
+            },
+            {
+                name:'Charles Swafford',
+                title:'Co-Founder/Vice President',
+                city:'Tracy California Office',
+                email:'charles@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/charles-swafford-2b001729/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 708',
+                cell:'925-872-0929',
+                photo:'/assets/images/aboutUs/CharlesSwafford.jpg'
+            },
+            {
+                name:'Eric Beach',
+                title:'Auction Operations',
+                city:'North Carolina Office',
+                email:'eric@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/eric-beach-b9349826/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 702',
+                cell:'704-608-9830',
+                photo:'/assets/images/aboutUs/EricBeach.jpg'
+            },
+            {
+                name:'Jack Ragan',
+                title:'Vice President of Business Development',
+                city:'Portland Oregon Office',
+                email:'jack@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/jack-ragan-80971916/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 700',
+                cell:'503-806-4611',
+                photo:'/assets/images/aboutUs/EricBeach.jpg'
+            },
+            {
+                name:'Ryan Hodsdon',
+                title:'Legal and Distressed Asset Business Development Manager',
+                city:'',
+                email:'ryan@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 709',
+                cell:'603-841-8016',
+                photo:'/assets/images/aboutUs/RyanHodsdon.jpg'
+              },
+              {
+                name:'Robert Skeates',
+                title:'Vice President Sales Canada',
+                city:'Toronto Offices – Port Credit, ON CANADA',
+                email:'robert@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/robert-skeates-86925816/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 703',
+                cell:'416-904-2475',
+                photo:'/assets/images/aboutUs/RobortSkeates.jpg'
+              },
+              {
+                name:'Mike Arnott',
+                title:'Midwest Sales Director',
+                city:'Shawnee Kansas Office',
+                email:'mike@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 701',
+                cell:'913-333-8396',
+                photo:'/assets/images/aboutUs/MikeArnott.jpg'
+              },
+              {
+                name:'Sabrina Burns',
+                title:'Support/Accounts Receivable',
+                city:'Tracy California Office',
+                email:'sabrina@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/sabrina-burns-23420079/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 706',
+                cell:' 209-839-7707',
+                photo:''
+              },
+              {
+                name:'Joe Raska',
+                title:'Regional Sales',
+                city:'Denver Colorado Office',
+                email:'joe@machinerymax.com',
+                facebook:'https://facebook.com',
+                linkedIn:'https://www.linkedin.com/in/eric-beach-b9349826/',
+                instagram:'https://instagram.com',
+                direct:'866-988-4667 Ext 705',
+                cell:' 303-349-7923',
+                photo:''
+              }
+          ],
+        stats : [
+            {
+              count:8253,
+              title:'Auctions',
+              icon:'assets/images/sell/cart.png'
+            },
+            {
+              count:458,
+              title:'Sellers',
+              icon:'assets/images/sell/dollar_thumb.png'
+            },
+            {
+              count:458,
+              title:'Users <br/> helped',
+              icon:'assets/images/sell/headphone.png'
+            },
+            {
+              count:116,
+              title:'Employees',
+              icon:'assets/images/sell/group.png'
+            },
+            {
+              count:4253,
+              title:'Total <br/> Users',
+              icon:'assets/images/sell/laptop.png'
+            },
+            {
+              count:450,
+              title:'Problems <br/> Solved',
+              icon:'assets/images/sell/bulb.png'
+            }
+          ],
+        testimonials:[
+            {
+              name:"Dave Meier",
+              role:"Manager",
+              companyName:"Lanz Cabinets",
+              city:"Eugene, Oregon",
+              photo:"assets/images/sell/tsagana.png",
+              quote:'I have worked with MachineryMax for several years to sell our excess equipment. The staff is professional and has executed each sale with no issues. Our company continues to upgrade our equipment and am sure we will call on MachineryMax again. Highly recommend their services.'
+            },
+            {
+                name:"Bill",
+                role:"Imagine Furniture Group",
+                companyName:"Formerly All Wood Treasures",
+                city:"Tempe, Arizona",
+                photo:"assets/images/sell/tsagana.png",
+                quote:'The team at MachineryMax is completely professional. They are on time and work their tail off to make sure the machinery is the best possible light to make the most money for the selling company. The estimates are extremely accurate. The website is exemplary. Financial goals are not only met but usually exceeded and the money is delivered in a timely fashion. We at All Wood look forward to our next opportunity to work with the team at MachineryMax.'
+            },{
+                name:"John Grout",
+                role:"",
+                companyName:"Portland Closet Company",
+                city:"Portland, Oregon",
+                photo:"assets/images/sell/tsagana.png",
+                quote:'“Thank you to Machinery Max for help selling our two CNC machines. They took care of all the details from photographing our machines to giving input on the machine to replace the two old machines. We are hoping to find a line boring machine to purchase in a future auction.'
+            },
+            {
+                name:"Michael Gilhood Jr",
+                role:"Vice President",
+                companyName:"American Wood Design",
+                city:"Chester, Pennsylvania",
+                photo:"assets/images/sell/tsagana.png",
+                quote:'We were referred by our financing company to MachineryMax. We needed our machine sold quickly and for the best value to make way for a new machine coming in. The team at MachineryMax were great to deal with, the communications and the expectations were right on the mark. Highly Recommend!'
+            },
+            {
+                name:"Tim Russell",
+                role:"President",
+                companyName:"Executive Interiors",
+                city:"Fresno, California",
+                photo:"assets/images/sell/tsagana.png",
+                quote:'We have had tremendous success auctioning off equipment that we no longer need in our business. MachineryMax promptly assesses the equipment, takes pictures and handles every aspect of selling. With their extensive knowledge of the industry, the listings are very detailed. That translates to maximum value for the equipment. Machinery Max manages the collections for the auction and we then receive one check. Customers who are picking up the equipment have all necessary documentation, which makes the transfer very easy. We give MachineryMax five stars for customer service and would recommend them to anyone in the market for used machinery.'
+            }
+          ]
     },
     footer:{
         newsletterSubscription:'Subscribe to <br /> our Newsletter',

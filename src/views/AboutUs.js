@@ -4,90 +4,8 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 
-const AboutUs = () => {
+const AboutUs = () => {    
 
-  const team = [
-    {
-      name:'Sia Dev',
-      title:'Logistics Manager',
-      facebook:'https://facebook.com',
-      linkedIn:'https://linkedin.com',
-      instagram:'https://instagram.com',
-      photo:'assets/images/sell/Optimized-team-member.jpg'
-    },
-    {
-      name:'Sia Dev',
-      title:'Logistics Manager',
-      facebook:'https://facebook.com',
-      linkedIn:'https://linkedin.com',
-      instagram:'https://instagram.com',
-      photo:'assets/images/sell/Optimized-team-member.jpg'
-    },
-    {
-      name:'Sia Dev',
-      title:'Logistics Manager',
-      facebook:'https://facebook.com',
-      linkedIn:'https://linkedin.com',
-      instagram:'https://instagram.com',
-      photo:'assets/images/sell/Optimized-team-member.jpg'
-    },
-    {
-      name:'Sia Dev',
-      title:'Logistics Manager',
-      facebook:'https://facebook.com',
-      linkedIn:'https://linkedin.com',
-      instagram:'https://instagram.com',
-      photo:'assets/images/sell/Optimized-team-member.jpg'
-    }
-  ]
-
-  const stats = [
-    {
-      count:8253,
-      title:'Auctions',
-      icon:'assets/images/sell/cart.png'
-    },
-    {
-      count:458,
-      title:'Sellers',
-      icon:'assets/images/sell/dollar_thumb.png'
-    },
-    {
-      count:458,
-      title:'Users <br/> helped',
-      icon:'assets/images/sell/headphone.png'
-    },
-    {
-      count:116,
-      title:'Employees',
-      icon:'assets/images/sell/group.png'
-    },
-    {
-      count:4253,
-      title:'Total <br/> Users',
-      icon:'assets/images/sell/laptop.png'
-    },
-    {
-      count:450,
-      title:'Problems <br/> Solved',
-      icon:'assets/images/sell/bulb.png'
-    }
-  ]
-
-  const testimonials = [
-    {
-      name:"Sia Dev",
-      role:"Manager",
-      photo:"assets/images/sell/tsagana.png",
-      quote:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.'
-    },
-    {
-      name:"Jane Doe",
-      role:"Seller",
-      photo:"assets/images/sell/tsagana.png",
-      quote:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.'
-    }
-  ]
   return (
     <>
     {/* Section Mission statement */}
@@ -111,7 +29,7 @@ const AboutUs = () => {
     <section className="wpo-contact-pg-section section-padding">
       <div className="container">
         <div className="row">
-          <h1 className="headservice">{d.about.service}</h1>
+          <h1 className="headservice">{d.about.serviceTitle}</h1>
         </div>
         <div className="row office-info">
           {d.about.services.map(item=>(
@@ -148,13 +66,18 @@ const AboutUs = () => {
         <h2 className="aboutteamstyle" >{d.about.ourTeam}</h2>
       </div>
       <div className="row teamrow"> 
-      {team.map((item,key) => (
+      {d.about.team.map((item,key) => (
         <div className={`col-sm-6 col-md text-center`}>
         <div className="opp">
-          <img className="rounded-circle" src={item.photo} alt="user"/>
+          <img className="rounded-circle mb-5" src={item.photo} alt="user"/>
           <span className="teamdiv" >
             {item.name}
-            <p className="teamclass">{item.title}</p>  
+            <p className="teamclass">{item.title}</p>
+            <p className="teamclass">{item.city}</p>  
+            <p className="teamclass">{item.email}</p>  
+            <p className="teamclass">Direct: {item.direct}</p>  
+            <p className="teamclass">Cell: {item.cell}</p>  
+            
             <a href={item.facebook} target='_blank' rel='noreferrer' alt='facebook'><i className="ti-facebook icondiv"/></a>
             <a href={item.linkedIn} target='_blank' rel='noreferrer' alt='linkedin'><i className="ti-linkedin icondiv2"/></a>
             <a href={item.instagram} target='_blank' rel='noreferrer' alt='instagram'><i className="ti-instagram icondiv2"/></a>
@@ -176,7 +99,7 @@ const AboutUs = () => {
           <div className="col-md-6">
             <article>
               <OwlCarousel className="owl-theme" items={1} loop dots autoPlay>
-                  {testimonials.map(item => (
+                  {d.about.testimonials.map(item => (
                     <div className="large-12 columns testimonial">
                       <div className="quote">
                         <p className="testimonialcolor">{item.quote}</p>
@@ -187,6 +110,8 @@ const AboutUs = () => {
                         </div>
                         <p>{item.name}</p>
                         <p>{item.role}</p>
+                        <p>{item.companyName}</p>
+                        <p>{item.city}</p>
                       </div>
                   </div>
                   ))}
@@ -195,7 +120,7 @@ const AboutUs = () => {
           </div>
           <div className="col-md-6">
             <div className="row symbols">
-              {stats.map(item => (
+              {d.about.stats.map(item => (
                 <div className="col-6"> 
                   <div className="row singelsymbol" >
                     <div className="col-md-4 statstop mx-auto" >
