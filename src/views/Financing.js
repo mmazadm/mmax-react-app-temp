@@ -83,7 +83,10 @@ const Financing = () => {
                                 <br /> <br /> <br /> <br />
                                 <h1 className="processhead2">{d.financing.getStartedTitle}</h1>
                                 <br /><br />
-                                <center><a href="about.html" className="theme-btn applytbtn" >{d.financing.applyNow} </a> </center>
+                                <center><a href="https://machinerymax.directcapital.com/" 
+                                target="_blank" 
+                                rel="noreferrer"
+                                className="theme-btn applytbtn" >{d.financing.applyNow} </a> </center>
 
                     </div>
                 </div>

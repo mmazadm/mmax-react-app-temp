@@ -6,27 +6,6 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const AboutUs = () => {
 
-  const services = [
-    {
-      icon:'assets/images/sell/hammer.png',
-      title:'Auction',
-      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
-      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
-    },
-    {
-      icon:'assets/images/sell/hammer.png',
-      title:'Auction',
-      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
-      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
-    },
-    {
-      icon:'assets/images/sell/handshake.png',
-      title:'Acquisitions',
-      desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
-      pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
-    }
-  ]
-
   const team = [
     {
       name:'Sia Dev',
@@ -135,7 +114,7 @@ const AboutUs = () => {
           <h1 className="headservice">{d.about.service}</h1>
         </div>
         <div className="row office-info">
-          {services.map(item=>(
+          {d.about.services.map(item=>(
           <div className="col-md mb-4">
             <div className="flip-card">
               <div className="flip-card-inner">

@@ -9,6 +9,8 @@ import UnderConstruction from "./views/UnderConstruction";
 import MobileApp from "./views/MobileApp";
 import SellEquipment from "./views/SellEquipment";
 import Financing from "./views/Financing";
+import SearchPage from "./views/Search";
+import Home from "./views/Home";
 
 const appRoutes = [
     {
@@ -16,7 +18,7 @@ const appRoutes = [
         children:[
             {
                 path:'/',
-                element:<UnderConstruction/>
+                element:<Home/>
             },
             {
                 path:'/about-us',
@@ -33,6 +35,14 @@ const appRoutes = [
             {
                 path:'/financing',
                 element:<Financing/>
+            },
+            {
+                path:'/search',
+                element:<SearchPage/>
+            },
+            {
+                path: '*',
+                element:<UnderConstruction/>
             }
         ]
     }
