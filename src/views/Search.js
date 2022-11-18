@@ -1,26 +1,30 @@
 import React,{useState, useEffect} from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import axios from 'axios'
 
 const SearchPage = () => {
     const location = useLocation()
     const [searchText, setSearchText] = useState(location.search.split('=')[1])
-    const [results, setReesults] = useState([])
+    const [results, setResults] = useState([])
+    const [isLoading, setLoading] = useState(true)
 
-    
     const getResults = () => {
-        axios.get(`/listing/search/0/2?FullTextQuery=${searchText}`)
-        .then(res=> {
-          console.log(res.data)
-          setReesults(res.data)
-        })
-        .catch()
+        if(searchText!==''){
+            setLoading(true)
+            axios.get(`/listing/search/0/10?FullTextQuery=${searchText}`)
+            .then(res=> {
+            console.log(res.data)
+            console.log(`for: ${searchText}`)
+            setResults(res.data)
+            setLoading(false)
+            })
+            .catch()
+        }
     }
 
     useEffect(() => {
         getResults()
-        console.log(results)
-    }, [])
+    })
     
   return (
     <section className="section-padding">
@@ -37,7 +41,19 @@ const SearchPage = () => {
                 </button>
             </div>
         <hr/>
-        <p>{searchText}</p>
+        { isLoading? <p>Loading...</p> :
+            results.List.length > 0 ?
+            <ul>
+            {results.List.map((item, key) => {
+                let link = item.TypeName === 'Auction'? `/events/lot/${item.LotId}`:`/listing/${item.ID}`
+            return (
+                <li key={key}>
+                    <Link to={link}>{item.Title}</Link>
+                </li>
+            )})}
+            </ul>:
+            <h4>No results found.</h4>
+        }
         </div>
     </section>
   )

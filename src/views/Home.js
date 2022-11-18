@@ -1,6 +1,9 @@
 import React from 'react'
+import LastestAuctions from '../components/home/LastestAuctions'
+import LastestListings from '../components/home/LatestListings'
 
 const Home = () => {
+  
   return (
     <>
     <section className="wpo-contact-pg-section home-section section-padding" >
@@ -13,7 +16,15 @@ const Home = () => {
     </div>
     <section className="wpo-contact-pg-section section-padding">
         <h1 className="text-center">LATEST AUCTIONS</h1>
-
+        <div className="container">
+          <LastestAuctions/>
+        </div>
+    </section>
+    <section className="wpo-contact-pg-section section-padding">
+        <h1 className="text-center">CATEGORIES</h1>
+        <div className="container">
+          <LastestListings/>
+        </div>
     </section>
     </>
   )

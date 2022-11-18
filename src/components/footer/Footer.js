@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import d from '../../assets/dictionary'
 import FooterMenu from './FooterMenu'
+import { validateEmail } from '../../assets/utility'
 
 const Footer = () => {
 const [email, setEmail] = useState("");
@@ -8,14 +9,9 @@ const [message, setMessage] = useState("");
 const emailValidation = (e) => {
 
   e.preventDefault();
-  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-  if (regEx.test(email)) {
-     setMessage("Subsciibe Succesfully");
-    
-         } else if (!regEx.test(email) && email !== "") {
-          setMessage("Invalid email");
-     }
-     setEmail('');
+  if(validateEmail(email)){
+    setMessage('Subscribed')
+  } else setMessage('Invalid email')
 }
 
 const handleOnChange = (e)=> {

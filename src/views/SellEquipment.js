@@ -15,6 +15,7 @@ const SellEquipment = () => {
     const [response, setResponse] = useState(0)
 
     const onSubmit = (e) => {
+        //validate all fields
         e.preventDefault()
         let sellEquipment = {
             "FirstName":firstname,
@@ -75,7 +76,7 @@ const SellEquipment = () => {
                     <p className="sellformpara">
                         {d.sellEquipment.consultationFormDescription}
                     </p>
-                    <form className="contact-validation-active sellform1" 
+                    <div className="contact-validation-active sellform1" 
                     id="contact-form-main" 
                     noValidate>
                         <div className="sellform">
@@ -183,7 +184,7 @@ const SellEquipment = () => {
                             {response === 1 && <div id="success">{d.sellEquipment.submitSucced} </div>}
                             {response === 2 && <div id="error"> {d.sellEquipment.submitFailed} </div>}
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div className="row">

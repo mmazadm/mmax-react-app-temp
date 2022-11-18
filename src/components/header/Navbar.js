@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import d from '../../assets/dictionary'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const {categories} = useSelector(state => state.listings)
     return (
         <nav className="navigation navbar navbar-expand-lg ">
             <div className="container-fluid">
@@ -38,10 +40,18 @@ const Navbar = () => {
                                         {hasChildren && 
                                         <ul className="sub-menu">
                                             {item.submenu.map(i=> 
-                                            <li>
-                                                <a href={i.link}>{i.name}</a>
-                                            </li>)}
-                                        </ul>}
+                                                <li>
+                                                    <a href={i.link}>{i.name}</a>
+                                                </li>
+                                            )}
+                                            {item.name.toUpperCase() === 'BROWSE' &&
+                                                categories.map(cat =>
+                                                    <li>
+                                                        <a href={`/browse/${cat.ID}`}>{cat.Name}</a>
+                                                    </li>
+                                            )}
+                                        </ul>
+                                        }
                                     </li>
                                     )
                                 })}

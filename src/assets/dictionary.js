@@ -8,7 +8,12 @@ const d = {
     },
     {
         name:'Browse',
-        link: url.browse
+        submenu:[
+          {
+            name:'All',
+            link: url.browse
+          }
+        ]
     },
     {
         name:'Auctions',

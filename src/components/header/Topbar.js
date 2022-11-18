@@ -10,10 +10,10 @@ const Topbar = () => {
                 <Search/>
             </li>
             <li>
-                <a href="/" className='menufont text-white ms-3'>Sign In</a>
+                <a href="/signIn" className='menufont text-white ms-3'>Sign In</a>
             </li>
             <li>
-                <a href="/" className='menufont text-white'>Register</a>
+                <a href="/register" className='menufont text-white'>Register</a>
             </li>
         </ul>
     </div>
