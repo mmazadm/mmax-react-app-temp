@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { useOutlet } from 'react-router-dom'
 import Loader from '../components/common/Loader'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/header/Navbar'
@@ -15,7 +15,7 @@ const Default = () => {
           <Navbar/>
         </div>
       </header>
-      <Outlet/>
+      {useOutlet()}
       <Footer/>
     </div>
   )

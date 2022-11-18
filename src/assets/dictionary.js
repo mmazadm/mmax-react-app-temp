@@ -1,4 +1,41 @@
+import { url } from "./paths"
+
 const d = {
+  menuItems : [
+    {
+        name:'HOME',
+        link: url.home
+    },
+    {
+        name:'Browse',
+        link: url.browse
+    },
+    {
+        name:'Auctions',
+        link:url.auctions
+    },
+    {
+        name:'About Us',
+        submenu:[
+            {
+                name:'About Us',
+                link:url.aboutUs
+            },
+            {
+                name:'Mobile Applications',
+                link:url.apps
+            }
+        ]
+    },
+    {
+        name:'Financing',
+        link:url.financing
+    },
+    {
+        name:'Calendar',
+        link:url.calendar
+    }
+],
     about:{
         missionTitle:'Mission Statement',
         missionStatement:'MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.',
@@ -10,19 +47,19 @@ const d = {
         customerDesignation:'Managers',
         services: [
             {
-              icon:'assets/images/sell/hammer.png',
+              icon:'/assets/images/sell/hammer.png',
               title:'Auction',
               desc:'MachineryMax Auctions offers several different services according to our clients needs such as',
               pointers:['Complete shop closures','Cleaning, Staging, Professional Photography','Clear Out Services','Valuation Service','Individual Asset Disposition','Valuations']
             },
             {
-              icon:'assets/images/sell/hammer.png',
+              icon:'/assets/images/sell/hammer.png',
               title:'Asset Recovery',
               desc:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers',
               pointers:['Collections','Asset Recovery','Asset Remarketing','Legal Services']
             },
             {
-              icon:'assets/images/sell/handshake.png',
+              icon:'/assets/images/sell/handshake.png',
               title:'Acquisitions',
               desc:'If going to auction is not an option, MachineryMax offers its acquisition services to our clients',
               pointers:['Immediate Cash Payouts','Complete plants, real estate, or individual assets']
@@ -142,32 +179,32 @@ const d = {
             {
               count:8253,
               title:'Auctions',
-              icon:'assets/images/sell/cart.png'
+              icon:'/assets/images/sell/cart.png'
             },
             {
               count:458,
               title:'Sellers',
-              icon:'assets/images/sell/dollar_thumb.png'
+              icon:'/assets/images/sell/dollar_thumb.png'
             },
             {
               count:458,
               title:'Users <br/> helped',
-              icon:'assets/images/sell/headphone.png'
+              icon:'/assets/images/sell/headphone.png'
             },
             {
               count:116,
               title:'Employees',
-              icon:'assets/images/sell/group.png'
+              icon:'/assets/images/sell/group.png'
             },
             {
               count:4253,
               title:'Total <br/> Users',
-              icon:'assets/images/sell/laptop.png'
+              icon:'/assets/images/sell/laptop.png'
             },
             {
               count:450,
               title:'Problems <br/> Solved',
-              icon:'assets/images/sell/bulb.png'
+              icon:'/assets/images/sell/bulb.png'
             }
           ],
         testimonials:[
@@ -176,7 +213,7 @@ const d = {
               role:"Manager",
               companyName:"Lanz Cabinets",
               city:"Eugene, Oregon",
-              photo:"assets/images/sell/tsagana.png",
+              photo:"/assets/images/sell/tsagana.png",
               quote:'I have worked with MachineryMax for several years to sell our excess equipment. The staff is professional and has executed each sale with no issues. Our company continues to upgrade our equipment and am sure we will call on MachineryMax again. Highly recommend their services.'
             },
             {
@@ -184,14 +221,14 @@ const d = {
                 role:"Imagine Furniture Group",
                 companyName:"Formerly All Wood Treasures",
                 city:"Tempe, Arizona",
-                photo:"assets/images/sell/tsagana.png",
+                photo:"/assets/images/sell/tsagana.png",
                 quote:'The team at MachineryMax is completely professional. They are on time and work their tail off to make sure the machinery is the best possible light to make the most money for the selling company. The estimates are extremely accurate. The website is exemplary. Financial goals are not only met but usually exceeded and the money is delivered in a timely fashion. We at All Wood look forward to our next opportunity to work with the team at MachineryMax.'
             },{
                 name:"John Grout",
                 role:"",
                 companyName:"Portland Closet Company",
                 city:"Portland, Oregon",
-                photo:"assets/images/sell/tsagana.png",
+                photo:"/assets/images/sell/tsagana.png",
                 quote:'“Thank you to Machinery Max for help selling our two CNC machines. They took care of all the details from photographing our machines to giving input on the machine to replace the two old machines. We are hoping to find a line boring machine to purchase in a future auction.'
             },
             {
@@ -199,7 +236,7 @@ const d = {
                 role:"Vice President",
                 companyName:"American Wood Design",
                 city:"Chester, Pennsylvania",
-                photo:"assets/images/sell/tsagana.png",
+                photo:"/assets/images/sell/tsagana.png",
                 quote:'We were referred by our financing company to MachineryMax. We needed our machine sold quickly and for the best value to make way for a new machine coming in. The team at MachineryMax were great to deal with, the communications and the expectations were right on the mark. Highly Recommend!'
             },
             {
@@ -207,7 +244,7 @@ const d = {
                 role:"President",
                 companyName:"Executive Interiors",
                 city:"Fresno, California",
-                photo:"assets/images/sell/tsagana.png",
+                photo:"/assets/images/sell/tsagana.png",
                 quote:'We have had tremendous success auctioning off equipment that we no longer need in our business. MachineryMax promptly assesses the equipment, takes pictures and handles every aspect of selling. With their extensive knowledge of the industry, the listings are very detailed. That translates to maximum value for the equipment. Machinery Max manages the collections for the auction and we then receive one check. Customers who are picking up the equipment have all necessary documentation, which makes the transfer very easy. We give MachineryMax five stars for customer service and would recommend them to anyone in the market for used machinery.'
             }
           ]
@@ -296,7 +333,84 @@ const d = {
         metalWorkingIndustry:'Metalworking',
         rollingStockIndustry:'Rolling Stock'
 
-    }
+    },
+      accountAddress:{
+          myAccountTitle:'MY ACCOUNT',
+          summary:'SUMMARY',
+          bidding:'BIDDING',
+          siteFees:'SITE FEES',
+          account:'ACCOUNT',
+          details:'Details',
+          address:'Addresses',
+          creditCard:'Credit Cards',
+          password:'Password',
+          message:'MESSAGING',
+          city:'Pune',
+          name:'Aditya Shah',
+          cityStatePin:'Pune, Maharashtra 411006',
+          country:'INDIA',
+          primaryAddress:'Primary Address',
+          edit:'Edit',
+          addNew:'Add New',
+      },
+      accountCreditCard:{
+          myAccountTitle:'MY ACCOUNT',
+          summary:'SUMMARY',
+          bidding:'BIDDING',
+          siteFees:'SITE FEES',
+          account:'ACCOUNT',
+          details:'Details',
+          address:'Addresses',
+          creditCardTitle:'Credit Cards',
+          password:'Password',
+          message:'MESSAGING',
+          creditcard:' Credit Card',
+          cardType:'Card Type',
+          expires:'Expires',
+          billingAddress:'Billing Address',
+          addNew:'Add New',
+      },
+      accountDetails:{
+           myAccountTitle:'MY ACCOUNT',
+          summary:'SUMMARY',
+          bidding:'BIDDING',
+          siteFees:'SITE FEES',
+          account:'ACCOUNT',
+          details:'Details',
+          address:'Addresses',
+          creditCardTitle:'Credit Cards',
+          password:'Password',
+          message:'MESSAGING',
+          firstName:'First Name ',
+          lastName:'Last Name',
+          homePhone:' Home Phone',
+          mobilePhone:' Mobile Phone',
+          company:'Company',
+          managerName:'Manager Name',
+          howDidHearAboutUs:'How did you hear about us',
+          industry:'Industry',
+          emailAddress:'Email Address',
+          category:'Category',
+          note:'Note: Click on save button after adding categories in "Category Notification Preferences" to get notification for selected categories.',
+          save:'Save'
+      },
+      accountPassword:{
+         currentPassword :'Current Password',
+          note:'Your Password must be at least 6 characters long. Passwords are case sensitive',
+          newPassword:'New Password',
+          confirmPassword:'Confirm Password',
+          changePassword:'Change Password'
+      },
+      accountSummary:{
+          generalTitle:'General',
+          generalOption1:'Listings being watched',
+          generalOption2:'Listings being bid on',
+          generalOption3:'Listings not won',
+          generalOption4:'Listings won',
+          actionNeeded:'Action Needed',
+          actionOption1:'Won listings awaiting payment',
+          actionOption2:'Purchase invoices awaiting payment'
+      }
 }
 
 export default d

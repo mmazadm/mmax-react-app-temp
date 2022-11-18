@@ -69,7 +69,7 @@ const AboutUs = () => {
       {d.about.team.map((item,key) => (
         <div className={`col-sm-6 col-md text-center`}>
         <div className="opp">
-          <img className="rounded-circle mb-5" src={item.photo} alt="user"/>
+          <img className="rounded-circle mb-5" src={item.photo} alt="user" width="200px" height="200px"/>
           <span className="teamdiv" >
             {item.name}
             <p className="teamclass">{item.title}</p>

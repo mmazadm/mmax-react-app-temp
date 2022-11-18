@@ -2,41 +2,6 @@ import React, { useState } from 'react'
 import d from '../../assets/dictionary'
 
 const Navbar = () => {
-    const menuItems = [
-        {
-            name:'HOME',
-            link:'/'
-        },
-        {
-            name:'Browse',
-            link:'/'
-        },
-        {
-            name:'Auctions',
-            link:'/'
-        },
-        {
-            name:'About Us',
-            submenu:[
-                {
-                    name:'About Us',
-                    link:'/about-us'
-                },
-                {
-                    name:'Mobile Applications',
-                    link:'/mobile-apps'
-                }
-            ]
-        },
-        {
-            name:'Financing',
-            link:'/financing'
-        },
-        {
-            name:'Calendar',
-            link:'/'
-        }
-    ]
     const [isOpen, setIsOpen] = useState(false)
     return (
         <nav className="navigation navbar navbar-expand-lg ">
@@ -55,7 +20,7 @@ const Navbar = () => {
                     <div className="col-lg-2 col-md-6 col-6">
                         <div className="navbar-header">
                             <a className="navbar-brand logo" href="index.html">
-                                <img src="assets/images/sell/logo.png" alt=""/>
+                                <img src="/assets/images/sell/logo.png" alt=""/>
                             </a>
                         </div>
                     </div>
@@ -63,7 +28,7 @@ const Navbar = () => {
                         <div id="navbar" className={`collapse navbar-collapse navigation-holder ${isOpen? 'slideInn':''}`}>
                             <button className="menu-close" onClick={() => setIsOpen(false)}><i className="ti-close"></i></button>
                             <ul className="nav mb-2 mb-lg-0">
-                                {menuItems.map((item, key) => {
+                                {d.menuItems.map((item, key) => {
                                     let hasChildren = 'submenu' in item
                                     return(
                                     <li key={key} className={hasChildren? "menu-item-has-children": ''}>

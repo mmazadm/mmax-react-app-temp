@@ -8,7 +8,7 @@ const Home = () => {
         <h1>Heavy <span className="text-primary">Machinery, </span>Auctions Marketplace</h1>
       </div>    
     </section>
-    <div class="bid-now-btn">
+    <div className="bid-now-btn">
         <img src="/assets/images/home/bid-now.jpg" alt="bid-now"/>
     </div>
     <section className="wpo-contact-pg-section section-padding">

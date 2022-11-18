@@ -47,7 +47,7 @@ const SellEquipment = () => {
             </div>
             <div className="row">
                 <div className="col-md-2 mobildiv ps-0">
-                    <img src="assets/images/Rectangle 14.svg" alt="presentational"/>
+                    <img src="/assets/images/Rectangle 14.svg" alt="presentational"/>
                 </div>
                 <div className="col-md-4 selimdiv" >
                     <div className="row sellequip">

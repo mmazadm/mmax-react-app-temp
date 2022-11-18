@@ -1,8 +1,34 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import d from '../../assets/dictionary'
 import FooterMenu from './FooterMenu'
 
 const Footer = () => {
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
+const emailValidation = (e) => {
+
+  e.preventDefault();
+  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+  if (regEx.test(email)) {
+     setMessage("Subsciibe Succesfully");
+    
+         } else if (!regEx.test(email) && email !== "") {
+          setMessage("Invalid email");
+     }
+     setEmail('');
+}
+
+const handleOnChange = (e)=> {
+  setEmail(e.target.value);
+  setMessage("");
+}
+
+useEffect(() => {
+  setTimeout(() => {
+    setMessage("")
+  },2000);
+}, [message]);
+
   const usefulLinks = {
     title: 'Useful Links',
     items: [
@@ -48,7 +74,7 @@ const Footer = () => {
         <div className="col col-lg-2 col-md-6 col-sm-12 col-12">
           <div className="widget link-widget">
             <div className="widget-title">
-              <img src="assets/images/sell/mmlogo.png" alt="mmlogo" />
+              <img src="/assets/images/sell/mmlogo.png" alt="mmlogo" />
             </div>
             <ul>
               <li>{d.footer.siteurl}</li>
@@ -75,10 +101,13 @@ const Footer = () => {
             <form >
               <div className="input-1">
                 <input
-                  type="email"
+                  id="email"
+                  type="text"
+                  value={email}
                   className="form-control"
-                  placeholder="Email"
+                  placeholder="email"
                   required=""
+                  onChange={handleOnChange}
                   style={{
                      width: '300px',
                      borderRadius: '20px',
@@ -90,11 +119,14 @@ const Footer = () => {
               <div className="submit clearfix">
                 <button
                 className='bg-transparent'
-                  type="submit"
+                type="submit" 
+                onClick={emailValidation}                
                 >
                   <i className="fa fa-paper-plane" aria-hidden="true" />
                 </button>
               </div>
+              {message}
+            
             </form>
           </div>
         </div>

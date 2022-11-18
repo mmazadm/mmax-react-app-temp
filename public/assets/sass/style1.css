@@ -628,7 +628,7 @@ a.buy-btn:focus {
                               
                               
                               
-                                   .opp {
+                          .opp {
   
                           color: #222;
                           border-radius: 100%;
@@ -636,7 +636,7 @@ a.buy-btn:focus {
                           text-decoration: none;
                           position: relative;
                           width: 100px;
-                          height: 28px;
+                          /*height: 28px;*/
                           margin: 0 2px;
                           padding-top: 12px;
                           -webkit-transition: all .5s;
@@ -731,7 +731,7 @@ a.buy-btn:focus {
                          width: 35%;
                          height: 100%;
                          background-color: #E5E6E9;
-                         z-index: 1;
+                         z-index: -999;
                                       } 
                                       
                                       
@@ -887,7 +887,7 @@ a.buy-btn:focus {
       text-decoration: none;
       position: relative;
       width: 100px;
-      height: 28px;
+      /*height: 28px;*/
       margin: 0 2px;
       padding-top: 12px;
       -webkit-transition: all .5s;
@@ -980,7 +980,7 @@ a.buy-btn:focus {
                          width: 35%;
                          height: 100%;
                          background-color: #E5E6E9;
-                         z-index: 1;
+                         z-index: -999;
                                       } 
                                       
                                       
@@ -1052,7 +1052,7 @@ a.buy-btn:focus {
     width: 60%;
     height: 100%;
     background-color: #E5E6E9;
-    z-index: 1;
+    z-index: -999;
 }
 
 .accounttabs{
@@ -1188,7 +1188,7 @@ background-repeat: no-repeat !important;
                           text-decoration: none;
                           position: relative;
                           width: 250px;
-                          height: 28px;
+                          /*height: 28px;*/
                           margin: 0 2px;
                           padding-top: 12px;
                           -webkit-transition: all 0.5s;
@@ -1272,7 +1272,7 @@ background-repeat: no-repeat !important;
     width: 25%;
     height: 100%;
     background-color: #E5E6E9;
-    z-index: 1;                      
+    z-index: -999;                      
                         }
                         
                         }   

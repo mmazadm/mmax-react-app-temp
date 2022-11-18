@@ -11,37 +11,50 @@ import SellEquipment from "./views/SellEquipment";
 import Financing from "./views/Financing";
 import SearchPage from "./views/Search";
 import Home from "./views/Home";
+import AccountSidebar from "./layouts/AccountSidebar";
+import AccountSummary from "./views/myAccount/AccountSummary";
+import { url } from "./assets/paths";
 
 const appRoutes = [
     {
         element:<Default/>,
         children:[
             {
-                path:'/',
+                path:url.home,
                 element:<Home/>
             },
             {
-                path:'/about-us',
+                path:url.aboutUs,
                 element:<AboutUs/>
             },
             {
-                path:'/mobile-apps',
+                path:url.MobileApp,
                 element:<MobileApp/>
             },
             {
-                path:'/sell-your-equipment',
+                path:url.SellEquipment,
                 element:<SellEquipment/>
             },
             {
-                path:'/financing',
+                path:url.financing,
                 element:<Financing/>
             },
             {
-                path:'/search',
+                path:url.account,
+                element:<AccountSidebar/>,
+                children:[
+                    {
+                        path:url.accountSummary,
+                        element:<AccountSummary/>
+                    }
+                ]
+            },
+            {
+                path:url.search,
                 element:<SearchPage/>
             },
             {
-                path: '*',
+                path:'*',
                 element:<UnderConstruction/>
             }
         ]
