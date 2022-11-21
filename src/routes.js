@@ -14,6 +14,8 @@ import Home from "./views/Home";
 import AccountSidebar from "./layouts/AccountSidebar";
 import AccountSummary from "./views/myAccount/AccountSummary";
 import { url } from "./assets/paths";
+import AllCategories from "./views/AllCategories";
+import EventDetails from "./views/EventDetails";
 
 const appRoutes = [
     {
@@ -52,6 +54,14 @@ const appRoutes = [
             {
                 path:url.search,
                 element:<SearchPage/>
+            },
+            {
+                path:url.browse,
+                element:<AllCategories/>
+            },
+            {
+                path:url.eventDetail,
+                element:<EventDetails/>
             },
             {
                 path:'*',

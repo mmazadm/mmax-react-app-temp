@@ -15,5 +15,6 @@ export const url = {
     accountPassword:'/account/update-password',
     search:'/search',
     signIn:'/signIn',
-    register:'/register'
+    register:'/register',
+    eventDetail:'/event/:eventId'
 }

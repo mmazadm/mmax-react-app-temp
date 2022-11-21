@@ -15,7 +15,6 @@ const SellEquipment = () => {
     const [response, setResponse] = useState(0)
 
     const onSubmit = (e) => {
-        //validate all fields
         e.preventDefault()
         let sellEquipment = {
             "FirstName":firstname,
@@ -76,7 +75,7 @@ const SellEquipment = () => {
                     <p className="sellformpara">
                         {d.sellEquipment.consultationFormDescription}
                     </p>
-                    <div className="contact-validation-active sellform1" 
+                    <form className="contact-validation-active sellform1" 
                     id="contact-form-main" 
                     noValidate>
                         <div className="sellform">
@@ -153,7 +152,12 @@ const SellEquipment = () => {
                             ))}
                         </div>
                         <div className="fullwidth">
-                            <p className="formfont">{d.sellEquipment.describePlantTitle} <span className="orangestar" >*</span></p>
+                            <span className="formfont">
+                                {d.sellEquipment.describePlantTitle1}
+                                </span>
+                                <p style={{fontFamily: "Montserrat" , fontSize:'14px'}}>
+                                    {d.sellEquipment.describePlantTitle2}
+                                <span className="orangestar" >*</span></p>
                             <textarea type="textarea" className="form-control" 
                             name="state" id="state"
                             onChange={(e) => setDesc(e.target.value)}
@@ -184,14 +188,14 @@ const SellEquipment = () => {
                             {response === 1 && <div id="success">{d.sellEquipment.submitSucced} </div>}
                             {response === 2 && <div id="error"> {d.sellEquipment.submitFailed} </div>}
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div className="row">
                 <div className="sellbdh">
                     <p className="sellbdp">
                         {d.sellEquipment.maximizeAssetMessageStrip1} <br/>
-                        <span style={{"fontSize":"20px"}}> <span dangerouslySetInnerHTML={{__html:d.sellEquipment.maximizeAssetMessageStrip2}}></span></span>
+                        <span style={{"fontSize":"20px"}}> <span  dangerouslySetInnerHTML={{__html:d.sellEquipment.maximizeAssetMessageStrip2}}></span></span>
                     </p>
                 </div>
             </div>
@@ -209,7 +213,9 @@ const SellEquipment = () => {
                         <div className="card-body">
                         <h4 className="card-title pt-4" > {d.sellEquipment.chooseMachineryMaxTitle}</h4>
                         <div className="card-text">
-                            <p>{d.sellEquipment.chooseMachineryMaxDescription}</p>                                
+                            <p> 
+                                <span dangerouslySetInnerHTML={{__html:d.sellEquipment.chooseMachineryMaxDescription}}></span>
+                                </p>                                
                         </div>
                         </div>
                     </div>
@@ -222,7 +228,9 @@ const SellEquipment = () => {
                             <h4 className="card-title pt-4">{d.sellEquipment.threeTiredSalesTitle}</h4>
                             <div className="card-text">
                                 <p>{d.sellEquipment.commisionDescription}</p>
-                                <p>{d.sellEquipment.netApproach}</p>                                
+                                <p>
+                                    <span dangerouslySetInnerHTML={{__html:d.sellEquipment.netApproach}}></span>
+                                    </p>                                
                             </div>
                         </div>
                     </div>
@@ -242,7 +250,8 @@ const SellEquipment = () => {
                         <div className="card-body">
                         <h4 className="card-title pt-4" >{d.sellEquipment.completeShopTitle}</h4>
                         <div className="card-text">
-                            <p>{d.sellEquipment.completeShopDescription}</p>                                
+                            <p>
+                                <span dangerouslySetInnerHTML={{__html:d.sellEquipment.completeShopDescription}}></span></p>                                
                         </div>
                         </div>
                     </div>
@@ -295,7 +304,9 @@ const SellEquipment = () => {
             <div className="col-md-6" > 
             
              <h2 className="analytictext"><br/>{d.sellEquipment.officeLocations}</h2>
-             <p  className="analytictextpara1" > {d.sellEquipment.officeLocationsDescription} </p>
+             <p  className="analytictextpara1" > 
+             <span dangerouslySetInnerHTML={{__html:d.sellEquipment.officeLocationsDescription}}></span>
+              </p>
             </div>
          </div> 
          <br/>  <br/> <br/> 
@@ -305,7 +316,9 @@ const SellEquipment = () => {
          
          
           <h2 className="analytictext">{d.sellEquipment.analyticalData}</h2>
-             <p className="analytictextpara2" > {d.sellEquipment.analyticalDataDescription} </p>
+             <p className="analytictextpara2" > 
+             <span dangerouslySetInnerHTML={{__html:d.sellEquipment.analyticalDataDescription}}></span>
+              </p>
          
          </div>
             
@@ -385,7 +398,9 @@ const SellEquipment = () => {
                             
                         <div className="col-md-2 mobildiv">
                     <img src="assets/images/sell/Rectangle 141.svg" className="cardli" alt="graphic"/>
-                    </div>                 
+                    </div> 
+
+                    <h2 className='industrytext'>{d.sellEquipment.endTitle}</h2>               
         </div> 
         </div>  
     </section>

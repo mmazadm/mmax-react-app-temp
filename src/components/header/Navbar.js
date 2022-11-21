@@ -4,7 +4,7 @@ import d from '../../assets/dictionary'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const {categories} = useSelector(state => state.listings)
+    const {categoriesWithCount} = useSelector(state => state.listings)
     return (
         <nav className="navigation navbar navbar-expand-lg ">
             <div className="container-fluid">
@@ -45,11 +45,20 @@ const Navbar = () => {
                                                 </li>
                                             )}
                                             {item.name.toUpperCase() === 'BROWSE' &&
-                                                categories.map(cat =>
+                                                categoriesWithCount.List &&
+                                                categoriesWithCount.List.length>0 &&
+                                                categoriesWithCount.List.map(cat =>
+                                                    categoriesWithCount.counts[cat.ID] &&
                                                     <li>
-                                                        <a href={`/browse/${cat.ID}`}>{cat.Name}</a>
+                                                        <a href={`/browse/${cat.ID}`}
+                                                        className="d-flex justify-content-between align-items-center">
+                                                            <span>{cat.Name}</span>
+                                                            <span className="badge rounded-pill bg-secondary text-center">
+                                                                {categoriesWithCount.counts[cat.ID]}
+                                                            </span>
+                                                        </a>
                                                     </li>
-                                            )}
+                                                )}
                                         </ul>
                                         }
                                     </li>

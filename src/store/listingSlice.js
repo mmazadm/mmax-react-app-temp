@@ -2,10 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 
 const initialState = {
-    isLoading: true,
-    categories:[],
+    loadingListings: true,
+    loadingCats: true,
+    categoriesWithCount:[{
+        List:[],
+        count:{}
+    }],
     currentCategory:{},
-    listings:{},
+    listings:{
+        List:[]
+    },
     listing:{},
     error: false,
     errorMessage:''
@@ -17,10 +23,11 @@ export const listingSlice = createSlice({
     reducers: {
         setListings: (state, action) => {
             state.listings = action.payload
-            state.isLoading = false
+            state.loadingListings = false
         },
         setCategories: (state, action) => {
-            state.categories = action.payload
+            state.categoriesWithCount = action.payload
+            state.loadingCats = false
         },
         setCurrentCategory: (state, action) => {
             state.currentCategory = action.payload
@@ -28,14 +35,13 @@ export const listingSlice = createSlice({
         setError: (state, action) => {
             state.error = true
             state.errorMessage = action.payload
-            state.isLoading = false
         },
         clearError: (state) => {
             state.error = false
             state.errorMessage = false
         },
-        startLoading: (state) => {state.isLoading = true},
-        stopLoading: (state) => {state.isLoading = false}
+        startLoading: (state) => {state.loadingListings = true},
+        stopLoading: (state) => {state.loadingListings = false}
     }
 })
 
@@ -46,11 +52,14 @@ export const fetchListings = (pageNumber,pageSize) => (dispatch) => {
     dispatch(startLoading())
     axios.get(`/listing/search/${pageNumber}/${pageSize}/0?Statuses=active`)
     .then((res)=> {
+        dispatch(clearError())
+        dispatch(setCurrentCategory({}))
         dispatch(setListings(res.data))
     })
     .catch((err) => {
         console.log(err)
-        dispatch(setError('Some error'))
+        dispatch(setError('Server error. Please try again'))
+        dispatch(stopLoading())
     })
 }
 
@@ -63,35 +72,33 @@ export const fetchListingsByCategory = (pageNumber,pageSize,breadcrumbs) => (dis
     axios
     .all(endpoints.map(point => axios.get(point)))
     .then(res=> {
+        dispatch(clearError())
         dispatch(setCurrentCategory(res[0].data))
-        console.log(res[1].data)
         dispatch(setListings(res[1].data))
     })
     .catch((err) => {
         console.log(err)
-        dispatch(setError('Some error'))
+        dispatch(setError('Server error. Please try again'))
+        dispatch(stopLoading())
     })
 }
 
-export const fetchCategoryList = () => (dispatch) => {
-    axios.get('/category/children/9')
+export const fetchCategoryListWithCounts = () => (dispatch) => {
+    axios.get('/listing/GetListingsCountByCategory')
     .then((res)=> {
-        dispatch(setCategories(res.data))
+        dispatch(clearError())
+        dispatch(setCategories({
+            List:res.data.m_Item1,
+            counts: res.data.m_Item2
+        }))
     })
     .catch((err) => {
         console.log(err)
-        dispatch(setError('Some error'))
-    })
-}
-
-export const fetchCategoryDetails = (id) => (dispatch) => {
-    axios.get(`/category/${id}`)
-    .then((res)=> {
-        dispatch(setCurrentCategory(res.data))
-    })
-    .catch((err) => {
-        console.log(err)
-        dispatch(setError('Some error'))
+        dispatch(setError('Server error. Please try again'))
+        dispatch(setCategories({
+            List:[],
+            counts: {}
+        }))
     })
 }
 

@@ -24,7 +24,8 @@ const SearchPage = () => {
 
     useEffect(() => {
         getResults()
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     
   return (
     <section className="section-padding">

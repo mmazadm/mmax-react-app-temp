@@ -17,7 +17,14 @@ const LastestAuctions = () => {
         <ul>
         {eventList.List.map((item, key) => 
             <li key={key}>
-                <Link to={`event/${item.ID}`}>{item.Title}</Link>
+                <img src={`/${item.PrimaryImageURI}`} alt={`${item.ID} img`}/>
+                <p><Link to={`event/${item.ID}`}>{item.Title}</Link></p>
+                <p dangerouslySetInnerHTML={{__html: item.Description}}/>
+                <p>First Lot closes on: {new Date(`${item.EndDTTM}Z`).toLocaleString("en-US",{
+                    timeZone: "America/Los_Angeles"
+                })} PT</p>
+                <Link to={`event/${item.ID}`} className="btn theme-btn">View All Lots ({item.LotCount})</Link>
+                <hr/>
             </li>
         )}
         </ul>

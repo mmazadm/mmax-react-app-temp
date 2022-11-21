@@ -4,31 +4,45 @@ import { Link } from 'react-router-dom'
 import { fetchListings, fetchListingsByCategory } from '../../store/listingSlice'
 
 const LastestListings = () => {
-    const { isLoading, listings, categories, currentCategory } = useSelector(state => state.listings)
+    const { loadingListings, listings, 
+        categoriesWithCount } = useSelector(state => state.listings)
     const dispatch = useDispatch()
 
     const handleSelect = (e) => {
-        dispatch(fetchListingsByCategory(0,5,e.currentTarget.dataset.id))
+        const {id} = e.currentTarget.dataset;
+        if(id) dispatch(fetchListingsByCategory(0,5, id))
+        else dispatch(fetchListings(0,5))
     }
 
     useEffect(() => {
         dispatch(fetchListings(0,5))
       }, [dispatch])
 
+    if(!categoriesWithCount.List || categoriesWithCount.List.length === 0) return <p>Loading...</p>
     return(
         <>
         <nav className="nav nav-pills flex-column flex-sm-row">
-            {categories.length>0 && categories.map((item) => 
-                <button className={`flex-sm-fill text-sm-center nav-link ${item.ID === currentCategory.ID}?'active':''}`}
+            <button className='flex-sm-fill text-sm-center nav-link'
+                data-id = {null}
+                data-name = 'All'
+                onClick={handleSelect}>
+                    All
+            </button>
+            {categoriesWithCount.List.map((item) => 
+                categoriesWithCount.counts[item.ID] &&
+                <button className='flex-sm-fill text-sm-center nav-link'
                 data-id = {item.ID}
                 data-name = {item.Name}
                 onClick={handleSelect}>
                     {item.Name}
+                    <span className="badge rounded-pill bg-secondary text-center">
+                        {categoriesWithCount.counts[item.ID]}
+                    </span>
                 </button>
             )}
         </nav>
         <ul>
-        {isLoading || categories.length === 0 || !listings.List?
+        {loadingListings || !listings.List?
             <p>Loading...</p>:
             listings.List.map((item, key) => 
             <li key={item.ID}>
