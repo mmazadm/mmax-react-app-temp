@@ -1,37 +1,91 @@
 import React, { useState } from 'react'
 import d from '../assets/dictionary'
-// import axios from 'axios'
+import { validateEmail, validatePhone } from '../assets/utility'
+import axios from 'axios'
 
 const SellEquipment = () => {
-    const [firstname, setFirstName] = useState('')
-    const [lastname, setLastName] = useState('')
-    const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [purpose, setPurpose] = useState('')
-    const [desc, setDesc] = useState('')
-    const [timeframe, setTimeframe] = useState('')
+    const [firstname, setFirstName] = useState({value:'', error:''})
+    const [lastname, setLastName] = useState({value:'', error:''})
+    const [city, setCity] = useState({value:'', error:''})
+    const [state, setState] = useState({value:'', error:''})
+    const [email, setEmail] = useState({value:'', error:''})
+    const [phone, setPhone] = useState({value:'', error:''})
+    const [purpose, setPurpose] = useState({value:'', error:''})
+    const [desc, setDesc] = useState({value:'', error:''})
+    const [timeframe, setTimeframe] = useState({value:'', error:''})
     const [response, setResponse] = useState(0)
+
+    const validate = (e) => {
+        let validated = true
+        if(!firstname.value){
+            validated = false
+            setFirstName({...firstname, error:'Firstname required!!'})
+        } else setFirstName({...firstname, error:''})
+        if(!lastname.value){
+            validated = false
+            setLastName({...lastname, error:'Lastname required!!'})
+        } else setLastName({...lastname, error:''})
+        if(!city.value){
+            validated = false
+            setCity({...city, error:'City required!!'})
+        } else setCity({...city, error:''})
+ 
+        if(!state.value){
+            validated = false
+            setState({...state, error:'State required!!'})
+        } else setState({...state, error:''})
+ 
+        if(!phone.value){
+            validated = false
+            setPhone({...phone, error:'Phone required!!'})
+        } else if (!validatePhone(phone.value)){
+            setPhone({...phone, error:'Enter a valid phone number'})
+        } else setPhone({...phone, error:''})
+ 
+        if(!email.value){
+            validated = false
+            setEmail({...email, error:'Email required!!'})
+        } else if (!validateEmail(email.value)){
+            setEmail({...email, error:'Enter a valid email'})
+        } else setEmail({...email, error:''})
+
+        if(!timeframe.value){
+            validated = false
+            setTimeframe({...timeframe, error:'Timeframe required!!'})
+        } else setTimeframe({...timeframe, error:''})
+
+        if(!purpose.value){
+            validated = false
+            setPurpose({...purpose, error:'Select one option'})
+        } else setPurpose({...purpose, error:''})
+
+        if(!desc.value){
+            validated = false
+            setDesc({...desc, error:'Description required!!'})
+        } else setDesc({...desc, error:''})
+
+        return validated
+    }
 
     const onSubmit = (e) => {
         e.preventDefault()
-        let sellEquipment = {
-            "FirstName":firstname,
-            "LastName":lastname,
-            "City":city,
-            "State":state,
-            "Email":email,
-            "Phone":phone,
-            "Discussion":purpose,
-            "TimeFrame":timeframe,
-            "Description":desc
+        let validated = validate()
+            let sellEquipment = {
+                "FirstName":firstname,
+                "LastName":lastname,
+                "City":city,
+                "State":state,
+                "Email":email,
+                "Phone":phone,
+                "Discussion":purpose,
+                "TimeFrame":timeframe,
+                "Description":desc
+            }
+        if (validated) {
+            axios.post('/api/user/sellequipment', sellEquipment)
+            .then(()=> setResponse(1))
+            .catch(()=> setResponse(2))
         }
-        console.log(sellEquipment)
-        setResponse(1)
-        /*axios.post('/api/user/sellequipment', sellEquipment)
-        .then(()=> setResponse(1))
-        .catch(()=> setResponse(2))*/
     }
   return (
     <>    
@@ -52,22 +106,22 @@ const SellEquipment = () => {
                 <div className="col-md-4 selimdiv" >
                     <div className="row sellequip">
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/excavator-construction-site (1).png" alt="machine-1"/>
+                            <img src="/assets/images/sell/excavator-construction-site (1).png" alt="machine-1"/>
                         </div>
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/gear-metal-wheels-close-up.png" alt="machine-1"/>
+                            <img src="/assets/images/sell/gear-metal-wheels-close-up.png" alt="machine-1"/>
                         </div>
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/excavator-site (1).png" alt="machine-1"/>
+                            <img src="/assets/images/sell/excavator-site (1).png" alt="machine-1"/>
                         </div>
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/close-up-construction-site-excavator (1).png" alt="machine-1"/>
+                            <img src="/assets/images/sell/close-up-construction-site-excavator (1).png" alt="machine-1"/>
                         </div>
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/excavator-site.png" alt="machine-1"/>
+                            <img src="/assets/images/sell/excavator-site.png" alt="machine-1"/>
                         </div>
                         <div className="col-md-6 selimbot" >
-                            <img src="assets/images/sell/cranes-seaport.png" alt="machine-1"/>
+                            <img src="/assets/images/sell/cranes-seaport.png" alt="machine-1"/>
                         </div>
                     </div>
                 </div>
@@ -75,48 +129,52 @@ const SellEquipment = () => {
                     <p className="sellformpara">
                         {d.sellEquipment.consultationFormDescription}
                     </p>
-                    <form className="contact-validation-active sellform1" 
-                    id="contact-form-main" 
-                    noValidate>
+                    <div className="contact-validation-active sellform1" id="contact-form-main">
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.firstName}<span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
-                            name="firstname" id="firstname" value={firstname}
-                            onChange={(e) => setFirstName(e.target.value)}/>
+                            name="firstname" id="firstname" value={firstname.value}
+                            onChange={(e) => setFirstName({value:e.target.value, error:''})}/>
+                            <p className='text-danger'>{firstname.error}</p>
                         </div>
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.lastName} <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
-                            name="lastname" id="lastname" value={lastname}
-                            onChange={(e) => setLastName(e.target.value)}/>
+                            name="lastname" id="lastname" value={lastname.value}
+                            onChange={(e) => setLastName({value:e.target.value, error:''})}/>
+                            <p className='text-danger'>{lastname.error}</p>
                         </div>
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.city} <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
                             name="city" id="city"
-                            onChange={(e) => setCity(e.target.value)}
-                            value={city}/>
+                            onChange={(e) => setCity({value:e.target.value, error:''})}
+                            value={city.value}/>
+                            <p className='text-danger'>{city.error}</p>
                         </div>
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.state} <span className="orangestar" >*</span></p>
                             <input type="text" className="form-control" 
                             name="state" id="state"
-                            onChange={(e) => setState(e.target.value)}
-                            value={state}/>
+                            onChange={(e) => setState({value:e.target.value, error:''})}
+                            value={state.value}/>
+                            <p className='text-danger'>{state.error}</p>
                         </div>
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.email} <span className="orangestar" >*</span></p>
                             <input type="email" className="form-control" 
                             name="email" id="email"
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}/>
+                            onChange={(e) => setEmail({value:e.target.value, error:''})}
+                            value={email.value}/>
+                            <p className='text-danger'>{email.error}</p>
                         </div>
                         <div className="sellform">
                             <p className="formfont">{d.sellEquipment.phoneNo} <span className="orangestar" >*</span></p>
                             <input type="tel" className="form-control" 
                             name="phone" id="phone"
-                            onChange={(e) => setPhone(e.target.value)}
-                            value={phone}/>
+                            onChange={(e) => setPhone({value:e.target.value, error:''})}
+                            value={phone.value}/>
+                            <p className='text-danger'>{phone.error}</p>
                         </div>    
                         <div className="row">   
                             <p className="formfont">{d.sellEquipment.discussionTitle} <span className="orangestar" >*</span></p>
@@ -126,13 +184,14 @@ const SellEquipment = () => {
                                     <input type="radio" id="purpose" name="purpose" 
                                     value={item}
                                     className="radiowidth"
-                                    onChange={()=> setPurpose(item)}/>
+                                    onChange={()=> setPurpose({value:item, error:''})}/>
                                 </div>
                                 <div className="col-md-10">
                                     <label htmlFor="html"  className="formfont1">{item}</label>
                                 </div>
                                 </>
                             ))}
+                            <p className='text-danger'>{purpose.error}</p>
 
                         </div>   
                         <div className="row">   
@@ -143,13 +202,14 @@ const SellEquipment = () => {
                                         <input type="radio" id="timeframe" name="timeframe" 
                                         value={item} 
                                         className="radiowidth"
-                                        onChange={() => setTimeframe(item) }/>
+                                        onChange={() => setTimeframe({value:item, error:''}) }/>
                                     </div>
                                     <div className="col-md-10">
                                         <label htmlFor="html"  className="formfont1">{item}</label>
                                     </div>
                                 </>
                             ))}
+                            <p className='text-danger'>{timeframe.error}</p>
                         </div>
                         <div className="fullwidth">
                             <span className="formfont">
@@ -160,8 +220,9 @@ const SellEquipment = () => {
                                 <span className="orangestar" >*</span></p>
                             <textarea type="textarea" className="form-control" 
                             name="state" id="state"
-                            onChange={(e) => setDesc(e.target.value)}
-                            value={desc}/>
+                            onChange={(e) => setDesc({value:e.target.value, error:''})}
+                            value={desc.value}/>
+                            <p className="text-danger">{desc.error}</p>
                         </div>
                         <div className="submit-area">
                             <div className="container">
@@ -172,8 +233,7 @@ const SellEquipment = () => {
                                             </p>
                                     </div>
                                     <div className="col-md-3">
-                                        <button type="submit" 
-                                        className="theme-btn sellformbtn11"
+                                        <button className="theme-btn sellformbtn11"
                                         onClick={(e)=>onSubmit(e)}>
                                             {d.sellEquipment.sendBtn}
                                         </button>
@@ -188,7 +248,7 @@ const SellEquipment = () => {
                             {response === 1 && <div id="success">{d.sellEquipment.submitSucced} </div>}
                             {response === 2 && <div id="error"> {d.sellEquipment.submitFailed} </div>}
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div className="row">

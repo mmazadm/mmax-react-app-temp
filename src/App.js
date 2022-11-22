@@ -10,7 +10,7 @@ import { fetchCategoryListWithCounts } from './store/listingSlice';
 axios.defaults.baseURL = 'http://localhost:64580/api';
 //axios.defaults.baseURL = 'https://machinerymax.com/api'
 axios.defaults.headers.common['Authorization'] = 'RWX_BASIC admin:admin1234';
-//axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 //axios.defaults.headers.commom['Date'] = new Date();
 
 function App() {

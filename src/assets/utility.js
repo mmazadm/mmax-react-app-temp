@@ -4,7 +4,14 @@ export const validateEmail = (input) => {
 }
 
 export const validateTextInput = (input, min, max) => {
-    
+    const regEx=/^[a-zA-Z][a-zA-Z\\s-]+[a-zA-Z]$/;
+    if(input.length<min || input.length>max) return false
+    return regEx.test(input); 
+}
+
+export const validatePhone = (input) => {
+    const regEx=/^([+]\d{2})? \d{10}$/;
+    return regEx.test(input);
 }
 
 
