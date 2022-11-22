@@ -67,14 +67,15 @@ export const fetchListingsByCategory = (pageNumber,pageSize,breadcrumbs) => (dis
     dispatch(startLoading())
     const endpoints = [
         `/category/${breadcrumbs}`,
+        `/category/children/${breadcrumbs}`,
         `/listing/search/0/5/0?Statuses=active&BreadCrumbs=C${breadcrumbs}`
     ]
     axios
     .all(endpoints.map(point => axios.get(point)))
     .then(res=> {
         dispatch(clearError())
-        dispatch(setCurrentCategory(res[0].data))
-        dispatch(setListings(res[1].data))
+        dispatch(setCurrentCategory({...res[0].data, children:res[1].data}))
+        dispatch(setListings(res[2].data))
     })
     .catch((err) => {
         console.log(err)
@@ -99,6 +100,25 @@ export const fetchCategoryListWithCounts = () => (dispatch) => {
             List:[],
             counts: {}
         }))
+    })
+}
+
+export const fetchCurrentCategory = (id) => (dispatch) => {
+    dispatch(startLoading())
+    const endpoints = [
+        `/category/${id}`,
+        `/category/children/${id}`
+    ]
+    axios
+    .all(endpoints.map(point => axios.get(point)))
+    .then(res=> {
+        dispatch(clearError())
+        dispatch(setCurrentCategory({...res[0].data, children:res[1].data}))
+    })
+    .catch((err) => {
+        console.log(err)
+        dispatch(setError('Server error. Please try again'))
+        dispatch(stopLoading())
     })
 }
 

@@ -64,6 +64,10 @@ const appRoutes = [
                 element:<EventDetails/>
             },
             {
+                path:url.eventDetailByCategory,
+                element:<EventDetails/>
+            },
+            {
                 path:'*',
                 element:<UnderConstruction/>
             }

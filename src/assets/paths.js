@@ -16,5 +16,6 @@ export const url = {
     search:'/search',
     signIn:'/signIn',
     register:'/register',
-    eventDetail:'/event/:eventId'
+    eventDetail:'/event/details/:eventId/:title',
+    eventDetailByCategory:'/event/details/:eventId/:title/:breadcrumbs/:catName'
 }
