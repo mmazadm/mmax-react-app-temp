@@ -83,9 +83,9 @@ const AboutUs = () => {
       </div>
       <div className="row teamrow"> 
       {d.about.team.map((item,key) => (
-        <div className={`col-sm-6 col-md text-center`}>
+        <div className={`col-sm-6 col-md-4 col-lg-3 text-center`}>
         <div className="opp">
-          <img className="rounded-circle mb-5" src={item.photo} alt="user" width="200px" height="200px"/>
+          <img className="rounded-circle mb-5" src={item.photo}  width="200px" height="200px"/>
           <span className="teamdiv" >
             {item.name}
             <p className="teamclass">{item.title}</p>
