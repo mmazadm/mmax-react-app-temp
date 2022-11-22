@@ -10,11 +10,11 @@ import MobileApp from "./views/MobileApp";
 import SellEquipment from "./views/SellEquipment";
 import Financing from "./views/Financing";
 import SearchPage from "./views/Search";
-import Home from "./views/Home";
+// import Home from "./views/Home";
 import AccountSidebar from "./layouts/AccountSidebar";
 import AccountSummary from "./views/myAccount/AccountSummary";
 import { url } from "./assets/paths";
-import AllCategories from "./views/AllCategories";
+// import AllCategories from "./views/AllCategories";
 import EventDetails from "./views/EventDetails";
 
 const appRoutes = [
@@ -23,7 +23,7 @@ const appRoutes = [
         children:[
             {
                 path:url.home,
-                element:<Home/>
+                element:<UnderConstruction/>
             },
             {
                 path:url.aboutUs,
@@ -57,7 +57,7 @@ const appRoutes = [
             },
             {
                 path:url.browse,
-                element:<AllCategories/>
+                element:<UnderConstruction/>
             },
             {
                 path:url.eventDetail,
