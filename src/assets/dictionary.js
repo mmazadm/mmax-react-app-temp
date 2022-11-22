@@ -117,7 +117,7 @@ const d = {
                 instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 700',
                 cell:'503-806-4611',
-                photo:'/assets/images/aboutUs/EricBeach.jpg'
+                photo:'/assets/images/aboutUs/JackRagan.jpg'
             },
             {
                 name:'Ryan Hodsdon',
@@ -141,7 +141,7 @@ const d = {
                 instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 703',
                 cell:'416-904-2475',
-                photo:'/assets/images/aboutUs/RobortSkeates.jpg'
+                photo:'/assets/images/aboutUs/DummyProfile.png'
               },
               {
                 name:'Mike Arnott',
@@ -165,7 +165,7 @@ const d = {
                 instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 706',
                 cell:' 209-839-7707',
-                photo:''
+                photo:'/assets/images/aboutUs/DummyProfile.png'
               },
               {
                 name:'Joe Raska',
@@ -177,8 +177,11 @@ const d = {
                 instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 705',
                 cell:' 303-349-7923',
-                photo:''
-              }
+                photo:'/assets/images/aboutUs/DummyProfile.png'
+              } 
+            
+          
+              
           ],
         stats : [
             {

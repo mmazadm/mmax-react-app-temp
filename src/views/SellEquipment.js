@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import d from '../assets/dictionary'
 import { validateEmail, validatePhone } from '../assets/utility'
 import axios from 'axios'
+import { url } from '../assets/paths'
 
 const SellEquipment = () => {
     const [firstname, setFirstName] = useState({value:'', error:''})
@@ -15,6 +16,12 @@ const SellEquipment = () => {
     const [timeframe, setTimeframe] = useState({value:'', error:''})
     const [response, setResponse] = useState(0)
 
+    const CardImg = {
+        backgroundImage:"url('assets/images/sell/CompleteShop-v02.png')" , 
+        backgroundRepeat:"no-repeat",
+        backgroundSize:'cover',
+        height:'100%'
+    }
     const validate = (e) => {
         let validated = true
         if(!firstname.value){
@@ -265,9 +272,10 @@ const SellEquipment = () => {
         <div className="container">   
             <div className="card mb-5">
                 <div className="row"> 
-                    <div className="col-3">                       
-                        <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
-                        className="card-img"/>
+                    <div className="col-md-3 col-sm-12 " style={{minHeight:'250px'}}>                       
+                        {/* <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop" */}
+                        {/* className="card-img"/> */}
+                        <div className='d-flex h-100'  style={CardImg}></div>
                     </div>
                     <div className="col-9" >
                         <div className="card-body">
@@ -282,7 +290,13 @@ const SellEquipment = () => {
                 </div>
             </div>
             <div className="card mb-5">
-                <div className="row"> 
+                <div className="row">
+                <div className="d-md-none col-sm-12" style={{minHeight:'250px'}}>      
+                        <div className='d-flex h-100'  style={CardImg}></div>
+
+                        {/* <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
+                        className="card-img"/> */}
+                    </div> 
                     <div className="col-9" >
                         <div className="card-body">
                             <h4 className="card-title pt-4">{d.sellEquipment.threeTiredSalesTitle}</h4>
@@ -294,17 +308,20 @@ const SellEquipment = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-3">                       
-                        <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
-                        className="card-img"/>
+                    <div className="col-md-3  d-md-block d-sm-none" style={{minHeight:'250px'}}>      
+                        <div className='d-flex h-100'  style={CardImg}></div>
+
+                        {/* <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
+                        className="card-img"/> */}
                     </div>
                 </div>
             </div>
             <div className="card mb-5">
                 <div className="row"> 
-                    <div className="col-3">                       
-                        <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
-                        className="card-img"/>
+                    <div className="col-md-3 col-sm-12" style={{minHeight:'250px'}} >                       
+                        {/* <img src="assets/images/sell/CompleteShop-v02.png" alt="completeShop"
+                        className="card-img"/> */}
+                        <div className='d-flex h-100'  style={CardImg}></div>
                     </div>
                     <div className="col-9">
                         <div className="card-body">
@@ -325,6 +342,7 @@ const SellEquipment = () => {
             </p>
             <div className="row" >
             <div className="col-md-2"></div>
+            
             <div className="circle col-md-2" >{d.sellEquipment.commision}</div>
             <div className=" col-md-2 mobildiv hrdiv" ><hr className="hrline"/>  </div>
             <div className="circle col-md-2">{d.sellEquipment.guarantee}</div>

@@ -343,7 +343,6 @@ a.buy-btn:focus {
 .leftcards {
   margin-top: 100px;
 }
-
 .card-img-top1 {
   height: 270px;
   filter: brightness(30%);
@@ -635,7 +634,7 @@ a.buy-btn:focus {
                           display: inline-block;
                           text-decoration: none;
                           position: relative;
-                          width: 100px;
+                          /* width: 100px; */
                           /*height: 28px;*/
                           margin: 0 2px;
                           padding-top: 12px;
@@ -645,6 +644,10 @@ a.buy-btn:focus {
                           margin-bottom:100px;
                         }
                         
+                        .opp img{
+                          min-height: 200px;
+                          min-width: 200px;
+                        }
                         .opp.icon:before {
                           font-family: 'FontAwesome', sans-serif;
                           color: #fff;
@@ -1642,7 +1645,7 @@ Sell Page Style Starts
 
 .sellbdh{
     background-color: #FF4402;
-    height: 100px!important;
+    /* height: 100px!important; */
     margin-top:50px;
 }
 
