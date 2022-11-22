@@ -47,8 +47,9 @@ const Navbar = () => {
                                             {item.name.toUpperCase() === 'BROWSE' &&
                                                 categoriesWithCount.List &&
                                                 categoriesWithCount.List.length>0 &&
-                                                categoriesWithCount.List.map(cat =>
-                                                    categoriesWithCount.counts[cat.ID] &&
+                                                categoriesWithCount.List.map(cat => {
+                                                    if(categoriesWithCount.counts[cat.ID])
+                                                    return(
                                                     <li>
                                                         <a href={`/browse/${cat.ID}`}
                                                         className="d-flex justify-content-between align-items-center">
@@ -57,8 +58,9 @@ const Navbar = () => {
                                                                 {categoriesWithCount.counts[cat.ID]}
                                                             </span>
                                                         </a>
-                                                    </li>
-                                                )}
+                                                    </li>)
+                                                    else return null
+                                                })}
                                         </ul>
                                         }
                                     </li>

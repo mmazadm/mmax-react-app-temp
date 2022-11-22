@@ -10241,7 +10241,10 @@ nav.navigation.navbar.navbar-expand-lg.navbar-light.sticky-header.sticky-on {
 .nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link{height:100%;}
 .mission-section{
   background-image: url('/assets/images/sell/excavator-construction-site.png');
-  height:1000px;
+  height:120vh;
+  width:100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .home-section{
   background-image: url('/assets/images/home/excavator-construction-site1.png');

@@ -25,6 +25,22 @@ const AboutUs = () => {
         </div>
       </div>     
     </section>
+    <div className="container">
+      <div className="row">
+          {d.about.stats.map(item => (
+            <div className="col-lg-2 col-md-4 col-sm-6"> 
+              <div className="row singelsymbol" >
+                <div className="col-md-4 statstop mx-auto" >
+                  <img src={item.icon} alt={item.title} className="statswidth"/>
+                </div>
+                <div className="col-md-8 statscontent mx-auto text-center">
+                  <span className="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
+                </div>      
+              </div>                  
+            </div>
+          ))}
+      </div>
+    </div>
     {/** services section */}
     <section className="wpo-contact-pg-section section-padding">
       <div className="container">
@@ -96,7 +112,7 @@ const AboutUs = () => {
           <h2 className="aboutteamstyle" >{d.about.customersReviewTitle}</h2>
         </div>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-12">
             <article>
               <OwlCarousel className="owl-theme" items={1} loop dots autoPlay>
                   {d.about.testimonials.map(item => (
@@ -117,22 +133,6 @@ const AboutUs = () => {
                   ))}
               </OwlCarousel>
             </article>
-          </div>
-          <div className="col-md-6">
-            <div className="row symbols">
-              {d.about.stats.map(item => (
-                <div className="col-6"> 
-                  <div className="row singelsymbol" >
-                    <div className="col-md-4 statstop mx-auto" >
-                      <img src={item.icon} alt={item.title} className="statswidth"/>
-                    </div>
-                    <div className="col-md-8 statscontent mx-auto">
-                      <span className="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
-                    </div>      
-                  </div>                  
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

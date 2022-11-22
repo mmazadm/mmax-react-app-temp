@@ -61,8 +61,8 @@ export const fetchEvent = (eventId, sort, pageNumber, lotStatus, username, bread
         dispatch(clearError())
         dispatch(setEvent({
             eventDetail:res.data.m_Item1,
-            lots: res.data.m_item2,
-            lotCountsByCategory: res.data.m_item3
+            lots: res.data.m_Item2,
+            lotCountsByCategory: res.data.m_Item3
         }))
     })
     .catch(err=>{
