@@ -46,7 +46,7 @@ useEffect(() => {
     title:'Contact Us',
     items: [
       {
-        name:'Terms and Condition',
+        name:'Terms and Conditions',
         link:'/'
       },
       {

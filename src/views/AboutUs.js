@@ -91,8 +91,8 @@ const AboutUs = () => {
             <p className="teamclass">{item.title}</p>
             <p className="teamclass">{item.city}</p>  
             <p className="teamclass">{item.email}</p>  
-            <p className="teamclass">Direct: {item.direct}</p>  
-            <p className="teamclass">Cell: {item.cell}</p>  
+            <p className="teamclass">{d.about.direct} {item.direct}</p>  
+            <p className="teamclass">{d.about.cell} {item.cell}</p>  
             
             <a href={item.facebook} target='_blank' rel='noreferrer' alt='facebook'><i className="ti-facebook icondiv"/></a>
             <a href={item.linkedIn} target='_blank' rel='noreferrer' alt='linkedin'><i className="ti-linkedin icondiv2"/></a>

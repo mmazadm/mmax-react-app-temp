@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {  useState } from "react";
+import d from "../assets/dictionary";
 
 
 const SignIn = () => {
@@ -65,7 +66,7 @@ const SignIn = () => {
           <div className="col-6">
             <div>
               <div className="form-group">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">{d.signIn.userName}</label>
                 <input
                   value={formValues.userName}
                   onChange={ChangeHandler}
@@ -77,7 +78,7 @@ const SignIn = () => {
               </div>
               <p className='text-danger'>{formError.userName}</p>
               <div className="form-group ">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">{d.signIn.password}</label>
                 <input
                   value={formValues.password}
                   name='password'
@@ -95,21 +96,21 @@ const SignIn = () => {
                     type="checkbox"
                   />
                   <label className="form-check-label" htmlFor="rememberMe">
-                    Remember Me
+                   {d.signIn.rememberMe}
                   </label>
                 </div>
               </div>
               <div>
-                {!isAvailable && <p className="text-danger">Enter valid credential </p>}
+                {!isAvailable && <p className="text-danger">{d.signIn.enterValidCredential}</p>}
                 </div>
               
                <button type="submit" className="theme-btn mt-2" onClick={submitHandler}>
                 Submit
               </button>
-              <h6 className="mt-3">Forgot Your Password?</h6>
+              <h6 className="mt-3">{d.signIn.forgotPassword}</h6>
             </div>
           </div>
-          <div className="col-6">Register</div>
+          <div className="col-6">{d.signIn.register}</div>
         </div>
       </div>
     </section>

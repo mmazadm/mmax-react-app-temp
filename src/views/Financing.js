@@ -2,25 +2,7 @@ import React from 'react'
 import d from '../assets/dictionary'
 
 const Financing = () => {
-    const pillsTab = [
-        {
-            name: "Amount",
-            limit: "Up to $150,000",
-
-        },
-        {
-            name: "Term Length ",
-            limit: "30 days - 72 months",
-        },
-        {
-            name: "Rates ",
-            limit: "As Low As 5.49 %",
-        },
-        {
-            name: "Funding Speed ",
-            limit: " As fast as 1 Day",
-        }
-    ]
+    
     
     return (
         <>
@@ -43,7 +25,7 @@ const Financing = () => {
                 <div className="container">
                     <div className="row">
                             <ul className="nav nav-pills  nav-justified" id="pills-tab" role="tablist">
-                                {pillsTab.map((pill, key) => {
+                                {d.financing.pillsTab.map((pill, key) => {
                                     return (
                                         <li key={key} className="nav-item" role="presentation">
                                             <button className={`nav-link tabtext ${key === 0? 'active':0}`} id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"  role="tab" aria-controls="pills-home" aria-selected="true" ><a href={pill.link} style={{"textDecoration":null,"color": "inherit"}}><br />{pill.name}<br />{pill.limit}<br /><br /></a></button>

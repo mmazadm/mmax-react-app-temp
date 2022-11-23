@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import axios from 'axios'
+import d from '../assets/dictionary'
 
 const SearchPage = () => {
     const location = useLocation()
@@ -53,7 +54,7 @@ const SearchPage = () => {
                 </li>
             )})}
             </ul>:
-            <h4>No results found.</h4>
+            <h4>{d.search.noResultFound}</h4>
         }
         </div>
     </section>

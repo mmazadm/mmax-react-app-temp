@@ -46,6 +46,8 @@ const d = {
         missionStatement:'MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.',
         serviceTitle:'Services',
         ourTeam:'Our Team',
+        direct:'Direct:',
+        cell:'Cell:',
         customersReviewTitle:'What Our Customers are Saying',
         customersReview:'MachineryMax offers its services to financial institutions, bankruptcy trustees, and turn around managers.',
         customerName:'Sia Dev',
@@ -261,6 +263,24 @@ const d = {
         newsletterSubscription:'Subscribe to <br /> our Newsletter',
         siteurl:'MachineryMax.Com',
         siteMobNo:'Call: +88 659 789 874',
+        usefulLinks :[
+           {
+          title: 'Useful Links',
+          items: [
+            {
+              name:'Help Contact',
+              link: '/'
+            },
+            {
+              name:'Technical Support',
+              link:'/'
+            },
+            {
+              name:'About Us',
+              link:'/'
+            }
+          ]
+        }]
     },
     navbar:{
         sellBtn:'SELL YOUR EQUIPMENT'
@@ -274,7 +294,26 @@ const d = {
         step2:'2. Sign your documents electronically.<br/>&nbsp &nbsp Receive your contracts in a secure online format.',
         step3:'3. Get your financing.<br /> &nbsp &nbsp     Receive your contracts in a secure online format.',
         getStartedTitle:'Ready to get started?',
-        applyNow:'Apply Now'
+        applyNow:'Apply Now',
+        pillsTab :  [
+          {
+              name: "Amount",
+              limit: "Up to $150,000",
+  
+          },
+          {
+              name: "Term Length ",
+              limit: "30 days - 72 months",
+          },
+          {
+              name: "Rates ",
+              limit: "As Low As 5.49 %",
+          },
+          {
+              name: "Funding Speed ",
+              limit: " As fast as 1 Day",
+          }
+      ]
     },
     mobile:{
         mobileAppTitle:'MachineryMax Mobile <br/>Application',
@@ -421,6 +460,22 @@ const d = {
           actionNeeded:'Action Needed',
           actionOption1:'Won listings awaiting payment',
           actionOption2:'Purchase invoices awaiting payment'
+      },
+      home:{
+        homeTitle:'Heavy Machinery Auctions Marketplace',
+        latestAuctions:'LATEST AUCTIONS',
+        categories:'CATEGORIES',
+      },
+      search:{
+        noResultFound:'No results found.'
+      },
+      signIn:{
+        userName:'Username',
+        password:'Password',
+        rememberMe:'Remember Me',
+        enterValidCredential:'Enter valid credential ',
+        forgotPassword:'Forgot Your Password?',
+        register:'Register',
       }
 }
 
