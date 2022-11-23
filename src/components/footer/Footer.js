@@ -25,40 +25,6 @@ useEffect(() => {
   },2000);
 }, [message]);
 
-  const usefulLinks = {
-    title: 'Useful Links',
-    items: [
-      {
-        name:'Help Contact',
-        link: '/'
-      },
-      {
-        name:'Technical Support',
-        link:'/'
-      },
-      {
-        name:'About Us',
-        link:'/'
-      }
-    ]
-  }
-  const contactLinks={
-    title:'Contact Us',
-    items: [
-      {
-        name:'Terms and Conditions',
-        link:'/'
-      },
-      {
-        name:'Privacy Policy',
-        link:'/'
-      },
-      {
-        name:'Site Map',
-        link:'/'
-      }
-    ]
-  }
   return (
   <footer className="wpo-site-footer footbg1">
   <div className="wpo-support-section">
@@ -84,10 +50,10 @@ useEffect(() => {
           </div>
         </div>
         <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-          <FooterMenu menu={usefulLinks}/>
+          <FooterMenu menu={d.footer.usefulLinks}/>
         </div>
         <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
-          <FooterMenu menu={contactLinks}/>
+          <FooterMenu menu={d.footer.contactLinks}/>
         </div>
         <div className="col col-lg-4 col-md-6 col-sm-12 col-12">
           <div className="widget  contact-widget link-widget">
@@ -135,7 +101,7 @@ useEffect(() => {
       <div className="row align-items-center">
         <div className="col">
           <p className="copyright">
-          © Copyright 2022 MachineryMax.Com. All Rights Reserved. No part of this web page may be reproduced in any way without the prior written permission of MachineryMax.Com.
+         {d.footer.copyRight}
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ const SignIn = () => {
     const initialValues = {userName:'',password:''}
     const [formValues,setFormValues] = useState(initialValues)
     const [formError,setFormError]=useState({});
-    const [isAvailable,setIsAvailable] = useState(false);
+    // const [isAvailable,setIsAvailable] = useState(false);
    const ChangeHandler =(e)=>{
        const {name,value} = e.target;
        setFormValues({...formValues,[name]:value})
@@ -16,7 +16,7 @@ const SignIn = () => {
   
     const submitHandler =(e)=>{  
     e.preventDefault();
-    setIsAvailable(true);
+    // setIsAvailable(true);
     
     axios.get('https://mmax-api-wrapper.azurewebsites.net/api/settings',{
     username:"admin",
@@ -73,7 +73,7 @@ const SignIn = () => {
                   type="text"
                   name="userName"
                   className="form-control mt-2"
-                  placeholder="Enter email"
+                  placeholder="Enter username"
                 />
               </div>
               <p className='text-danger'>{formError.userName}</p>
@@ -100,9 +100,9 @@ const SignIn = () => {
                   </label>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 {!isAvailable && <p className="text-danger">{d.signIn.enterValidCredential}</p>}
-                </div>
+                </div> */}
               
                <button type="submit" className="theme-btn mt-2" onClick={submitHandler}>
                 Submit

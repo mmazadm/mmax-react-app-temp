@@ -1,5 +1,6 @@
 import React from 'react'
 import { useOutlet } from 'react-router-dom'
+import d from '../assets/dictionary'
 import Sidebar from '../components/myAccount/Sidebar'
 
 const AccountSidebar = () => {
@@ -8,7 +9,7 @@ const AccountSidebar = () => {
         <div className="container-fluid accountcont">
             <div className="row">
                 <div className="col col-lg-11 offset-md-1 acch1">
-                    <h1 className="eqhead acch1align">MY ACCOUNT</h1>
+                    <h1 className="eqhead acch1align">{d.accountSidebar.myAccountTitle}</h1>
                 </div>
             </div>
             <div className="row">

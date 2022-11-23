@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import d from '../../assets/dictionary'
 import { fetchEventList } from '../../store/eventSlice'
 
 const LastestAuctions = () => {
@@ -23,7 +24,7 @@ const LastestAuctions = () => {
                 <p>First Lot closes on: {new Date(`${item.EndDTTM}Z`).toLocaleString("en-US",{
                     timeZone: "America/Los_Angeles"
                 })} PT</p>
-                <Link to={`event/details/${item.ID}/${item.Title}`} className="btn theme-btn">View All Lots ({item.LotCount})</Link>
+                <Link to={`event/details/${item.ID}/${item.Title}`} className="btn theme-btn">{d.latestauctions.viewAllLots} ({item.LotCount})</Link>
                 <hr/>
             </li>
         )}

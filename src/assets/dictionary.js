@@ -263,8 +263,25 @@ const d = {
         newsletterSubscription:'Subscribe to <br /> our Newsletter',
         siteurl:'MachineryMax.Com',
         siteMobNo:'Call: +88 659 789 874',
-        usefulLinks :[
-           {
+        copyRight:' © Copyright 2022 MachineryMax.Com. All Rights Reserved. No part of this web page may be reproduced in any way without the prior written permission of MachineryMax.Com.',
+        contactLinks:{
+          title:'Contact Us',
+          items: [
+            {
+              name:'Terms and Conditions',
+              link:'/'
+            },
+            {
+              name:'Privacy Policy',
+              link:'/'
+            },
+            {
+              name:'Site Map',
+              link:'/'
+            }
+          ]
+        },
+        usefulLinks : {
           title: 'Useful Links',
           items: [
             {
@@ -280,7 +297,7 @@ const d = {
               link:'/'
             }
           ]
-        }]
+        }
     },
     navbar:{
         sellBtn:'SELL YOUR EQUIPMENT'
@@ -384,6 +401,9 @@ const d = {
         endTitle:'Remember, our expertise spans any asset of value that your facility!'
 
     },
+    accountSidebar:{
+      myAccountTitle:'MY ACCOUNT',
+    },
       accountAddress:{
           myAccountTitle:'MY ACCOUNT',
           summary:'SUMMARY',
@@ -476,6 +496,34 @@ const d = {
         enterValidCredential:'Enter valid credential ',
         forgotPassword:'Forgot Your Password?',
         register:'Register',
+      },
+      eventDetails:{
+        managedBy:'Managed By',
+        status:'Status',
+        eventId:'Event ID',
+        termsAndConditions:'Terms and Conditions',
+        valueAddesServiceOptions:'Value added service Options',
+        starts:'Starts',
+        additionalInfo:'Additional Information',
+        browseByCategories:'Browse By Categories',
+        goBack:'Go back',
+        lotFilter:'Lot filters',
+        active:'Active',
+        completed:'Completed',
+        sort:'Sort',
+        lot:'Lot',
+        daysRemaining:'Days Remaining',
+        currentBid:'Current Bid',
+        bid:'Bid(s)',
+        bidNow:'Bid Now'
+
+      },
+      latestauctions:{
+        viewAllLots:'View All Lots'
+      },
+      topBar:{
+       signin :'Sign In',
+       regitration:'Register'
       }
 }
 

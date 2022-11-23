@@ -10,12 +10,13 @@ import MobileApp from "./views/MobileApp";
 import SellEquipment from "./views/SellEquipment";
 import Financing from "./views/Financing";
 import SearchPage from "./views/Search";
-// import Home from "./views/Home";
+import Home from "./views/Home";
 import AccountSidebar from "./layouts/AccountSidebar";
 import AccountSummary from "./views/myAccount/AccountSummary";
 import { url } from "./assets/paths";
-// import AllCategories from "./views/AllCategories";
+import AllCategories from "./views/AllCategories";
 import EventDetails from "./views/EventDetails";
+import SignIn from "./views/SignIn";
 
 const appRoutes = [
     {
@@ -23,7 +24,7 @@ const appRoutes = [
         children:[
             {
                 path:url.home,
-                element:<UnderConstruction/>
+                element:<Home/>
             },
             {
                 path:url.aboutUs,
@@ -57,7 +58,7 @@ const appRoutes = [
             },
             {
                 path:url.browse,
-                element:<UnderConstruction/>
+                element:<AllCategories/>
             },
             {
                 path:url.eventDetail,
@@ -66,6 +67,10 @@ const appRoutes = [
             {
                 path:url.eventDetailByCategory,
                 element:<EventDetails/>
+            },
+            {
+                path:url.signIn,
+                element:<SignIn/>
             },
             {
                 path:'*',

@@ -1,4 +1,5 @@
 import React from 'react'
+import d from '../../assets/dictionary'
 import Search from './Search'
 
 const Topbar = () => {
@@ -10,10 +11,10 @@ const Topbar = () => {
                 <Search/>
             </li>
             <li>
-                <a href="/signIn" className='menufont text-white ms-3'>Sign In</a>
+                <a href="/signIn" className='menufont text-white ms-3'>{d.topBar.signin}</a>
             </li>
             <li>
-                <a href="/register" className='menufont text-white'>Register</a>
+                <a href="/register" className='menufont text-white'>{d.topBar.regitration}</a>
             </li>
         </ul>
     </div>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import d from '../assets/dictionary'
 import Sort from '../components/common/Sort'
 import { fetchEvent } from '../store/eventSlice'
 
@@ -56,16 +57,16 @@ const EventDetails = () => {
             {event.eventDetail.SecondaryImageURI && <img src={event.eventDetail.SecondaryImageURI} alt="featured-img"/>}
             <h1>{event.eventDetail.Title}</h1>
             <p dangerouslySetInnerHTML={{__html:event.eventDetail.Description}}/>
-            <p>Managed By: {event.eventDetail.ManagedByName}</p>
-            <p>Status: {event.eventDetail.Status}</p>
-            <p>Event ID: {event.eventDetail.ID}</p>
-            <p>Terms and Conditions: {event.eventDetail.TermsAndConditions}</p>
-            <p>Value added service Options: {event.eventDetail.ShippingInfo}</p>
-            <p>Starts: {new Date(`${event.eventDetail.EndDTTM}Z`).toLocaleString("en-US",{
+            <p>{d.eventDetails.managedBy}: {event.eventDetail.ManagedByName}</p>
+            <p>{d.eventDetails.status}: {event.eventDetail.Status}</p>
+            <p>{d.eventDetails.eventId}: {event.eventDetail.ID}</p>
+            <p>{d.eventDetails.termsAndConditions}: {event.eventDetail.TermsAndConditions}</p>
+            <p>{d.eventDetails.valueAddesServiceOptions}: {event.eventDetail.ShippingInfo}</p>
+            <p>{d.eventDetails.starts}: {new Date(`${event.eventDetail.EndDTTM}Z`).toLocaleString("en-US",{
                     timeZone: "America/Los_Angeles"
                 })} PT
             </p>
-            <h4>Additional Information</h4>
+            <h4>{d.eventDetails.additionalInfo}</h4>
             <ul>
               { event.eventDetail.Properties.map(item=>{
                 let f_name = item.Field.Name
@@ -85,7 +86,7 @@ const EventDetails = () => {
             </ul>
             <div className="row">
               <div className="col-3">
-                <h6>Browse By Categories</h6>
+                <h6>{d.eventDetails.browseByCategories}</h6>
                   <ul>
                   {browseByCategory.length>1?
                     browseByCategory.map(cat => {
@@ -105,28 +106,28 @@ const EventDetails = () => {
                     else return null
                   }):
                     <li key={0}>
-                      <button onClick={()=>navigate(-1)}>Go back</button>
+                      <button onClick={()=>navigate(-1)}>{d.eventDetails.goBack}</button>
                     </li>
                   }   
                   </ul>
               </div>
               <div className="col-9">
                 <div className="row">
-                  <h6>Lot filters</h6>
+                  <h6>{d.eventDetails.lotFilter}</h6>
                   <nav className="nav btn-group col-3">
                     <button onClick={()=> setFilter('active_only')} 
                     className="btn nav-link" 
                     data-name="Active">
-                      Active
+                      {d.eventDetails.active}
                     </button>
                     <button onClick={()=> setFilter('completed_only')} 
                     className="btn nav-link" 
                     data-name="Completed">
-                      Completed
+                      {d.eventDetails.completed}
                     </button>
                   </nav>
                   <div className="col-9">
-                  Sort: <Sort selected={sort} onSelect={setSort}/>
+                  {d.eventDetails.sort}: <Sort selected={sort} onSelect={setSort}/>
                   </div>
                   <hr/>
                 </div>
@@ -135,12 +136,12 @@ const EventDetails = () => {
                 <ul>
                   {event.lots.map(lot=>(
                     <li>
-                      <span>Lot {lot.LotNumber} - {lot.Title}</span>
+                      <span>{d.eventDetails.lot} {lot.LotNumber} - {lot.Title}</span>
                       <p>{lot.Subtitle}</p>
-                      <p>Days Remaining:</p>
-                      <p>Current Bid: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
-                      <p>{lot.ActionCount} Bid(s)</p>
-                      <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">Bid Now</Link>
+                      <p>{d.eventDetails.daysRemaining}:</p>
+                      <p>{d.eventDetails.currentBid}: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
+                      <p>{lot.ActionCount} {d.eventDetails.bid}</p>
+                      <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>
                       <hr/>
                     </li>
                   ))}  
