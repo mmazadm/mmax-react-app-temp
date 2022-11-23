@@ -94,15 +94,17 @@ useEffect(() => {
             <h2 style={{ color: "white", marginTop: '30px' }}>
               <span dangerouslySetInnerHTML={{__html:d.footer.newsletterSubscription}}></span>
             </h2>
-            <form >
+            <form action="https://Com.us9.list-manage.com/subscribe/post?u=33c58f4c369cbafa2651ae21a&id=ac7a559fae"
+            method="post">
               <div className="input-1">
                 <input
-                  id="email"
-                  type="text"
+                  name="Email"
+                  id="Email"
+                  type="email"
                   value={email}
                   className="form-control"
                   placeholder="email"
-                  required=""
+                  required
                   onChange={handleOnChange}
                   style={{
                      width: '300px',
@@ -115,9 +117,7 @@ useEffect(() => {
               <div className="submit clearfix">
                 <button
                 className='bg-transparent'
-                type="submit" 
-                onClick={emailValidation}                
-                >
+                type="submit">
                   <i className="fa fa-paper-plane" aria-hidden="true" />
                 </button>
               </div>

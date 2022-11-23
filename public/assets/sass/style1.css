@@ -1655,7 +1655,7 @@ Sell Page Style Starts
     font-weight:500;
     font-size:26px;
     padding-top:15px;
-    line-height:26px;
+    line-height:1.2;
 }
 
 .cardup{
@@ -1717,7 +1717,7 @@ Sell Page Style Starts
     font-weight:500;
     font-size:26px;
     padding-top:20px;
-    line-height:26px;
+    line-height:1.2;
 }
 
 .sellparatext{

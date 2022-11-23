@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import d from '../assets/dictionary'
 import { validateEmail, validatePhone } from '../assets/utility'
 import axios from 'axios'
-import { url } from '../assets/paths'
+// import { url } from '../assets/paths'
 
 const SellEquipment = () => {
     const [firstname, setFirstName] = useState({value:'', error:''})
@@ -183,36 +183,36 @@ const SellEquipment = () => {
                             value={phone.value}/>
                             <p className='text-danger'>{phone.error}</p>
                         </div>    
-                        <div className="row">   
+                        <div className="row align-items-center">   
                             <p className="formfont">{d.sellEquipment.discussionTitle} <span className="orangestar" >*</span></p>
                             {d.sellEquipment.sellingPurpose.map(item=> (
                                 <>
-                                <div className="col-md-2">
+                                <div className="col-md-2 mb-2">
                                     <input type="radio" id="purpose" name="purpose" 
                                     value={item}
-                                    className="radiowidth"
+                                    // className="radiowidth"
                                     onChange={()=> setPurpose({value:item, error:''})}/>
                                 </div>
-                                <div className="col-md-10">
-                                    <label htmlFor="html"  className="formfont1">{item}</label>
+                                <div className="col-md-10 mb-2">
+                                    <label htmlFor="html">{item}</label>
                                 </div>
                                 </>
                             ))}
                             <p className='text-danger'>{purpose.error}</p>
 
                         </div>   
-                        <div className="row">   
+                        <div className="row align-items-center">   
                             <p className="formfont">{d.sellEquipment.timeframeTitle}  <span className="orangestar" >*</span></p>
                             {d.sellEquipment.timeframeOptions.map(item=>(
                                 <>
-                                    <div className="col-md-2">
+                                    <div className="col-md-2 mb-2">
                                         <input type="radio" id="timeframe" name="timeframe" 
                                         value={item} 
-                                        className="radiowidth"
+                                        // className="radiowidth"
                                         onChange={() => setTimeframe({value:item, error:''}) }/>
                                     </div>
-                                    <div className="col-md-10">
-                                        <label htmlFor="html"  className="formfont1">{item}</label>
+                                    <div className="col-md-10 mb-2">
+                                        <label htmlFor="html">{item}</label>
                                     </div>
                                 </>
                             ))}
