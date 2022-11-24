@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import d from '../../assets/dictionary'
 import { fetchEventList } from '../../store/eventSlice'
-import { getEventThumbnail } from '../../assets/utility'
+import { getEventThumbnail, getTimeLeft } from '../../assets/utility'
 
 const LastestAuctions = () => {
     const { isLoading, eventList } = useSelector(state => state.events)
@@ -21,11 +21,17 @@ const LastestAuctions = () => {
             return(
             <li key={key} className="row">
                 <div className="col-sm-12 col-md-3">
-                <img src={getEventThumbnail(item.PrimaryImageURI, item.Media, 0)} alt={`${item.ID} img`}/>
+                <img src={getEventThumbnail(item.PrimaryImageURI, item.Media, 0)}
+                alt={`${item.ID} img`}
+                onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src="/assets/images/placeholder-thumbnail.gif";
+                  }}/>
                 </div>
                 <div className="col-sm-12 col-md-9">
                     <p><Link to={`event/details/${item.ID}/${item.Title}`}>{item.Title}</Link></p>
                     <p dangerouslySetInnerHTML={{__html: item.Description}}/>
+                    <p>Ending: {getTimeLeft(item.EndDTTM)}</p>
                     <p>First Lot closes on: {new Date(`${item.EndDTTM}Z`).toLocaleString("en-US",{
                         timeZone: "America/Los_Angeles"
                     })} PT</p>

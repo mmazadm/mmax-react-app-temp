@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import d from '../assets/dictionary'
 import Sort from '../components/common/Sort'
 import { fetchEvent } from '../store/eventSlice'
-import { getEventThumbnail, getLotThumbnail } from '../assets/utility'
+import { getEventThumbnail, getLotThumbnail, getTimeLeft } from '../assets/utility'
 
 const EventDetails = () => {
     const { event, isLoading } = useSelector(state=> state.events)
@@ -31,8 +31,8 @@ const EventDetails = () => {
     }
 
     useEffect(()=> {
-        console.log(event)
-       if( typeof event.eventDetail==='undefined' || event.eventDetail.ID !== eventId)
+        console.log('start')
+       //if( Object.keys(event).length===0 || event.eventDetail.ID !== eventId)
           dispatch(fetchEvent(eventId,0,0,'active',null, '', filter, sort))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
@@ -50,20 +50,28 @@ const EventDetails = () => {
       dispatch(fetchEvent(eventId,0,0,'active', null, breadcrumbs?breadcrumbs:'', filter, sort))
     }, [breadcrumbs, dispatch, eventId, filter, sort])
     
-
     if(isLoading || Object.keys(event).length===0) return <p>Loading...</p>
   return (
     <section className="wpo-contact-pg-section section-padding">
         <div className="container">
-            <img src={getEventThumbnail(event.eventDetail.SecondaryImageURI, event.eventDetail.Media, 1)} alt="featured-img"/>
+            <img src={getEventThumbnail(event.eventDetail.SecondaryImageURI, event.eventDetail.Media, 1)}
+            alt="featured-img"
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src="/assets/images/placeholder-thumbnail.gif";
+            }}
+            />
             <h1>{event.eventDetail.Title}</h1>
             <p dangerouslySetInnerHTML={{__html:event.eventDetail.Description}}/>
             <p>{d.eventDetails.managedBy}: {event.eventDetail.ManagedByName}</p>
             <p>{d.eventDetails.status}: {event.eventDetail.Status}</p>
             <p>{d.eventDetails.eventId}: {event.eventDetail.ID}</p>
-            <p>{d.eventDetails.termsAndConditions}: {event.eventDetail.TermsAndConditions}</p>
-            <p>{d.eventDetails.valueAddesServiceOptions}: {event.eventDetail.ShippingInfo}</p>
-            <p>{d.eventDetails.starts}: {new Date(`${event.eventDetail.EndDTTM}Z`).toLocaleString("en-US",{
+            <p>{d.eventDetails.termsAndConditions}: 
+              <span dangerouslySetInnerHTML={{__html:event.eventDetail.TermsAndConditions}}/>
+            </p>
+            <p>{d.eventDetails.valueAddesServiceOptions}: 
+              <span dangerouslySetInnerHTML={{__html:event.eventDetail.ShippingInfo}}/></p>
+            <p>{d.eventDetails.starts}: {new Date(`${event.eventDetail.StartDTTM}Z`).toLocaleString("en-US",{
                     timeZone: "America/Los_Angeles"
                 })} PT
             </p>
@@ -138,12 +146,17 @@ const EventDetails = () => {
                   {event.lots.map(lot=>(
                     <li className="row">
                       <div className="col-sm-12 col-md-3">
-                        <img src={getLotThumbnail(lot.Media)} alt={`${lot.ID} img`}/>
+                        <img src={getLotThumbnail(lot.Media)} 
+                        alt={`${lot.ID} img`}
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null;
+                          currentTarget.src="/assets/images/placeholder-thumbnail.gif";
+                        }}/>
                       </div>
                       <div className="col-sm-12 col-md-9">
                         <span>{d.eventDetails.lot} {lot.LotNumber} - {lot.Title}</span>
                         <p>{lot.Subtitle}</p>
-                        <p>{d.eventDetails.daysRemaining}:</p>
+                        <p>{d.eventDetails.daysRemaining}: {getTimeLeft(lot.EndDTTM)}</p>
                         <p>{d.eventDetails.currentBid}: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
                         <p>{lot.ActionCount} {d.eventDetails.bid}</p>
                         <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>

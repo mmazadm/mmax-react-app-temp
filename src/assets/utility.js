@@ -23,16 +23,19 @@ export const formatPhone = (i) => {
 export const getEventThumbnail = (uri, media, type) => {
     let fullSize = '/assets/images/placeholder-thumbnail.gif'
     if(uri){
-        if(media[type].Saver === 'BlobStorage'){
-            fullSize = blobStorageUrl+media[type].Variations.FullSize.Asset.Reference
+        let context = type === 0 ? 'UploadEventImage': 'UploadEventBanner'
+        let mediaObj = media.filter(i=> i.Context === context)[0]
+        if(mediaObj.Saver === 'BlobStorage'){
+            fullSize = blobStorageUrl+mediaObj.Variations.FullSize.Asset.Reference
         }
         else{
-            let path = media[type].Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
+           // let defaultVariation = media[type].Variations[file.DefaultVariationName]
+            let path = mediaObj.Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
             fullSize = appMediaUrl
             +'Content/eventImages/'
             +path
             +'/'
-            +media[type].Variations.FullSize.Asset.Reference
+            +mediaObj.Variations.FullSize.Asset.Reference
         }
     }
     return fullSize
@@ -41,18 +44,33 @@ export const getEventThumbnail = (uri, media, type) => {
 export const getLotThumbnail = (media) => {
     let thumbnail = '/assets/images/placeholder-thumbnail.gif'
     if(media.length > 0){
-        if(media[0].Saver === 'BlobStorage'){
+        let mediaObj = media.filter(i=> i.Context === 'UploadListingImage')[0]
+        if(mediaObj.Saver === 'BlobStorage'){
             thumbnail = blobStorageUrl+media[0].Variations.FullSize.Asset.Reference
         }
         else
         {
             thumbnail = appMediaUrl
             +'Content/listingImages/'
-            +media[0].Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
-            +'/'+media[0].Variations.FullSize.Asset.Reference
+            +mediaObj.Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
+            +'/'+mediaObj.Variations.FullSize.Asset.Reference
         }
     }
     return thumbnail
+}
+
+export const getTimeLeft = (endDate) => {
+    const timestamp = Date.parse(endDate)-Date.now()
+    var diff = Math.floor(timestamp/86400000)
+    if(diff>=1) return `${diff} days left`
+    else {
+        diff = Math.floor(timestamp/3600000)
+        if(diff>=1) return `${diff} hours left`
+        else {
+            diff = Math.floor(((timestamp%86400000)%3600000)/6000)
+            return `${diff} mins left`
+        }
+    }
 }
 
 

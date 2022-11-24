@@ -20,6 +20,6 @@ export const url = {
     eventDetailByCategory:'/event/details/:eventId/:title/:breadcrumbs/:catName'
 }
 
-//export const appMediaUrl = 'https://mmaxaw35migrate.azurewebsites.net/'
-export const appMediaUrl = 'http://localhost:64580/'
+export const appMediaUrl = 'https://mmaxaw35migrate.azurewebsites.net/'
+//export const appMediaUrl = 'http://localhost:64580/'
 export const blobStorageUrl = 'https://mmaxstorage.blob.core.windows.net/assets/media/'

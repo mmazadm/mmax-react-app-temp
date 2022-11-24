@@ -68,7 +68,8 @@ export const fetchEvent = (eventId, sort, pageNumber, lotStatus,
     })
     .catch(err=>{
         console.log(err)
-        dispatch(setError('Unable to get details. Please try again'))
+        dispatch(setEvent({}))
+        dispatch(setError(err.message))
     })
 }
 
