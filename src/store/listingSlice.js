@@ -48,9 +48,9 @@ export const listingSlice = createSlice({
 export const { setListings, setCategories, setCurrentCategory,
      setError, clearError, startLoading, stopLoading } = listingSlice.actions
 
-export const fetchListings = (pageNumber,pageSize) => (dispatch) => {
+export const fetchListings = (pageNumber,pageSize, sort) => (dispatch) => {
     dispatch(startLoading())
-    axios.get(`/listing/search/${pageNumber}/${pageSize}/0?Statuses=active`)
+    axios.get(`/listing/search/${pageNumber}/${pageSize}/${sort}?Statuses=active`)
     .then((res)=> {
         dispatch(clearError())
         dispatch(setCurrentCategory({}))

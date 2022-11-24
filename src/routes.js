@@ -35,7 +35,7 @@ const appRoutes = [
                 element:<MobileApp/>
             },
             {
-                path:url.SellEquipment,
+                path:url.sellEquipment,
                 element:<SellEquipment/>
             },
             {

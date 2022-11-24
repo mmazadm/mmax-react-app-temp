@@ -1,6 +1,48 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import d from '../../assets/dictionary'
+import { url } from "../../assets/paths"
+
+const menuItems = [
+    {
+        name:'HOME',
+        link: url.home
+    },
+    {
+        name:'Explore',
+        submenu:[
+          {
+            name:'All',
+            link: url.browse
+          }
+        ]
+    },
+    {
+        name:'Auctions',
+        link:url.auctions
+    },
+    {
+        name:'About Us',
+        submenu:[
+            {
+                name:'About Us',
+                link:url.aboutUs
+            },
+            {
+                name:'Mobile Applications',
+                link:url.apps
+            }
+        ]
+    },
+    {
+        name:'Financing',
+        link:url.financing
+    },
+    {
+        name:'Calendar',
+        link:url.calendar
+    }
+]
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -30,7 +72,7 @@ const Navbar = () => {
                         <div id="navbar" className={`collapse navbar-collapse navigation-holder ${isOpen? 'slideInn':''}`}>
                             <button className="menu-close" onClick={() => setIsOpen(false)}><i className="ti-close"></i></button>
                             <ul className="nav mb-2 mb-lg-0">
-                                {d.menuItems.map((item, key) => {
+                                {menuItems.map((item, key) => {
                                     let hasChildren = 'submenu' in item
                                     return(
                                     <li key={key} className={hasChildren? "menu-item-has-children": ''}>
@@ -44,7 +86,7 @@ const Navbar = () => {
                                                     <a href={i.link}>{i.name}</a>
                                                 </li>
                                             )}
-                                            {item.name.toUpperCase() === 'BROWSE' &&
+                                            {item.name.toUpperCase() === 'EXPLORE' &&
                                                 categoriesWithCount.List &&
                                                 categoriesWithCount.List.length>0 &&
                                                 categoriesWithCount.List.map(cat => {
@@ -68,7 +110,7 @@ const Navbar = () => {
                                 })}
                                 <li>
                                     <a className="theme-btn1 btndef sellbtn1"
-                                        href='/sell-your-equipment'>
+                                        href={url.sellEquipment}>
                                            {d.navbar.sellBtn}
                                     </a>  
                                 </li>

@@ -3,6 +3,7 @@ import { useOutlet } from 'react-router-dom'
 import Loader from '../components/common/Loader'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/header/Navbar'
+//import Tickr from '../components/header/Tickr'
 import Topbar from '../components/header/Topbar'
 
 const Default = () => {

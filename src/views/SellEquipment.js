@@ -301,10 +301,10 @@ const SellEquipment = () => {
                         <div className="card-body">
                             <h4 className="card-title pt-4">{d.sellEquipment.threeTiredSalesTitle}</h4>
                             <div className="card-text">
-                                <p>{d.sellEquipment.commisionDescription}</p>
-                                <p>
-                                    <span dangerouslySetInnerHTML={{__html:d.sellEquipment.netApproach}}></span>
-                                    </p>                                
+                                <p dangerouslySetInnerHTML={{__html:d.sellEquipment.commisionDescription}}></p> 
+                                <p dangerouslySetInnerHTML={{__html:d.sellEquipment.netApproach}}>
+                                </p>  
+                                <p dangerouslySetInnerHTML={{__html:d.sellEquipment.cashPurchaseApproach}}></p>                              
                             </div>
                         </div>
                     </div>

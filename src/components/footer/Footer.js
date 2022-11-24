@@ -1,29 +1,13 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import d from '../../assets/dictionary'
 import FooterMenu from './FooterMenu'
-import { validateEmail } from '../../assets/utility'
 
 const Footer = () => {
 const [email, setEmail] = useState("");
-const [message, setMessage] = useState("");
-const emailValidation = (e) => {
-
-  e.preventDefault();
-  if(validateEmail(email)){
-    setMessage('Subscribed')
-  } else setMessage('Invalid email')
-}
 
 const handleOnChange = (e)=> {
   setEmail(e.target.value);
-  setMessage("");
 }
-
-useEffect(() => {
-  setTimeout(() => {
-    setMessage("")
-  },2000);
-}, [message]);
 
   return (
   <footer className="wpo-site-footer footbg1">
@@ -36,15 +20,21 @@ useEffect(() => {
         <div className="col col-lg-2 col-md-6 col-sm-12 col-12">
           <div className="widget link-widget">
             <div className="widget-title">
-              <img src="/assets/images/sell/mmlogo.png" alt="mmlogo" />
+              <img src="/assets/images/sell/logo.png" alt="mmlogo" />
             </div>
             <ul>
               <li>{d.footer.siteurl}</li>
-              <li>{d.footer.siteMobNo}</li>
+              <li><i className="fa fa-phone me-2"/>{d.footer.siteMobNo}</li>
               <li>
-                <i className="ti-twitter"></i>
-                <i className="ti-facebook ms-1"></i>
-                <i className="ti-instagram ms-1"></i>
+                <a href={d.footer.linkedIn} target="_blank" rel="noreferrer" alt="linkedin">
+                  <i className="ti-linkedin"/>
+                </a>
+                <a href={d.footer.facebook} target="_blank" rel="noreferrer" alt="fb">
+                <i className="ti-facebook ms-1"/>
+                </a>
+                <a href={d.footer.instagram} target="_blank" rel="noreferrer" alt="instagram">
+                <i className="ti-instagram ms-1"/>
+                </a>
               </li>
             </ul>
           </div>
@@ -87,7 +77,6 @@ useEffect(() => {
                   <i className="fa fa-paper-plane" aria-hidden="true" />
                 </button>
               </div>
-              {message}
             
             </form>
           </div>

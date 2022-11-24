@@ -1,64 +1,53 @@
-import axios from "axios";
-import React, {  useState } from "react";
+import React, {  useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import d from "../assets/dictionary";
-
+import { login } from "../store/userSlice";
 
 const SignIn = () => {
     const initialValues = {userName:'',password:''}
     const [formValues,setFormValues] = useState(initialValues)
     const [formError,setFormError]=useState({});
-    // const [isAvailable,setIsAvailable] = useState(false);
+    const { authenticated, isLoading, error } = useSelector(state => state.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const token = localStorage.getItem('mmx_storage')
+
+
    const ChangeHandler =(e)=>{
        const {name,value} = e.target;
        setFormValues({...formValues,[name]:value})
-      //  console.log(formValues)
     }
   
     const submitHandler =(e)=>{  
-    e.preventDefault();
-    // setIsAvailable(true);
-    
-    axios.get('https://mmax-api-wrapper.azurewebsites.net/api/settings',{
-    username:"admin",
-    password:"admin1234"
-    })
-    .then((res)=>{
-      console.log(res.data);
-     localStorage.setItem('mmax_token',res.data);
-     
-     
-     console.log(res.data);
-     console.log('hello');
-      setFormValues(res.data);
-    })
-    .catch(err=> {
-      setFormError(err.message)
-    });
-
-
-     setFormError(validate(formValues));
-     setFormValues(initialValues);
+      e.preventDefault();
+      let errors = validate(formValues)
+      if(Object.keys(errors).length === 0){
+        dispatch(login(formValues))
+        setFormValues(initialValues);
+        navigate('/account/summary', {replace:true})
+      }
+      else setFormError(errors)
     }
-
-    
 
     const validate = (values) =>{
        let errors ={}
-      
-       const regex = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
        if(!values.userName){
-        errors.userName = 'Username is required!!'
-       } else if (!regex.test(values.userName)){
-        errors.userName = 'Enter Valid Username'
+        errors.userName = 'Username is required'
        }
          if(!values.password){
         errors.password = 'Password is required!!'
-       } else if (values.password < 4) {
-        errors.password = 'Password Length must be more than 4'
+       } else if (values.password.length < 6) {
+        errors.password = 'Password should be atleast 6 characters long'
        }
-        
        return errors;
     }
+
+    useEffect(() => {
+      if(token || authenticated)
+        navigate('/account/summary', {replace:true})
+    }, [token, navigate, authenticated])
+    
   return (
     <section className="wpo-contact-pg-section section-padding ">
       <div className="container">
@@ -100,13 +89,12 @@ const SignIn = () => {
                   </label>
                 </div>
               </div>
-              {/* <div>
-                {!isAvailable && <p className="text-danger">{d.signIn.enterValidCredential}</p>}
-                </div> */}
-              
-               <button type="submit" className="theme-btn mt-2" onClick={submitHandler}>
+               <button className="theme-btn mt-2" 
+               onClick={submitHandler}
+               disabled={isLoading}>
                 Submit
               </button>
+              {error && <p className="text-danger">Username and password do not match</p>}
               <h6 className="mt-3">{d.signIn.forgotPassword}</h6>
             </div>
           </div>

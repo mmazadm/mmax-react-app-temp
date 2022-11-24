@@ -11,11 +11,11 @@ const LastestListings = () => {
     const handleSelect = (e) => {
         const {id} = e.currentTarget.dataset;
         if(id) dispatch(fetchListingsByCategory(0,5, id))
-        else dispatch(fetchListings(0,5))
+        else dispatch(fetchListings(0,5,1))
     }
 
     useEffect(() => {
-        dispatch(fetchListings(0,5))
+        dispatch(fetchListings(0,5,1))
       }, [dispatch])
 
     if(!categoriesWithCount.List || categoriesWithCount.List.length === 0) return <p>Loading...</p>

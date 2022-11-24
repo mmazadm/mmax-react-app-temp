@@ -1,46 +1,4 @@
-import { url } from "./paths"
-
 const d = {
-  menuItems : [
-    {
-        name:'HOME',
-        link: url.home
-    },
-    {
-        name:'Browse',
-        submenu:[
-          {
-            name:'All',
-            link: url.browse
-          }
-        ]
-    },
-    {
-        name:'Auctions',
-        link:url.auctions
-    },
-    {
-        name:'About Us',
-        submenu:[
-            {
-                name:'About Us',
-                link:url.aboutUs
-            },
-            {
-                name:'Mobile Applications',
-                link:url.apps
-            }
-        ]
-    },
-    {
-        name:'Financing',
-        link:url.financing
-    },
-    {
-        name:'Calendar',
-        link:url.calendar
-    }
-],
     about:{
         missionTitle:'Mission Statement',
         missionStatement:'MachineryMax is committed to providing maximum service, and return on investment by utilizing our state of the art, high traffic online auction marketplace offering machinery sellers and buyers a global, transparent, and easy to use system.',
@@ -57,7 +15,7 @@ const d = {
               icon:'/assets/images/sell/hammer.png',
               title:'Auction',
               desc:'MachineryMax Auctions offers several different services according to our clients needs such as',
-              pointers:['Complete shop closures','Cleaning, Staging, Professional Photography','Clear Out Services','Valuation Service','Individual Asset Disposition','Valuations']
+              pointers:['Complete shop closures','Cleaning, Staging, Professional Photography','Clear Out Services','Valuation Service']
             },
             {
               icon:'/assets/images/sell/hammer.png',
@@ -78,9 +36,7 @@ const d = {
               title:'Co-Founder/President',
               city:'Tracy California Office',
               email:'kirk@machinerymax.com',
-              facebook:'https://facebook.com',
               linkedIn:'https://www.linkedin.com/in/kirk-gass-9164669/',
-              instagram:'https://instagram.com',
               direct:'866-988-4667 Ext 707',
               cell:'925-250-8248',
               photo:'/assets/images/aboutUs/KirkGass.jpg'
@@ -90,9 +46,7 @@ const d = {
                 title:'Co-Founder/Vice President',
                 city:'Tracy California Office',
                 email:'charles@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/charles-swafford-2b001729/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 708',
                 cell:'925-872-0929',
                 photo:'/assets/images/aboutUs/CharlesSwafford.jpg'
@@ -102,9 +56,7 @@ const d = {
                 title:'Auction Operations',
                 city:'North Carolina Office',
                 email:'eric@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/eric-beach-b9349826/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 702',
                 cell:'704-608-9830',
                 photo:'/assets/images/aboutUs/EricBeach.jpg'
@@ -114,9 +66,7 @@ const d = {
                 title:'Vice President of Business Development',
                 city:'Portland Oregon Office',
                 email:'jack@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/jack-ragan-80971916/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 700',
                 cell:'503-806-4611',
                 photo:'/assets/images/aboutUs/JackRagan.jpg'
@@ -126,9 +76,7 @@ const d = {
                 title:'Legal and Distressed Asset Business Development Manager',
                 city:'',
                 email:'ryan@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 709',
                 cell:'603-841-8016',
                 photo:'/assets/images/aboutUs/RyanHodsdon.jpg'
@@ -138,9 +86,7 @@ const d = {
                 title:'Vice President Sales Canada',
                 city:'Toronto Offices – Port Credit, ON CANADA',
                 email:'robert@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/robert-skeates-86925816/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 703',
                 cell:'416-904-2475',
                 photo:'/assets/images/aboutUs/DummyProfile.png'
@@ -150,9 +96,7 @@ const d = {
                 title:'Midwest Sales Director',
                 city:'Shawnee Kansas Office',
                 email:'mike@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 701',
                 cell:'913-333-8396',
                 photo:'/assets/images/aboutUs/MikeArnott.jpg'
@@ -162,9 +106,7 @@ const d = {
                 title:'Support/Accounts Receivable',
                 city:'Tracy California Office',
                 email:'sabrina@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/sabrina-burns-23420079/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 706',
                 cell:' 209-839-7707',
                 photo:'/assets/images/aboutUs/DummyProfile.png'
@@ -174,9 +116,7 @@ const d = {
                 title:'Regional Sales',
                 city:'Denver Colorado Office',
                 email:'joe@machinerymax.com',
-                facebook:'https://facebook.com',
                 linkedIn:'https://www.linkedin.com/in/eric-beach-b9349826/',
-                instagram:'https://instagram.com',
                 direct:'866-988-4667 Ext 705',
                 cell:' 303-349-7923',
                 photo:'/assets/images/aboutUs/DummyProfile.png'
@@ -187,32 +127,32 @@ const d = {
           ],
         stats : [
             {
-              count:8253,
+              count:16021,
               title:'Auctions',
               icon:'/assets/images/sell/cart.png'
             },
             {
-              count:458,
+              count:'***',
               title:'Sellers',
               icon:'/assets/images/sell/dollar_thumb.png'
             },
             {
-              count:458,
+              count:'***',
               title:'Users <br/> helped',
               icon:'/assets/images/sell/headphone.png'
             },
             {
-              count:116,
+              count:12,
               title:'Employees',
               icon:'/assets/images/sell/group.png'
             },
             {
-              count:4253,
+              count:21634,
               title:'Total <br/> Users',
               icon:'/assets/images/sell/laptop.png'
             },
             {
-              count:450,
+              count:'***',
               title:'Problems <br/> Solved',
               icon:'/assets/images/sell/bulb.png'
             }
@@ -262,50 +202,86 @@ const d = {
     footer:{
         newsletterSubscription:'Subscribe to <br /> our Newsletter',
         siteurl:'MachineryMax.Com',
-        siteMobNo:'Call: +88 659 789 874',
-        copyRight:' © Copyright 2022 MachineryMax.Com. All Rights Reserved. No part of this web page may be reproduced in any way without the prior written permission of MachineryMax.Com.',
+        siteMobNo:'866-988-4667',
+        copyRight:' © Copyright 2022 MachineryMax.Com. All rights reserved. No part of this web page may be reproduced in any way without the prior written permission of MachineryMax.Com.',
+        instagram: 'https://instagram.com/machinerymax?igshid=YmMyMTA2M2Y=',
+        facebook: 'https://www.facebook.com/machinerymax',
+        linkedIn: 'https://www.linkedin.com/company/machinerymax-com/',
         contactLinks:{
+
           title:'Contact Us',
+
           items: [
+
             {
+
               name:'Terms and Conditions',
+
               link:'/'
+
             },
+
             {
+
               name:'Privacy Policy',
+
               link:'/'
+
             },
+
             {
+
               name:'Site Map',
+
               link:'/'
+
             }
+
           ]
+
         },
+
         usefulLinks : {
+
           title: 'Useful Links',
+
           items: [
+
             {
+
               name:'Help Contact',
+
               link: '/'
+
             },
+
             {
+
               name:'Technical Support',
+
               link:'/'
+
             },
+
             {
+
               name:'About Us',
-              link:'/'
+
+              link:'/about-us'
+
             }
+
           ]
+
         }
     },
     navbar:{
-        sellBtn:'SELL YOUR EQUIPMENT'
+        sellBtn:'Start Selling Today'
     },
     financing:{
         financingTitle:'Equipment Financing',
         financingIntroduction:'Get financing for new and used equipment or technology for your business.<br />Access up to $150,000 application only, or up to $1million with financials. <br />Loan and lease options are available.',
-        preApprovedBidTitle:'GET PRE-APPROVED BEFORE YOU BID!',
+        preApprovedBidTitle:'Explore a credit limit of up to $150,000 for your bid',
         processTitle:'The Process',
         step1:'1. Apply Online <br />&nbsp &nbsp It only takes 3 minutes.',
         step2:'2. Sign your documents electronically.<br/>&nbsp &nbsp Receive your contracts in a secure online format.',
@@ -366,7 +342,7 @@ const d = {
         timeframeOptions:['Need it sold yesterday', '2-4 weeks', 'Longer than 4 weeks'],
         describePlantTitle1:'Share more details  ',
         describePlantTitle2:'More description helps us speed the process',
-        contactDetails:'You can also contact us directly on phone number: <b>866-988-4667</b> Extension 1 <br/> or email us at <b>sales@machinerymax.com</b>',
+        contactDetails:'You can also contact us directly on phone number: <b>866-988-4667</b> Ext 1 <br/> or email us at <b>sales@machinerymax.com</b>',
         sendBtn:'Send',
         submitSucced:'Thank you',
         submitFailed:'Error occurred while sending email. Please try again later.',
@@ -375,8 +351,9 @@ const d = {
         chooseMachineryMaxTitle:'MachineryMax-A trusted partner for any industrial asset sale',
         chooseMachineryMaxDescription:'With decades of combined experience, Machinery Max has a proven track record of <b> efficiency, speed, and trust. </b> This has helped us to be the fastest growing global online industrial asset auction platform! We leverage the latest <b> digital technologies </b> to access, market, and facilitate transactions. This helps you <b> realize maximum value </b> for your asset. MachineryMax turns your sale into an event that engages the buyers and create a <b> win-win  </b> for everyone.',
         threeTiredSalesTitle:'Choose the sales model that suits you best',
-        commisionDescription:'Commission: This is the most traditional auction structure and provides several different options to satisfy your needs. While there is some risk, it will provide the largest net reward.',
-        netApproach:'Net Guarantee Approach: We assess your asset and provide a guaranteed net minimum amount<b>  plus </b> an agreed percentage above and beyond the minimum amount. This provides the security of knowing what you will receive with the opportunity to participate in the potential upside.',
+        commisionDescription:'<b>Commission</b>: This is the most traditional auction structure and provides several different options to satisfy your needs. While there is some risk, it will provide the largest net reward.',
+        netApproach:'<b>Net Guarantee Approach</b>: We assess your asset and provide a guaranteed net minimum amount<b>  plus </b> an agreed percentage above and beyond the minimum amount. This provides the security of knowing what you will receive with the opportunity to participate in the potential upside.',
+        cashPurchaseApproach:'<b>Cash Purchase Approach</b>: We will purchase all your assets and fund you within 24 hours of executing a purchase agreement.',
         completeShopTitle:'Complete Shop or Just a Few Machines',
         completeShopDescription:'<b>MachineryMax has you covered! </b> <br/> Our highly experienced team is strategically located across the United States and Canada to ensure quick response. We put extra effort to clean and stage prior to professionally photographing your assets. We present your events in a 100% clean environment ensuring high engagement with prospective buyers. We also include video links of specific machines running to inspire MachineryMax confidence.',
         timeCrunchTitle:'In a Time Crunch?',
@@ -482,8 +459,9 @@ const d = {
           actionOption2:'Purchase invoices awaiting payment'
       },
       home:{
-        homeTitle:'Heavy Machinery Auctions Marketplace',
-        latestAuctions:'LATEST AUCTIONS',
+        homeTitle:'New-age industrial assets auction platform',
+        homeSubtitle:'Maximum Trust - Maximum Value',
+        latestAuctions:'POPULAR AUCTIONS',
         categories:'CATEGORIES',
       },
       search:{
@@ -495,7 +473,7 @@ const d = {
         rememberMe:'Remember Me',
         enterValidCredential:'Enter valid credential ',
         forgotPassword:'Forgot Your Password?',
-        register:'Register',
+        register:'Create Free Account',
       },
       eventDetails:{
         managedBy:'Managed By',
@@ -505,7 +483,7 @@ const d = {
         valueAddesServiceOptions:'Value added service Options',
         starts:'Starts',
         additionalInfo:'Additional Information',
-        browseByCategories:'Browse By Categories',
+        browseByCategories:'Explore By Categories',
         goBack:'Go back',
         lotFilter:'Lot filters',
         active:'Active',
@@ -523,7 +501,8 @@ const d = {
       },
       topBar:{
        signin :'Sign In',
-       regitration:'Register'
+       regitration:'Create Free Account',
+       myaccount:'My Account'
       }
 }
 

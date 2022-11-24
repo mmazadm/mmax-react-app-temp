@@ -85,18 +85,16 @@ const AboutUs = () => {
       {d.about.team.map((item,key) => (
         <div className={`col-sm-6 col-md-4 col-lg-3 text-center`}>
         <div className="opp">
-          <img className="rounded-circle mb-5" src={item.photo}  width="200px" height="200px"/>
+          <img className="rounded-circle mb-5" src={item.photo} alt="" width="200px" height="200px"/>
           <span className="teamdiv" >
             {item.name}
-            <p className="teamclass">{item.title}</p>
-            <p className="teamclass">{item.city}</p>  
-            <p className="teamclass">{item.email}</p>  
-            <p className="teamclass">{d.about.direct} {item.direct}</p>  
-            <p className="teamclass">{d.about.cell} {item.cell}</p>  
+            <p className="teamclass mb-0">{item.title}</p>
+            <p className="teamclass mb-0">{item.city}</p>  
+            <p className="teamclass mb-0">{item.email}</p>  
+            <p className="teamclass mb-0">{item.direct}</p>  
+            <p className="teamclass mb-0">{item.cell}</p>  
             
-            <a href={item.facebook} target='_blank' rel='noreferrer' alt='facebook'><i className="ti-facebook icondiv"/></a>
             <a href={item.linkedIn} target='_blank' rel='noreferrer' alt='linkedin'><i className="ti-linkedin icondiv2"/></a>
-            <a href={item.instagram} target='_blank' rel='noreferrer' alt='instagram'><i className="ti-instagram icondiv2"/></a>
             <br/> 
           </span>
         </div>  
@@ -121,9 +119,6 @@ const AboutUs = () => {
                         <p className="testimonialcolor">{item.quote}</p>
                       </div>
                       <div className="student">
-                        <div className="photo round-image">
-                          <img src={item.photo} alt="user-img"/>
-                        </div>
                         <p>{item.name}</p>
                         <p>{item.role}</p>
                         <p>{item.companyName}</p>

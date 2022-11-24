@@ -9,7 +9,8 @@ const Home = () => {
     <>
     <section className="wpo-contact-pg-section home-section section-padding" >
       <div className="container">
-        <h1>{d.home.homeTitle}</h1>
+        <h1>{d.home.homeTitle.toUpperCase()}</h1>
+        <h4 className="text-white">{d.home.homeSubtitle}</h4>
       </div>    
     </section>
     <div className="bid-now-btn">

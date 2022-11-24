@@ -688,7 +688,7 @@ a.buy-btn:focus {
                         }
                         
                         .opp:hover span {
-                          bottom: 50px;
+                          bottom: 250px;
                           visibility: visible;
                           opacity: 1;
                         }
@@ -937,7 +937,7 @@ a.buy-btn:focus {
                         }
                         
                         .opp:hover span {
-                          bottom: 50px;
+                          bottom: 250px;
                           visibility: visible;
                           opacity: 1;
                         }
@@ -1239,7 +1239,7 @@ background-repeat: no-repeat !important;
                         }
                         
                         .opp:hover span {
-                          bottom: 50px;
+                          bottom: 250px;
                           visibility: visible;
                           opacity: 1;
                         }

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import d from '../assets/dictionary'
 import Sort from '../components/common/Sort'
 import { fetchEvent } from '../store/eventSlice'
+import { getEventThumbnail, getLotThumbnail } from '../assets/utility'
 
 const EventDetails = () => {
     const { event, isLoading } = useSelector(state=> state.events)
@@ -54,7 +55,7 @@ const EventDetails = () => {
   return (
     <section className="wpo-contact-pg-section section-padding">
         <div className="container">
-            {event.eventDetail.SecondaryImageURI && <img src={event.eventDetail.SecondaryImageURI} alt="featured-img"/>}
+            <img src={getEventThumbnail(event.eventDetail.SecondaryImageURI, event.eventDetail.Media, 1)} alt="featured-img"/>
             <h1>{event.eventDetail.Title}</h1>
             <p dangerouslySetInnerHTML={{__html:event.eventDetail.Description}}/>
             <p>{d.eventDetails.managedBy}: {event.eventDetail.ManagedByName}</p>
@@ -135,13 +136,18 @@ const EventDetails = () => {
                 {event.lots &&
                 <ul>
                   {event.lots.map(lot=>(
-                    <li>
-                      <span>{d.eventDetails.lot} {lot.LotNumber} - {lot.Title}</span>
-                      <p>{lot.Subtitle}</p>
-                      <p>{d.eventDetails.daysRemaining}:</p>
-                      <p>{d.eventDetails.currentBid}: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
-                      <p>{lot.ActionCount} {d.eventDetails.bid}</p>
-                      <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>
+                    <li className="row">
+                      <div className="col-sm-12 col-md-3">
+                        <img src={getLotThumbnail(lot.Media)} alt={`${lot.ID} img`}/>
+                      </div>
+                      <div className="col-sm-12 col-md-9">
+                        <span>{d.eventDetails.lot} {lot.LotNumber} - {lot.Title}</span>
+                        <p>{lot.Subtitle}</p>
+                        <p>{d.eventDetails.daysRemaining}:</p>
+                        <p>{d.eventDetails.currentBid}: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
+                        <p>{lot.ActionCount} {d.eventDetails.bid}</p>
+                        <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>
+                      </div>
                       <hr/>
                     </li>
                   ))}  

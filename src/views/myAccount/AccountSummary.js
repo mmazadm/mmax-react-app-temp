@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import d from "../../assets/dictionary";
+import {url} from '../../assets/paths'
 
 const AccountSummary = () => {
+  const { authenticated } = useSelector(state=> state.user)
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    if(!authenticated)
+      navigate(url.signIn)
+  },[authenticated, navigate])
+
   return (
     <div className="wpo-contact-form-area">
     <div className="row">
