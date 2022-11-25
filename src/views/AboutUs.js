@@ -3,8 +3,11 @@ import d from '../assets/dictionary'
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
+import CountUp from '../components/common/CountUp';
 
-const AboutUs = () => {    
+
+
+const AboutUs = () => {   
 
   return (
     <>
@@ -28,13 +31,19 @@ const AboutUs = () => {
     <div className="container">
       <div className="row">
           {d.about.stats.map(item => (
-            <div className="col-lg-2 col-md-4 col-sm-6"> 
-              <div className="row singelsymbol" >
-                <div className="col-md-4 statstop mx-auto" >
-                  <img src={item.icon} alt={item.title} className="statswidth"/>
+            <div className="col-lg-3 col-6"> 
+              <div className="singelsymbol" >
+                <div className="statstop d-flex" >
+                  <img src={item.icon} alt={item.title} className="mx-auto statswidth"/>
                 </div>
-                <div className="col-md-8 statscontent mx-auto text-center">
-                  <span className="statstext" >{item.count} <br/><span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
+                <div className="statscontent mx-auto text-center">
+                  <span className="statstext">
+                    <p style={{"fontSize":'2em'}}>
+                      {item.preCount && <span>{item.preCount} </span>}
+                      <CountUp end={item.count}/>
+                      {item.postCount && <span>{item.postCount}</span>}
+                    </p>
+                    <span dangerouslySetInnerHTML={{__html:item.title.toUpperCase()}}></span></span>
                 </div>      
               </div>                  
             </div>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import d from '../../assets/dictionary'
 import { fetchEventList } from '../../store/eventSlice'
 import { getEventThumbnail, getTimeLeft } from '../../assets/utility'
+import Spinner from '../common/Spinner'
 
 const LastestAuctions = () => {
     const { isLoading, eventList } = useSelector(state => state.events)
@@ -14,7 +15,7 @@ const LastestAuctions = () => {
       }, [dispatch])
 
     if(isLoading)
-        return <p>Loading...</p>
+        return <Spinner/>
     return(
         <ul>
         {eventList.List.map((item, key) => {
@@ -30,7 +31,7 @@ const LastestAuctions = () => {
                 </div>
                 <div className="col-sm-12 col-md-9">
                     <p><Link to={`event/details/${item.ID}/${item.Title}`}>{item.Title}</Link></p>
-                    <p dangerouslySetInnerHTML={{__html: item.Description}}/>
+                    <p dangerouslySetInnerHTML={{__html: item.Subtitle}}/>
                     <p>Ending: {getTimeLeft(item.EndDTTM)}</p>
                     <p>First Lot closes on: {new Date(`${item.EndDTTM}Z`).toLocaleString("en-US",{
                         timeZone: "America/Los_Angeles"

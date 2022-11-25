@@ -2,10 +2,10 @@ import React, {  useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import d from "../assets/dictionary";
-import { login } from "../store/userSlice";
+import { clearError, login } from "../store/userSlice";
 
 const SignIn = () => {
-    const initialValues = {userName:'',password:''}
+    const initialValues = {username:'',password:''}
     const [formValues,setFormValues] = useState(initialValues)
     const [formError,setFormError]=useState({});
     const { authenticated, isLoading, error } = useSelector(state => state.user)
@@ -23,17 +23,16 @@ const SignIn = () => {
       e.preventDefault();
       let errors = validate(formValues)
       if(Object.keys(errors).length === 0){
-        dispatch(login(formValues))
+        dispatch(login(formValues, navigate))
         setFormValues(initialValues);
-        navigate('/account/summary', {replace:true})
       }
       else setFormError(errors)
     }
 
     const validate = (values) =>{
        let errors ={}
-       if(!values.userName){
-        errors.userName = 'Username is required'
+       if(!values.username){
+        errors.username = 'Username is required'
        }
          if(!values.password){
         errors.password = 'Password is required!!'
@@ -46,7 +45,8 @@ const SignIn = () => {
     useEffect(() => {
       if(token || authenticated)
         navigate('/account/summary', {replace:true})
-    }, [token, navigate, authenticated])
+      dispatch(clearError())
+    }, [token, navigate, authenticated, dispatch])
     
   return (
     <section className="wpo-contact-pg-section section-padding ">
@@ -57,15 +57,15 @@ const SignIn = () => {
               <div className="form-group">
                 <label htmlFor="username">{d.signIn.userName}</label>
                 <input
-                  value={formValues.userName}
+                  value={formValues.username}
                   onChange={ChangeHandler}
                   type="text"
-                  name="userName"
+                  name="username"
                   className="form-control mt-2"
                   placeholder="Enter username"
                 />
               </div>
-              <p className='text-danger'>{formError.userName}</p>
+              <p className='text-danger'>{formError.username}</p>
               <div className="form-group ">
                 <label htmlFor="password">{d.signIn.password}</label>
                 <input

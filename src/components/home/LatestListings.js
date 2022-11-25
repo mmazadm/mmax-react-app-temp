@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchListings, fetchListingsByCategory } from '../../store/listingSlice'
+import Spinner from '../common/Spinner'
 
 const LastestListings = () => {
     const { loadingListings, listings, 
@@ -43,7 +44,7 @@ const LastestListings = () => {
         </nav>
         <ul>
         {loadingListings || !listings.List?
-            <p>Loading...</p>:
+            <Spinner/>:
             listings.List.map((item, key) => 
             <li key={item.ID}>
                 <Link to={item.TypeName === 'Auction'? 

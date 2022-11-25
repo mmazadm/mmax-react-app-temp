@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { getLotThumbnail } from '../../assets/utility'
+import { getLotThumbnail, getTimeLeft } from '../../assets/utility'
 
 const Tickr = () => {
   const [endingSoon, setEndingSoon] = useState([])
@@ -27,19 +27,19 @@ const Tickr = () => {
           {loading || !endingSoon?
               <p>Loading...</p>:
               endingSoon.map((item) => 
-              <div key={item.ID} className="col">
+              <div key={item.ID} className="col align-items-center">
                   <Link to={`/event/lotDetails/${item.LotId}`}>
                     <div className="d-flex">
                       <img src={getLotThumbnail(item.Media)} 
                       alt={`${item.ID}-img`} 
-                      style={{maxWidth:"80px"}}
+                      style={{maxHeight:"80px"}}
                       className="me-2"
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null;
                         currentTarget.src="/assets/images/placeholder-thumbnail.gif";
                       }}/>
                       <div>
-                        {item.Title}<br/>
+                        {getTimeLeft(item.EndDTTM)}<br/>
                         ${item.CurrentPrice}
                       </div>
                     </div>

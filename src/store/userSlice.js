@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import axios from 'axios'
+import axios from 'axios'
 
 const initialState = {
     isLoading: false,
@@ -39,23 +39,24 @@ export const userSlice = createSlice({
 export const { setUser, clearUser, setError, clearError, 
     startLoading, stopLoading } = userSlice.actions
 
-export const login = (formValues) => (dispatch) => {
+export const login = (formValues, navigate) => (dispatch) => {
     dispatch(startLoading())
     dispatch(clearError())
-    /*axios.post('/login',formValues)
+    axios.post('/login',formValues)
     .then((res)=> {
         localStorage.setItem('mmx_token', res.data.token)
         axios.get(`/user/${formValues.username}`)
         .then(res=>{
             dispatch(setUser(res.data))
+            navigate('/account/summary', {replace:true})
         })
     })
     .catch((err) => {
         console.log(err)
         dispatch(clearUser())
         dispatch(setError(err.message))
-    })*/
-    dispatch(setUser({username: formValues.username}))
+    })
+    //dispatch(setUser({username: formValues.username}))
 }
 
 export default userSlice.reducer;

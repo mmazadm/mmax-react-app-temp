@@ -1,6 +1,5 @@
 import React from 'react'
 import { useLocation, useOutlet } from 'react-router-dom'
-import Loader from '../components/common/Loader'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/header/Navbar'
 import Tickr from '../components/header/Tickr'
@@ -10,7 +9,6 @@ const Default = () => {
   const {pathname} = useLocation()
   return (
     <div className="page-wrapper">
-      <Loader/>
       <header id="header" className="mheader" >
         <Topbar/>
         {pathname === '/' && <Tickr/>}

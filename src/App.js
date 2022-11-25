@@ -6,11 +6,11 @@ import appRoutes from './routes';
 import { fetchCategoryListWithCounts } from './store/listingSlice';
 
 
-axios.defaults.baseURL = 'https://mmaxaw35migrate.azurewebsites.net/api';
-//axios.defaults.baseURL = 'http://localhost:64580/api';
+//axios.defaults.baseURL = 'https://mmaxaw35migrate.azurewebsites.net/api';
+axios.defaults.baseURL = 'http://localhost:64580/api';
 //axios.defaults.baseURL = 'https://mmax-api-wrapper.azurewebsites.net/api'
-axios.defaults.headers.common['Authorization'] = 'RWX_BASIC admin:admin1234';
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+//axios.defaults.headers.common['Authorization'] = 'RWX_BASIC admin:admin1234';
+//axios.defaults.headers.common['Content-Type'] = 'application/json';
 //axios.defaults.headers.commom['Date'] = new Date();
 
 function App() {
@@ -20,6 +20,8 @@ function App() {
   useEffect(()=> {
     dispatch(fetchCategoryListWithCounts())
   },[dispatch])
+
+  window.scrollTo(0, 0)
   return (
     <div className="App">
       {element}

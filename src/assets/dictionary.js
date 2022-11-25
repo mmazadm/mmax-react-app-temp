@@ -127,34 +127,28 @@ const d = {
           ],
         stats : [
             {
-              count:16021,
+              count:41528,
+              postCount:'+',
               title:'Auctions',
               icon:'/assets/images/sell/cart.png'
             },
             {
-              count:'***',
-              title:'Sellers',
+              count:180,
+              preCount:'USD',
+              postCount:'M+',
+              title:'Revenue generated',
               icon:'/assets/images/sell/dollar_thumb.png'
             },
             {
-              count:'***',
-              title:'Users <br/> helped',
-              icon:'/assets/images/sell/headphone.png'
-            },
-            {
-              count:12,
-              title:'Employees',
-              icon:'/assets/images/sell/group.png'
-            },
-            {
-              count:21634,
-              title:'Total <br/> Users',
+              count:21960,
+              postCount:'+',
+              title:'Total users',
               icon:'/assets/images/sell/laptop.png'
             },
             {
-              count:'***',
-              title:'Problems <br/> Solved',
-              icon:'/assets/images/sell/bulb.png'
+              count:9,
+              title:'Office Locations',
+              icon:'/assets/images/sell/group.png'
             }
           ],
         testimonials:[

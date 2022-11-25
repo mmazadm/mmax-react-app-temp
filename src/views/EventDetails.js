@@ -7,6 +7,7 @@ import d from '../assets/dictionary'
 import Sort from '../components/common/Sort'
 import { fetchEvent } from '../store/eventSlice'
 import { getEventThumbnail, getLotThumbnail, getTimeLeft } from '../assets/utility'
+import Loader from '../components/common/Loader'
 
 const EventDetails = () => {
     const { event, isLoading } = useSelector(state=> state.events)
@@ -50,7 +51,7 @@ const EventDetails = () => {
       dispatch(fetchEvent(eventId,0,0,'active', null, breadcrumbs?breadcrumbs:'', filter, sort))
     }, [breadcrumbs, dispatch, eventId, filter, sort])
     
-    if(isLoading || Object.keys(event).length===0) return <p>Loading...</p>
+    if(isLoading || Object.keys(event).length===0) return <Loader/>
   return (
     <section className="wpo-contact-pg-section section-padding">
         <div className="container">
