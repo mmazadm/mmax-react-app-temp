@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import d from '../assets/dictionary'
-import Sort from '../components/common/Sort'
+import Sort from '../components/common/Dropdown'
 import { fetchEvent } from '../store/eventSlice'
 import { getEventThumbnail, getLotThumbnail, getTimeLeft } from '../assets/utility'
 import Loader from '../components/common/Loader'
@@ -56,60 +56,62 @@ const EventDetails = () => {
   return (
     <section className="wpo-contact-pg-section section-padding">
         <div className="container">
-            <img src={getEventThumbnail(event.eventDetail.SecondaryImageURI, event.eventDetail.Media, 1)}
+          {
+            <img src={getEventThumbnail(event.eventDetail.secondaryImageURI, event.eventDetail.media, 1)}
             alt="featured-img"
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
               currentTarget.src="/assets/images/placeholder-thumbnail.gif";
             }}
-            />
-            <h1>{event.eventDetail.Title}</h1>
-            <p dangerouslySetInnerHTML={{__html:event.eventDetail.Description}}/>
-            <p>{d.eventDetails.managedBy}: {event.eventDetail.ManagedByName}</p>
-            <p>{d.eventDetails.status}: {event.eventDetail.Status}</p>
-            <p>{d.eventDetails.eventId}: {event.eventDetail.ID}</p>
+          />}
+            <h1>{event.eventDetail.title}</h1>
+            <p dangerouslySetInnerHTML={{__html:event.eventDetail.description}}/>
+            <p>{d.eventDetails.managedBy}: {event.eventDetail.managedByName}</p>
+            <p>{d.eventDetails.status}: {event.eventDetail.status}</p>
+            <p>{d.eventDetails.eventId}: {event.eventDetail.id}</p>
             <p>{d.eventDetails.termsAndConditions}: 
-              <span dangerouslySetInnerHTML={{__html:event.eventDetail.TermsAndConditions}}/>
+              <span dangerouslySetInnerHTML={{__html:event.eventDetail.termsAndConditions}}/>
             </p>
             <p>{d.eventDetails.valueAddesServiceOptions}: 
-              <span dangerouslySetInnerHTML={{__html:event.eventDetail.ShippingInfo}}/></p>
-            <p>{d.eventDetails.starts}: {new Date(`${event.eventDetail.StartDTTM}Z`).toLocaleString("en-US",{
+              <span dangerouslySetInnerHTML={{__html:event.eventDetail.shippingInfo}}/></p>
+            <p>{d.eventDetails.starts}: {new Date(`${event.eventDetail.startDTTM}Z`).toLocaleString("en-US",{
                     timeZone: "America/Los_Angeles"
                 })} PT
             </p>
             <h4>{d.eventDetails.additionalInfo}</h4>
             <ul>
-              { event.eventDetail.Properties.map(item=>{
-                let f_name = item.Field.Name
-                let f_value = item.Value
-                if(item.Value){
-                  if(item.Field.Name.includes('SalesTax')){
+              {event.eventDetail.properties && event.eventDetail.properties.map(item=>{
+                let f_name = item.field.name
+                let f_value = item.value
+                if(item.value){
+                  if(item.field.name.includes('SalesTax')){
                     f_name = 'Sales Tax'
                     f_value = parseInt(f_value)+' %'
                   }
                 }
                 return(
-                <li key={item.ID}>
+                <li key={item.id}>
                   {f_name}: {f_value}
                   <hr/>
                 </li>)
               })}
             </ul>
+            {
             <div className="row">
               <div className="col-3">
                 <h6>{d.eventDetails.browseByCategories}</h6>
                   <ul>
                   {browseByCategory.length>1?
                     browseByCategory.map(cat => {
-                    if(event.lotCountsByCategory[cat.ID])
+                    if(event.lotCountsByCategory[cat.id])
                       return(
-                        <li key={cat.ID}>
+                        <li key={cat.id}>
                           <button onClick={handleSelectCategory}
-                          data-id={cat.ID}
-                          data-name={cat.Name}>
-                          {cat.Name} 
+                          data-id={cat.id}
+                          data-name={cat.name}>
+                          {cat.name} 
                           <span className="badge rounded-pill bg-secondary">
-                            {event.lotCountsByCategory[cat.ID]}
+                            {event.lotCountsByCategory[cat.id]}
                           </span>
                           </button>
                         </li>
@@ -148,20 +150,20 @@ const EventDetails = () => {
                   {event.lots.map(lot=>(
                     <li className="row">
                       <div className="col-sm-12 col-md-3">
-                        <img src={getLotThumbnail(lot.Media)} 
-                        alt={`${lot.ID} img`}
+                        <img src={getLotThumbnail(lot.media)} 
+                        alt={`${lot.id} img`}
                         onError={({ currentTarget }) => {
                           currentTarget.onerror = null;
                           currentTarget.src="/assets/images/placeholder-thumbnail.gif";
                         }}/>
                       </div>
                       <div className="col-sm-12 col-md-9">
-                        <span>{d.eventDetails.lot} {lot.LotNumber} - {lot.Title}</span>
-                        <p>{lot.Subtitle}</p>
-                        <p>{d.eventDetails.daysRemaining}: {getTimeLeft(lot.EndDTTM)}</p>
-                        <p>{d.eventDetails.currentBid}: ${parseFloat(lot.CurrentPrice).toFixed(2)} {lot.CurrencyCode}</p>
-                        <p>{lot.ActionCount} {d.eventDetails.bid}</p>
-                        <Link to={`/event/lotDetails/${lot.LotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>
+                        <span>{d.eventDetails.lot} {lot.lotNumber} - {lot.title}</span>
+                        <p>{lot.subtitle}</p>
+                        <p>{d.eventDetails.daysRemaining}: {getTimeLeft(lot.endDTTM)}</p>
+                        <p>{d.eventDetails.currentBid}: ${parseFloat(lot.currentPrice).toFixed(2)} {lot.currencyCode}</p>
+                        <p>{lot.actionCount} {d.eventDetails.bid}</p>
+                        <Link to={`/event/lotDetails/${lot.lotId}`} className="btn theme-btn">{d.eventDetails.bidNow}</Link>
                       </div>
                       <hr/>
                     </li>
@@ -170,7 +172,7 @@ const EventDetails = () => {
                 }
               </div>
             </div>
-
+              }
                
         </div>
     </section>

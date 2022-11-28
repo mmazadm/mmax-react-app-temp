@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { getLotThumbnail, getTimeLeft } from '../../assets/utility'
+import Spinner from '../common/Spinner'
 
 const Tickr = () => {
   const [endingSoon, setEndingSoon] = useState([])
@@ -11,10 +12,10 @@ const Tickr = () => {
     setLoading(true)
     axios.get(`/listing/search/0/5/0?Statuses=active`)
     .then((res)=> {
-        setEndingSoon(res.data.List)
+        setEndingSoon(res.data.list)
         setLoading(false)
     })
-    .catch((err) => {
+    .catch(() => {
       setEndingSoon([])
       setLoading(false)
     })
@@ -25,13 +26,13 @@ const Tickr = () => {
         <div className="container">
           <div className="row">
           {loading || !endingSoon?
-              <p>Loading...</p>:
+              <Spinner/>:
               endingSoon.map((item) => 
-              <div key={item.ID} className="col align-items-center">
-                  <Link to={`/event/lotDetails/${item.LotId}`}>
+              <div key={item.id} className="col align-items-center">
+                  <Link to={`/event/lotDetails/${item.lotId}`}>
                     <div className="d-flex">
-                      <img src={getLotThumbnail(item.Media)} 
-                      alt={`${item.ID}-img`} 
+                      <img src={getLotThumbnail(item.media)} 
+                      alt={`${item.id}-img`} 
                       style={{maxHeight:"80px"}}
                       className="me-2"
                       onError={({ currentTarget }) => {
@@ -39,8 +40,8 @@ const Tickr = () => {
                         currentTarget.src="/assets/images/placeholder-thumbnail.gif";
                       }}/>
                       <div>
-                        {getTimeLeft(item.EndDTTM)}<br/>
-                        ${item.CurrentPrice}
+                        {getTimeLeft(item.endDTTM)}<br/>
+                        ${item.currentPrice}
                       </div>
                     </div>
                   </Link>

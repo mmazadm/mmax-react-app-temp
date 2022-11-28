@@ -5,12 +5,12 @@ const initialState = {
     loadingListings: true,
     loadingCats: true,
     categoriesWithCount:[{
-        List:[],
+        list:[],
         count:{}
     }],
     currentCategory:{},
     listings:{
-        List:[]
+        list:[]
     },
     listing:{},
     listingTypes:['All', 'Fixed Price','Auction','Classified'],
@@ -90,12 +90,12 @@ export const fetchListingsByCategory = (pageNumber,pageSize,breadcrumbs) => (dis
 }
 
 export const fetchCategoryListWithCounts = () => (dispatch) => {
-    axios.get('/listing/GetListingsCountByCategory')
+    axios.get('/listing/getlistingscountbycategory')
     .then((res)=> {
         dispatch(clearError())
         dispatch(setCategories({
-            List:res.data.m_Item1,
-            counts: res.data.m_Item2
+            list:res.data.item1,
+            counts: res.data.item2
         }))
     })
     .catch((err) => {
@@ -130,7 +130,7 @@ export const fetchCurrentCategory = (id) => (dispatch) => {
 export const fetchListingTypes = () => (dispatch, initialState) => {
     axios.get('/listing/types')
     .then(res=> {
-        let types = res.data.filter(i=> i.Enabled).map(i=> i.Name)
+        let types = res.data.filter(i=> i.enabled).map(i=> i.name)
         types.push('All')
         dispatch(setListingTypes(types))
     })

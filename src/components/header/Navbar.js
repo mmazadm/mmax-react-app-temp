@@ -83,25 +83,25 @@ const Navbar = () => {
                                         <a href={item.link} className="menufont">
                                             {item.name.toUpperCase()}
                                         </a>
-                                        {hasChildren && 
+                                        {hasChildren &&
                                         <ul className="sub-menu">
                                             {item.submenu.map(i=> 
-                                                <li>
+                                                <li key={i.link}>
                                                     <a href={i.link}>{i.name}</a>
                                                 </li>
                                             )}
                                             {item.name.toUpperCase() === 'EXPLORE' &&
-                                                categoriesWithCount.List &&
-                                                categoriesWithCount.List.length>0 &&
-                                                categoriesWithCount.List.map(cat => {
-                                                    if(categoriesWithCount.counts[cat.ID])
+                                                categoriesWithCount.list &&
+                                                categoriesWithCount.list.length>0 &&
+                                                categoriesWithCount.list.map(cat => {
+                                                    if(categoriesWithCount.counts[cat.id])
                                                     return(
-                                                    <li>
-                                                        <a href={`/browse/${cat.ID}`}
+                                                    <li key={cat.id}>
+                                                        <a href={`/browse/${cat.id}`}
                                                         className="d-flex justify-content-between align-items-center">
-                                                            <span>{cat.Name}</span>
+                                                            <span>{cat.name}</span>
                                                             <span className="badge rounded-pill bg-secondary text-center">
-                                                                {categoriesWithCount.counts[cat.ID]}
+                                                                {categoriesWithCount.counts[cat.id]}
                                                             </span>
                                                         </a>
                                                     </li>)
@@ -112,7 +112,7 @@ const Navbar = () => {
                                     </li>
                                     )
                                 })}
-                                <li>
+                                <li key={0}>
                                     <a className="theme-btn1 btndef sellbtn1"
                                         href={url.sellEquipment}>
                                            {d.navbar.sellBtn}

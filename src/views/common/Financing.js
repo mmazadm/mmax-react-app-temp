@@ -1,5 +1,5 @@
 import React from 'react'
-import d from '../assets/dictionary'
+import d from '../../assets/dictionary'
 
 const Financing = () => {
     

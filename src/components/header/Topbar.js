@@ -1,12 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import d from '../../assets/dictionary'
 import Search from './Search'
 import { url } from '../../assets/paths'
+import { logout } from '../../store/userSlice'
 
 const Topbar = () => {
     const { authenticated } = useSelector(state => state.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const {pathname} = useLocation()
   return (
     <div className='container-fluid bg-dark'>
 
@@ -15,9 +19,18 @@ const Topbar = () => {
                 <Search/>
             </li>
             { authenticated?
-            <li>
-                <Link to={url.accountSummary} className="menufont text-white ms-3">{d.topBar.myaccount}</Link>
-            </li>:
+            <>
+                <li>
+                    <Link to={url.accountSummary} className="menufont text-white ms-3">
+                        {d.topBar.myaccount}
+                    </Link>
+                </li>
+                <li>
+                    <button onClick={()=>dispatch(logout(navigate, pathname))} className="menufont">
+                        Logout
+                    </button>
+                </li>
+            </>:
             <>
             <li>
                 <Link to={url.signIn} className='menufont text-white ms-3'>{d.topBar.signin}</Link>

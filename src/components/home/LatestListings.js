@@ -19,7 +19,7 @@ const LastestListings = () => {
         dispatch(fetchListings(0,5,1))
       }, [dispatch])
 
-    if(!categoriesWithCount.List || categoriesWithCount.List.length === 0) return <p>Loading...</p>
+    if(!categoriesWithCount.list || categoriesWithCount.list.length === 0) return <Spinner/>
     return(
         <>
         <nav className="nav nav-pills flex-column flex-sm-row">
@@ -29,27 +29,27 @@ const LastestListings = () => {
                 onClick={handleSelect}>
                     All
             </button>
-            {categoriesWithCount.List.map((item) => 
-                categoriesWithCount.counts[item.ID] &&
+            {categoriesWithCount.list.map((item) => 
+                categoriesWithCount.counts[item.id] &&
                 <button className='flex-sm-fill text-sm-center nav-link'
-                data-id = {item.ID}
-                data-name = {item.Name}
+                data-id = {item.id}
+                data-name = {item.name}
                 onClick={handleSelect}>
-                    {item.Name}
+                    {item.name}
                     <span className="badge rounded-pill bg-secondary text-center">
-                        {categoriesWithCount.counts[item.ID]}
+                        {categoriesWithCount.counts[item.id]}
                     </span>
                 </button>
             )}
         </nav>
         <ul>
-        {loadingListings || !listings.List?
+        {loadingListings || !listings.list?
             <Spinner/>:
-            listings.List.map((item, key) => 
-            <li key={item.ID}>
+            listings.list.map((item) => 
+            <li key={item.id}>
                 <Link to={item.TypeName === 'Auction'? 
-                `/event/lotDetails/${item.LotId}`:
-                `/fixedPrice/${item.ID}`}>{item.Title}</Link>
+                `/event/lotDetails/${item.lotId}`:
+                `/fixedPrice/${item.id}`}>{item.title}</Link>
             </li>
         )}
         </ul>

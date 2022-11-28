@@ -18,25 +18,25 @@ const LastestAuctions = () => {
         return <Spinner/>
     return(
         <ul>
-        {eventList.List.map((item, key) => {
+        {eventList.list.map((item, key) => {
             return(
             <li key={key} className="row">
                 <div className="col-sm-12 col-md-3">
-                <img src={getEventThumbnail(item.PrimaryImageURI, item.Media, 0)}
-                alt={`${item.ID} img`}
+                <img src={getEventThumbnail(item.primaryImageURI, item.media, 0)}
+                alt={`${item.id} img`}
                 onError={({ currentTarget }) => {
                     currentTarget.onerror = null;
                     currentTarget.src="/assets/images/placeholder-thumbnail.gif";
                   }}/>
                 </div>
                 <div className="col-sm-12 col-md-9">
-                    <p><Link to={`event/details/${item.ID}/${item.Title}`}>{item.Title}</Link></p>
-                    <p dangerouslySetInnerHTML={{__html: item.Subtitle}}/>
-                    <p>Ending: {getTimeLeft(item.EndDTTM)}</p>
-                    <p>First Lot closes on: {new Date(`${item.EndDTTM}Z`).toLocaleString("en-US",{
+                    <p><Link to={`event/details/${item.id}/${item.title}`}>{item.title}</Link></p>
+                    <p dangerouslySetInnerHTML={{__html: item.subtitle}}/>
+                    <p>Ending: {getTimeLeft(item.endDTTM)}</p>
+                    <p>First Lot closes on: {new Date(`${item.endDTTM}Z`).toLocaleString("en-US",{
                         timeZone: "America/Los_Angeles"
                     })} PT</p>
-                    <Link to={`event/details/${item.ID}/${item.Title}`} className="btn theme-btn">{d.latestauctions.viewAllLots} ({item.LotCount})</Link>
+                    <Link to={`event/details/${item.id}/${item.title}`} className="btn theme-btn">{d.latestauctions.viewAllLots} ({item.lotCount})</Link>
                 </div>
                 <hr className="my-2"/>
             </li>

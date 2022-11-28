@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { validateEmail } from '../assets/utility'
-import Spinner from '../components/common/Spinner'
+import Spinner from '../../components/common/Spinner'
+
 
 const ContactUs = () => {
     const initialValues = { firstname: '', lastname: '',email:'', message: '' }
@@ -21,32 +21,31 @@ const ContactUs = () => {
     const ChangeHandler = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value })
+        setFormError({...formError, [name]:''})
     }
 
     const submitHandler = (e) => {
         e.preventDefault();
         let validated = validateDetails(formValues)
-        if(validated){
+
+        if(Object.keys(validated).length===0){
         setLoading(true)
-            axios.post('/api/contact-us',{
-                firstname:'',
-                lastname:'',
-                email:'',
-                message:''
-            })
-            .then(res=> {
+            axios.post('/contact',formValues)
+            .then(()=> {
                 setFormValues(initialValues);
-                setLoading(false)
+                setLoading(false);
             })
-            .catch(err=>{
+            .catch(()=>{
                 setLoading(false)
                 setError(true)
-                setErrorMessage(error.message)
+                setErrorMessage('Something Went wrong. Please try again.')
             })
-        }
+        } 
         else
-        { setFormError(validateDetails(formValues));
+        { 
+            setFormError(validateDetails(formValues));
         }
+        console.log(formValues)
 
     }
 
@@ -56,7 +55,7 @@ const ContactUs = () => {
         if(!values.email){
          errors.email = 'Username is required!!'
         } else if (!regex.test(values.email)){
-         errors.email = 'Enter Valid Username'
+         errors.email = 'Enter Valid Email..'
         }
 
         if (!values.firstname) {
@@ -74,16 +73,16 @@ const ContactUs = () => {
         return errors;
     }
     return (
-        <section className="wpo-contact-pg-section section-padding ">
+        <section className="wpo-contact-pg-section py-4 ">
 
-            <div className='container'>
+            <div className='container'> 
 
                 <div className='row'>
                     <div className="fullwidth">
                         <label className="form-control insize bg-secondary text-white mb-4" >Contact Us</label>
                     </div>
                     <div className='col-6'>
-                        <p>All filled marked with "<span className='text-danger'>*</span>"are required</p>
+                        <p className='text-end'>All filled marked with "<span className='text-danger'>*</span>"are required.</p>
                         <div>
                             <div className="form-group">
                                 <label htmlFor="username" className='d-flex'>First Name<span className='text-danger'>*</span> </label>
@@ -96,7 +95,8 @@ const ContactUs = () => {
                                     placeholder="Enter First Name"
                                 />
                             </div>
-                            <p className='text-danger'>{formError.firstname}</p>
+                           
+                            <p className='text-danger'>{formError.firstname}</p> 
                             <div className="form-group ">
                                 <label htmlFor="lastname">Last Name <span className='text-danger'>*</span></label>
                                 <input
@@ -108,11 +108,12 @@ const ContactUs = () => {
                                     placeholder="Enter Last Name"
                                 />
                             </div>
-                            <p className='text-danger'>{formError.lastname}</p>
+                            
+                            <p className='text-danger'>{formError.lastname}</p> 
                             <div className="form-group ">
                                 <label htmlFor="email"> Email <span className='text-danger'>*</span></label>
                                 <input
-                                    value={formValues.password}
+                                    value={formValues.email}
                                     name='email'
                                     onChange={ChangeHandler}
                                     type="email"
@@ -120,6 +121,7 @@ const ContactUs = () => {
                                     placeholder="Enter Email"
                                 />
                             </div>
+                           
                             <p className='text-danger'>{formError.email}</p>
 
                             <div className="form-group ">
@@ -131,16 +133,22 @@ const ContactUs = () => {
                                     name="message" id="state"
                                 />
                             </div>
-                            <p className='text-danger'>{formError.message}</p>
+                          
+                            <p className='text-danger'>{formError.message}</p> 
 
                             <ReCAPTCHA className='mt-2'
                                 sitekey="6LeZ3C4jAAAAAFug5KfMU74Ltzw9cRSnOAAYiQJN"
                                 onChange={onChange}
                             />
-                            {error && <p>{errorMessage}</p>}
-                            <button type="submit" className="theme-btn mt-2" disabled={!verified || loading} onClick={submitHandler} >
-                                Send {loading && <Spinner/>}
+                            {error && <p className='text-danger'>{errorMessage}</p>}
+                            
+                            <button type="submit" className="theme-btn mt-2  text-right " disabled={!verified || loading} 
+                            onClick={submitHandler} 
+                            >
+                                Send  {loading && <Spinner/>}
                             </button>
+                            
+                          
                         </div>
                     </div>
                     <div className='col-6 mt-1'>

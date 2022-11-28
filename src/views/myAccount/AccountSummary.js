@@ -1,17 +1,20 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import d from "../../assets/dictionary";
 import {url} from '../../assets/paths'
+import { fetchAccountSummary } from "../../store/userSlice";
 
 const AccountSummary = () => {
-  const { authenticated } = useSelector(state=> state.user)
+  const { authenticated, summary } = useSelector(state=> state.user)
   const navigate = useNavigate()
-
+  const dispatch = useDispatch()
   useEffect(()=>{
     if(!authenticated)
       navigate(url.signIn)
-  },[authenticated, navigate])
+    else
+      dispatch(fetchAccountSummary())
+  },[authenticated, navigate, dispatch])
 
   return (
     <div className="wpo-contact-form-area">
@@ -25,9 +28,9 @@ const AccountSummary = () => {
           id="contact-form-main"
           noValidate="novalidate"
         >
-          <div className="fullwidth">
-            
-        <label className="form-control insize">{d.accountSummary.generalOption1}</label>    
+          <div className="fullwidth">  
+            <label className="form-control insize">{d.accountSummary.generalOption1}</label>   
+             
           </div>
            <div className="fullwidth">
             <label className="form-control insize">{d.accountSummary.generalOption2}</label>     

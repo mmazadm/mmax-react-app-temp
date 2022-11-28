@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import d from '../assets/dictionary'
-import { validateEmail, validatePhone } from '../assets/utility'
+import d from '../../assets/dictionary'
+import { validateEmail, validatePhone } from '../../assets/utility'
 import axios from 'axios'
 // import { url } from '../assets/paths'
 

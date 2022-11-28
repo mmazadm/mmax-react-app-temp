@@ -18,9 +18,12 @@ export const url = {
     register:'/register',
     eventDetail:'/event/details/:eventId/:title',
     eventDetailByCategory:'/event/details/:eventId/:title/:breadcrumbs/:catName',
-    contactUs:'/contact-us'
+    contactUs:'/contact-us',
+    termsAndConditions:'/terms-and-conditions',
+    privacyPolicy:'/privacy-policy',
+    techSupport:'/technical-support'
 }
 
-//export const appMediaUrl = 'https://mmaxaw35migrate.azurewebsites.net/'
-export const appMediaUrl = 'http://localhost:64580/'
+export const appMediaUrl = 'https://mmaxaw35migrate.azurewebsites.net/'
+//export const appMediaUrl = 'http://localhost:64580/'
 export const blobStorageUrl = 'https://mmaxstorage.blob.core.windows.net/assets/media/'

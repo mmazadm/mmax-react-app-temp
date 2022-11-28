@@ -4,18 +4,20 @@ import axios from 'axios'
 import d from '../assets/dictionary'
 import Loader from '../components/common/Loader'
 import { useSelector } from 'react-redux'
-import Sort from '../components/common/Sort'
+import Dropdown from '../components/common/Dropdown'
 
 const SearchPage = () => {
     const location = useLocation()
-    const searchText = location.search.split('=')[1]
+    const urlParams = new URLSearchParams(location.search);
+    const searchText = urlParams.get('fullTextQuery')
     const [results, setResults] = useState([])
     const [isLoading, setLoading] = useState(true)
     const[error, setError] = useState(false)
-    const [listingType, setListingType] = useState('')
-    const [statusFilter, setStatusFilter] = useState('active_only')
-    const [sortOpt, setSortOpt] = useState(0)
+    const [listingType, setListingType] = useState('All')
+    const [statusFilter, setStatusFilter] = useState('Active')
+    const [sortOpt, setSortOpt] = useState('Ending Soon')
     const {listingTypes} = useSelector(state=> state.listings)
+    const sortOpts=['Ending Soon','Newest']
 
     const getResults = () => {
         if(searchText!==''){
@@ -25,12 +27,16 @@ const SearchPage = () => {
             if(listingType!=='All') type = listingType.replace(' ','')
             let status = 'active_only'
             if(status === 'Completed') status = 'completed_only'
-            axios.get(`/listing/search/0/10?FullTextQuery=${searchText}
-            &ListingType=${type}
-            &StatusFilter=${statusFilter}
-            &SortFilterOptions=${sortOpt}`)
+            let sort = 0;
+            switch(sortOpt){
+                case 'Ending Soon': sort = 0;
+                break;
+                case 'Newest': sort = 1;
+                break;
+                default: sort = 0;
+            }
+            axios.get(`/listing/search/0/10/${sort}?FullTextQuery=${searchText}&ListingType=${type}&Statuses=${statusFilter}`)
             .then(res=> {
-                console.log(res.data)
                 setResults(res.data)
                 setLoading(false)
             })
@@ -52,23 +58,35 @@ const SearchPage = () => {
   return (
     <section className="section-padding">
         <div className="container">
-            <div className='d-flex'>
-                <Sort selected={listingType} 
-                onSelect={(e)=>setListingType(e.currentTarget.dataset.name)}
-                defaultelection='All' 
-                list={listingTypes}/>
+            <div className='d-flex align-items-center'>
+            <label className="me-2">Listing Type</label>
+            <Dropdown selected={listingType} 
+            onSelect={(e)=>setListingType(e.currentTarget.dataset.name)}
+            list={listingTypes}/>
+            <label className="mx-2">Sort</label>
+            <Dropdown selected={sortOpt} 
+            onSelect={(e)=>setSortOpt(e.currentTarget.dataset.name)}
+            list={sortOpts}/>
+            <div className="btn-group ms-4">
+                <button onClick={()=> setStatusFilter('Active')} 
+                className={`btn btn-primary ${statusFilter==='Active'?'active':''}`} 
+                aria-current="page">Active</button>
+                <button onClick={()=> setStatusFilter('Ended')} 
+                className={`btn btn-primary ${statusFilter==='Ended'?'active':''}`} 
+                aria-current="page">Completed</button>
+            </div>
             </div>
         </div>
         <hr/>
         { isLoading? <Loader/> :
             error? <p className='text-danger'>Unable to fetch results. Please try again</p>
-            :results.List && results.List.length > 0 ?
+            :results.list && results.list.length > 0 ?
             <ul>
-            {results.List.map((item, key) => {
-                let link = item.TypeName === 'Auction'? `/events/lot/${item.LotId}`:`/listing/${item.ID}`
+            {results.list.map((item, key) => {
+                let link = item.TypeName === 'Auction'? `/events/lot/${item.lotId}`:`/listing/${item.id}`
             return (
                 <li key={key}>
-                    <Link to={link}>{item.Title}</Link>
+                    <Link to={link}>{item.title}</Link>
                 </li>
             )})}
             </ul>:

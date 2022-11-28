@@ -4,20 +4,28 @@ import React from "react";
 import Default from "./layouts/Default";
 
 //views
-import AboutUs from "./views/AboutUs";
-import UnderConstruction from "./views/UnderConstruction";
-import MobileApp from "./views/MobileApp";
-import SellEquipment from "./views/SellEquipment";
-import Financing from "./views/Financing";
+import AboutUs from "./views/common/AboutUs";
+import UnderConstruction from "./views/common/UnderConstruction";
+import MobileApp from "./views/common/MobileApp";
+import SellEquipment from "./views/common/SellEquipment";
+import Financing from "./views/common/Financing";
 import SearchPage from "./views/Search";
 import Home from "./views/Home";
 import AccountSidebar from "./layouts/AccountSidebar";
 import AccountSummary from "./views/myAccount/AccountSummary";
-import { url } from "./assets/paths";
 import AllCategories from "./views/AllCategories";
 import EventDetails from "./views/EventDetails";
 import SignIn from "./views/SignIn";
-import ContactUs from "./views/ContactUs";
+import ContactUs from "./views/common/ContactUs";
+import AccountCreditCard from "./views/myAccount/AccountCreditCard";
+import AccountDetails from "./views/myAccount/AccountDetails";
+import AccountPassword from "./views/myAccount/AccountPassword";
+import AccountAddress from "./views/myAccount/AccountAddress";
+import TechSupport from "./views/common/TechSupport"
+import PrivacyPolicy from "./views/common/PrivacyPolicy"
+import TermsAndConditions from "./views/common/TermsAndConditions"
+
+import { url } from "./assets/paths";
 
 const appRoutes = [
     {
@@ -50,6 +58,22 @@ const appRoutes = [
                     {
                         path:url.accountSummary,
                         element:<AccountSummary/>
+                    },
+                    {
+                        path: url.accountCreditCard,
+                        element: <AccountCreditCard/>
+                    },
+                    {
+                        path: url.accountAddress,
+                        element: <AccountAddress/>
+                    },
+                    {
+                        path: url.accountDetails,
+                        element: <AccountDetails/>
+                    },
+                    {
+                        path: url.accountPassword,
+                        element: <AccountPassword/>
                     }
                 ]
             },
@@ -78,11 +102,23 @@ const appRoutes = [
                 element:<ContactUs/>
             },
             {
+                path:url.techSupport,
+                element:<TechSupport/>
+            },
+            {
+                path:url.privacyPolicy,
+                element:<PrivacyPolicy/>
+            },
+            {
+                path:url.termsAndConditions,
+                element:<TermsAndConditions/>
+            },
+            {
                 path:'*',
                 element:<UnderConstruction/>
             }
-        ]
-    }
+        ],
+    },
 ];
 
 export default appRoutes;

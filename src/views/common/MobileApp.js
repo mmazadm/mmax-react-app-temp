@@ -1,5 +1,5 @@
 import React from 'react'
-import d from '../assets/dictionary'
+import d from '../../assets/dictionary'
 const MobileApp = () => {
   return (
     <section className="wpo-contact-pg-section section-padding">

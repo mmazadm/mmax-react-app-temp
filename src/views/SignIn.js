@@ -17,12 +17,13 @@ const SignIn = () => {
    const ChangeHandler =(e)=>{
        const {name,value} = e.target;
        setFormValues({...formValues,[name]:value})
+       setFormError({...formError,[name]:''})
     }
   
-    const submitHandler =(e)=>{  
-      e.preventDefault();
+    const handleSubmit =(e)=>{  
+      //e.preventDefault();
       let errors = validate(formValues)
-      if(Object.keys(errors).length === 0){
+      if(Object.values(errors).length === 0){
         dispatch(login(formValues, navigate))
         setFormValues(initialValues);
       }
@@ -90,8 +91,8 @@ const SignIn = () => {
                 </div>
               </div>
                <button className="theme-btn mt-2" 
-               onClick={submitHandler}
-               disabled={isLoading}>
+               disabled={isLoading}
+               onClick={handleSubmit}>
                 Submit
               </button>
               {error && <p className="text-danger">{errorMessage}</p>}

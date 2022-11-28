@@ -24,18 +24,18 @@ export const getEventThumbnail = (uri, media, type) => {
     let fullSize = '/assets/images/placeholder-thumbnail.gif'
     if(uri){
         let context = type === 0 ? 'UploadEventImage': 'UploadEventBanner'
-        let mediaObj = media.filter(i=> i.Context === context)[0]
-        if(mediaObj.Saver === 'BlobStorage'){
-            fullSize = blobStorageUrl+mediaObj.Variations.FullSize.Asset.Reference
+        let mediaObj = media.filter(i=> i.context === context)[0]
+        if(mediaObj.saver === 'BlobStorage'){
+            fullSize = blobStorageUrl+mediaObj.variations.FullSize.asset.reference
         }
         else{
            // let defaultVariation = media[type].Variations[file.DefaultVariationName]
-            let path = mediaObj.Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
+            let path = mediaObj.variations.FullSize.asset.dateStamp.replaceAll('-','').split('T')[0]
             fullSize = appMediaUrl
             +'Content/eventImages/'
             +path
             +'/'
-            +mediaObj.Variations.FullSize.Asset.Reference
+            +mediaObj.variations.FullSize.asset.reference
         }
     }
     return fullSize
@@ -44,16 +44,16 @@ export const getEventThumbnail = (uri, media, type) => {
 export const getLotThumbnail = (media) => {
     let thumbnail = '/assets/images/placeholder-thumbnail.gif'
     if(media.length > 0){
-        let mediaObj = media.filter(i=> i.Context === 'UploadListingImage')[0]
-        if(mediaObj.Saver === 'BlobStorage'){
-            thumbnail = blobStorageUrl+media[0].Variations.FullSize.Asset.Reference
+        let mediaObj = media.filter(i=> i.context === 'UploadListingImage')[0]
+        if(mediaObj.saver === 'BlobStorage'){
+            thumbnail = blobStorageUrl+media[0].variations.FullSize.asset.reference
         }
         else
         {
             thumbnail = appMediaUrl
             +'Content/listingImages/'
-            +mediaObj.Variations.FullSize.Asset.DateStamp.replaceAll('-','').split('T')[0]
-            +'/'+mediaObj.Variations.FullSize.Asset.Reference
+            +mediaObj.variations.FullSize.asset.dateStamp.replaceAll('-','').split('T')[0]
+            +'/'+mediaObj.variations.FullSize.asset.reference
         }
     }
     return thumbnail
