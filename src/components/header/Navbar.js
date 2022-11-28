@@ -31,6 +31,10 @@ const menuItems = [
             {
                 name:'Mobile Applications',
                 link:url.apps
+            },
+            {
+                name:'Contact Us',
+                link:url.contactUs
             }
         ]
     },

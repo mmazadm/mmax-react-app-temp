@@ -17,7 +17,8 @@ export const url = {
     signIn:'/signIn',
     register:'/register',
     eventDetail:'/event/details/:eventId/:title',
-    eventDetailByCategory:'/event/details/:eventId/:title/:breadcrumbs/:catName'
+    eventDetailByCategory:'/event/details/:eventId/:title/:breadcrumbs/:catName',
+    contactUs:'/contact-us'
 }
 
 //export const appMediaUrl = 'https://mmaxaw35migrate.azurewebsites.net/'

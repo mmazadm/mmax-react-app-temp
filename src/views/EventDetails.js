@@ -17,7 +17,8 @@ const EventDetails = () => {
     const [browseByCategory, setBrowseByCategory] = useState([])
     const [filter, setFilter] = useState('Active')
     const [sort, setSort] = useState('Ending Soon')
-
+    const sortOptions = ['Ending Soon','Lot Order']
+    
     const handleSelectCategory = (e) => {
       e.preventDefault()
       let {id, name}  = e.currentTarget.dataset
@@ -137,7 +138,7 @@ const EventDetails = () => {
                     </button>
                   </nav>
                   <div className="col-9">
-                  {d.eventDetails.sort}: <Sort selected={sort} onSelect={setSort}/>
+                  {d.eventDetails.sort}: <Sort selected={sort} onSelect={setSort} list={sortOptions}/>
                   </div>
                   <hr/>
                 </div>

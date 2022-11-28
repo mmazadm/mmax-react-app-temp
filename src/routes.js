@@ -17,6 +17,7 @@ import { url } from "./assets/paths";
 import AllCategories from "./views/AllCategories";
 import EventDetails from "./views/EventDetails";
 import SignIn from "./views/SignIn";
+import ContactUs from "./views/ContactUs";
 
 const appRoutes = [
     {
@@ -71,6 +72,10 @@ const appRoutes = [
             {
                 path:url.signIn,
                 element:<SignIn/>
+            },
+            {
+                path:url.contactUs,
+                element:<ContactUs/>
             },
             {
                 path:'*',

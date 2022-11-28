@@ -42,7 +42,7 @@ export const { setUser, clearUser, setError, clearError,
 export const login = (formValues, navigate) => (dispatch) => {
     dispatch(startLoading())
     dispatch(clearError())
-    axios.post('/login',formValues)
+    axios.post('/system/login',formValues)
     .then((res)=> {
         localStorage.setItem('mmx_token', res.data.token)
         axios.get(`/user/${formValues.username}`)

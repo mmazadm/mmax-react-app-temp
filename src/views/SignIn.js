@@ -8,7 +8,7 @@ const SignIn = () => {
     const initialValues = {username:'',password:''}
     const [formValues,setFormValues] = useState(initialValues)
     const [formError,setFormError]=useState({});
-    const { authenticated, isLoading, error } = useSelector(state => state.user)
+    const { authenticated, isLoading, error, errorMessage } = useSelector(state => state.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const token = localStorage.getItem('mmx_storage')
@@ -94,7 +94,7 @@ const SignIn = () => {
                disabled={isLoading}>
                 Submit
               </button>
-              {error && <p className="text-danger">Username and password do not match</p>}
+              {error && <p className="text-danger">{errorMessage}</p>}
               <h6 className="mt-3">{d.signIn.forgotPassword}</h6>
             </div>
           </div>

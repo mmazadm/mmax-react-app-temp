@@ -13,6 +13,7 @@ const initialState = {
         List:[]
     },
     listing:{},
+    listingTypes:['All', 'Fixed Price','Auction','Classified'],
     error: false,
     errorMessage:''
 }
@@ -32,6 +33,9 @@ export const listingSlice = createSlice({
         setCurrentCategory: (state, action) => {
             state.currentCategory = action.payload
         },
+        setListingTypes: (state, action) => {
+            state.listingTypes = action.payload
+        },
         setError: (state, action) => {
             state.error = true
             state.errorMessage = action.payload
@@ -46,6 +50,7 @@ export const listingSlice = createSlice({
 })
 
 export const { setListings, setCategories, setCurrentCategory,
+    setListingTypes,
      setError, clearError, startLoading, stopLoading } = listingSlice.actions
 
 export const fetchListings = (pageNumber,pageSize, sort) => (dispatch) => {
@@ -120,6 +125,16 @@ export const fetchCurrentCategory = (id) => (dispatch) => {
         dispatch(setError('Server error. Please try again'))
         dispatch(stopLoading())
     })
+}
+
+export const fetchListingTypes = () => (dispatch, initialState) => {
+    axios.get('/listing/types')
+    .then(res=> {
+        let types = res.data.filter(i=> i.Enabled).map(i=> i.Name)
+        types.push('All')
+        dispatch(setListingTypes(types))
+    })
+    .catch(()=> dispatch(setListingTypes(initialState.listingTypes)))
 }
 
 export default listingSlice.reducer;
