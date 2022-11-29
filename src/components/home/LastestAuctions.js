@@ -14,11 +14,13 @@ const LastestAuctions = () => {
         dispatch(fetchEventList())
       }, [dispatch])
 
-    if(isLoading)
+    console.log(eventList.list)
+
+    if(isLoading || !eventList.list)
         return <Spinner/>
     return(
         <ul>
-        {eventList.list.map((item, key) => {
+        {eventList.list && eventList.list.map((item, key) => {
             return(
             <li key={key} className="row">
                 <div className="col-sm-12 col-md-3">

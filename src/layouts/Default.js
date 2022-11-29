@@ -11,7 +11,7 @@ const Default = () => {
     <div className="page-wrapper">
       <header id="header" className="mheader" >
         <Topbar/>
-        {pathname === '/' && <Tickr/>}
+        {/*pathname === '/' && <Tickr/>*/}
         <div className="wpo-site-header wpo-header-style-2 headmobbg" >
           <Navbar/>
         </div>

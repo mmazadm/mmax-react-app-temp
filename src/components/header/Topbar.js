@@ -12,35 +12,29 @@ const Topbar = () => {
     const navigate = useNavigate()
     const {pathname} = useLocation()
   return (
-    <div className='container-fluid bg-dark'>
-
-        <ul className="nav flex-row-reverse py-1 px-4 align-items-center">
-            <li className="ms-3">
-                <Search/>
-            </li>
-            { authenticated?
-            <>
-                <li>
-                    <Link to={url.accountSummary} className="menufont text-white ms-3">
-                        {d.topBar.myaccount}
-                    </Link>
-                </li>
-                <li>
-                    <button onClick={()=>dispatch(logout(navigate, pathname))} className="menufont">
-                        Logout
-                    </button>
-                </li>
-            </>:
-            <>
-            <li>
-                <Link to={url.signIn} className='menufont text-white ms-3'>{d.topBar.signin}</Link>
-            </li>
-            <li>
-                <Link to={url.register} className='menufont text-white'>{d.topBar.regitration}</Link>
-            </li>
-            </>
-            }
-        </ul>
+    <div className='container-fluid search-wrap bg-dark'>
+        <div className="row align-items-center">
+            <div className="col-md-9 offset-md-1 signform"> 
+                { authenticated?
+                    <span className="copyright cp_st">
+                        <Link to={url.accountSummary} className="menufont text-white ms-3">
+                            {d.topBar.myaccount} | 
+                        </Link>
+                        <button onClick={()=>dispatch(logout(navigate, pathname))} className="menufont text-white">
+                            Logout
+                        </button>
+                    </span> 
+                    :
+                    <span className="copyright cp_st">
+                        <Link to={url.signIn} className='menufont text-white ms-3'>{d.topBar.signin} | </Link>
+                        <Link to={url.register} className='menufont text-white'>{d.topBar.regitration}</Link>
+                    </span>
+                }
+                <div class="form-group has-search">
+                    <Search/>
+                </div>
+            </div>
+        </div>
     </div>
   )
 }

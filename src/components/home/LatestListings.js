@@ -34,6 +34,7 @@ const LastestListings = () => {
                 <button className='flex-sm-fill text-sm-center nav-link'
                 data-id = {item.id}
                 data-name = {item.name}
+                key = {item.id}
                 onClick={handleSelect}>
                     {item.name}
                     <span className="badge rounded-pill bg-secondary text-center">
