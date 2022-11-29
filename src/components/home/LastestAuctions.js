@@ -67,7 +67,7 @@ const LastestAuctions = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <Link to={`event/details/${item.id}/${item.title}`}
+                                        <Link to={`event/details/${item.id}/${item.title.replace(' ','_')}`}
                                             className="theme-btn btnbgco21">
                                             {d.latestauctions.viewAllLots} ({item.lotCount})
                                         </Link>

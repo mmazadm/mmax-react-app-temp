@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import d from '../assets/dictionary'
-import Sort from '../components/common/Dropdown'
+import Dropdown from '../components/common/Dropdown'
 import { fetchEvent } from '../store/eventSlice'
 import { getEventThumbnail, getLotThumbnail, getTimeLeft } from '../assets/utility'
 import Loader from '../components/common/Loader'
@@ -29,13 +29,13 @@ const EventDetails = () => {
       else {
         b_crumbs = 'C'+id
       }
-      navigate(`/event/details/${eventId}/${title}/${b_crumbs}/${name}`)
+      navigate(`/event/details/${eventId}/${title.replace(' ','_')}/${b_crumbs}/${name}`)
     }
 
     useEffect(()=> {
         console.log('start')
        //if( Object.keys(event).length===0 || event.eventDetail.ID !== eventId)
-          dispatch(fetchEvent(eventId,0,0,'active',null, '', filter, sort))
+          dispatch(fetchEvent(eventId,sort,0,filter,null, breadcrumbs?breadcrumbs:''))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
@@ -49,7 +49,7 @@ const EventDetails = () => {
       .then(res=> {
         setBrowseByCategory(res.data)
       })
-      dispatch(fetchEvent(eventId,0,0,'active', null, breadcrumbs?breadcrumbs:'', filter, sort))
+      dispatch(fetchEvent(eventId,sort,0,filter, null, breadcrumbs?breadcrumbs:''))
     }, [breadcrumbs, dispatch, eventId, filter, sort])
     
     if(isLoading || Object.keys(event).length===0) return <Loader/>
@@ -140,7 +140,7 @@ const EventDetails = () => {
                     </button>
                   </nav>
                   <div className="col-9">
-                  {d.eventDetails.sort}: <Sort selected={sort} onSelect={setSort} list={sortOptions}/>
+                  {d.eventDetails.sort}: <Dropdown selected={sort} onSelect={setSort} list={sortOptions}/>
                   </div>
                   <hr/>
                 </div>

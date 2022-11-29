@@ -54,10 +54,18 @@ export const fetchEventList = () => (dispatch) => {
 }
 
 export const fetchEvent = (eventId, sort, pageNumber, lotStatus, 
-    username, breadcrumbs, filter ) => (dispatch) => {
+    username, breadcrumbs ) => (dispatch) => {
     //if eventId is not same as currentEvent's ID
     dispatch(startLoading())
-    axios.get(`/event/geteventsdetails/${eventId}/${sort}/${pageNumber}/5/${lotStatus}/${username}?BreadCrumbs=${breadcrumbs}&StatusFilter=${filter}`)
+    let s = 0;
+    switch(sort){
+        case 'Ending Soon':
+            s=0; break;
+        case 'Lot Order':
+            s=1;break;
+        default: s=0;
+    }
+    axios.get(`/event/geteventsdetails/${eventId}/${s}/${pageNumber}/5/${lotStatus}/${username}?BreadCrumbs=${breadcrumbs}`)
     .then(res=>{
         dispatch(clearError())
         dispatch(setEvent({
