@@ -1,12 +1,12 @@
 import React from 'react'
-import { useLocation, useOutlet } from 'react-router-dom'
+import { useOutlet } from 'react-router-dom'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/header/Navbar'
-import Tickr from '../components/header/Tickr'
+//import Tickr from '../components/header/Tickr'
 import Topbar from '../components/header/Topbar'
 
 const Default = () => {
-  const {pathname} = useLocation()
+  //const {pathname} = useLocation()
   return (
     <div className="page-wrapper">
       <header id="header" className="mheader" >
