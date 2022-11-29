@@ -6,7 +6,7 @@ import {url} from '../../assets/paths'
 import { fetchAccountSummary } from "../../store/userSlice";
 
 const AccountSummary = () => {
-  const { authenticated, summary } = useSelector(state=> state.user)
+  const { authenticated } = useSelector(state=> state.user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(()=>{
