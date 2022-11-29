@@ -14,7 +14,7 @@ const Topbar = () => {
   return (
     <div className='container-fluid search-wrap bg-dark'>
         <div className="row align-items-center">
-            <div className="col-md-9 offset-md-1 signform"> 
+            <div className="signform"> 
                 { authenticated?
                     <span className="copyright cp_st">
                         <Link to={url.accountSummary} className="menufont text-white ms-3">
@@ -30,7 +30,7 @@ const Topbar = () => {
                         <Link to={url.register} className='menufont text-white'>{d.topBar.regitration}</Link>
                     </span>
                 }
-                <div class="form-group has-search">
+                <div class="form-group has-search me-3">
                     <Search/>
                 </div>
             </div>

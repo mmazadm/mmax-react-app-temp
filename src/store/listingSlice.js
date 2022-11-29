@@ -73,7 +73,7 @@ export const fetchListingsByCategory = (pageNumber,pageSize,breadcrumbs) => (dis
     const endpoints = [
         `/category/${breadcrumbs}`,
         `/category/children/${breadcrumbs}`,
-        `/listing/search/0/5/0?Statuses=active&BreadCrumbs=C${breadcrumbs}`
+        `/listing/search/${pageNumber}/${pageSize}/0?Statuses=active&breadcrumbs=C${breadcrumbs}`
     ]
     axios
     .all(endpoints.map(point => axios.get(point)))

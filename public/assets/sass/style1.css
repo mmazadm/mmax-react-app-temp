@@ -128,7 +128,7 @@ h6 {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 .wsk-cp-text {
-  padding-top: 110%;
+  padding-top: 118%;
 }
 
 .contentst{
@@ -179,9 +179,9 @@ h6 {
   font-size: 20px;
   font-weight: bold;
   margin: 15px auto;
-  overflow: hidden;
+  /*overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;*/
   width: 100%;
 }
 .wsk-cp-text .description-prod p {
@@ -403,8 +403,12 @@ border-bottom: 2px solid grey;
 	color:#f44336;
 }
 
-.npill>li>a, .npill>li, .npill>li>a{
+.npill>li>a, .npill>li, .npill>li>button{
 	color:#f44336;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
 }
 
 .pillboard{
@@ -788,7 +792,7 @@ cursor: pointer;
   }
   .centered21 {
     position: absolute;
-    bottom: -14%;
+    bottom: -10%;
     right: 18% !important;
     transform: translate(-3%, -30%);
     color: black;
@@ -811,7 +815,7 @@ cursor: pointer;
 
 .evtitle{
   color: white;
-  word-break: break-all;
+  /*word-break: break-all;*/
   margin-top: 5px !important;
 
   font-size: 14px !important;
@@ -907,9 +911,9 @@ cursor: pointer;
     font-size: 20px !important;
     font-weight: bold;
     margin: 15px auto;
-    overflow: hidden;
+    /*overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis;*/
     width: 60% !important;
 }
 
@@ -1013,6 +1017,7 @@ cursor: pointer;
 .cardtitletexts {
   color: white;
   margin-left: 60px;
+  margin-bottom: 30px;
 }
 
 .cardtexts {
@@ -1102,7 +1107,7 @@ margin-top: 20px;
 .btnbgco {
   background-color: #303030 !important;
   clip-path: polygon(100% 0, 100% 100%, 88% 100%, 0 100%, 0 0) !important;
-  font-size: 10px !important;
+  /*font-size: 10px !important;*/
   width: 100%;
 }
 
@@ -1270,7 +1275,7 @@ margin-top: 20px;
   }
   .centered21 {
   position: absolute;
-  bottom: -14%;
+  bottom: -10%;
   right: 6%;
   transform: translate(-3%, -30%);
   color: black;
@@ -1293,7 +1298,7 @@ margin-top: 20px;
 
   .evtitle{
   color: white;
-  word-break: break-all;
+  /*word-break: break-all;*/
   }
 
   .hrfield{
@@ -1360,9 +1365,9 @@ margin-top: 20px;
   .wsk-cp-text .title-product h3 {
   font-size: 14px;
   margin: 15px auto;
-  overflow: hidden;
+  /*overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;*/
   width: 100%;
   }
 
@@ -2230,7 +2235,7 @@ margin-left: -100px ;
 
   .centered21 {
     position: absolute;
-    bottom: -14%;
+    bottom: -10%;
     right: 6%;
     transform: translate(-3%, -30%);
     color: black;
@@ -2253,7 +2258,7 @@ margin-left: -100px ;
 
 .evtitle{
   color: white;
-  word-break: break-all;
+  /*word-break: break-all;*/
   font-size: 16px !important ;
 }
 
@@ -3282,3 +3287,6 @@ margin-left:50px;
 
 
 /* New Css Code Ends*/
+.btnbgco21:hover{
+  color: #FF5E14;
+}

@@ -15,9 +15,9 @@ const SearchPage = () => {
     const[error, setError] = useState(false)
     const [listingType, setListingType] = useState('All')
     const [statusFilter, setStatusFilter] = useState('Active')
-    const [sortOpt, setSortOpt] = useState('Ending Soon')
+    const [sortOpt, setSortOpt] = useState('Newest')
     const {listingTypes} = useSelector(state=> state.listings)
-    const sortOpts=['Ending Soon','Newest']
+    const sortOpts=['Newest', 'Ending Soon']
 
     const getResults = () => {
         if(searchText!==''){

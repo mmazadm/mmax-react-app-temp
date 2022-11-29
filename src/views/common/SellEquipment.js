@@ -183,17 +183,17 @@ const SellEquipment = () => {
                             value={phone.value}/>
                             <p className='text-danger'>{phone.error}</p>
                         </div>    
-                        <div className="row align-items-center">   
+                        <div className="row">   
                             <p className="formfont">{d.sellEquipment.discussionTitle} <span className="orangestar" >*</span></p>
                             {d.sellEquipment.sellingPurpose.map(item=> (
                                 <>
-                                <div className="col-md-2 mb-2">
+                                <div className="col-1 mb-2">
                                     <input type="radio" id="purpose" name="purpose" 
                                     value={item}
-                                    // className="radiowidth"
+                                    style={{height:'20px',width:'18px'}}
                                     onChange={()=> setPurpose({value:item, error:''})}/>
                                 </div>
-                                <div className="col-md-10 mb-2">
+                                <div className="col-11 mb-2">
                                     <label htmlFor="html">{item}</label>
                                 </div>
                                 </>
@@ -201,17 +201,17 @@ const SellEquipment = () => {
                             <p className='text-danger'>{purpose.error}</p>
 
                         </div>   
-                        <div className="row align-items-center">   
+                        <div className="row">   
                             <p className="formfont">{d.sellEquipment.timeframeTitle}  <span className="orangestar" >*</span></p>
                             {d.sellEquipment.timeframeOptions.map(item=>(
                                 <>
-                                    <div className="col-md-2 mb-2">
+                                    <div className="col-1 mb-2">
                                         <input type="radio" id="timeframe" name="timeframe" 
                                         value={item} 
-                                        // className="radiowidth"
+                                        style={{height:'25px',width:'18px'}}
                                         onChange={() => setTimeframe({value:item, error:''}) }/>
                                     </div>
-                                    <div className="col-md-10 mb-2">
+                                    <div className="col-11 mb-2">
                                         <label htmlFor="html">{item}</label>
                                     </div>
                                 </>
