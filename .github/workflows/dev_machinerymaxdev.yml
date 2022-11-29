@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'machinerymaxdev'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3364C71F24AD44488592C893861682C4 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C62BCB4F2F8846EFB0F73F795FE106C1 }}
           package: .
